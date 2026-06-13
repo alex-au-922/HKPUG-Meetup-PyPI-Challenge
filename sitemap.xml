@@ -9,6 +9,10 @@
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/hints/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
          <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/rules/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
@@ -90,6 +94,14 @@
     </url>
     <url>
          <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/04-submission-and-certificates/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/05-reading-pip-output/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/06-submission-pr-workflow/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
 </urlset>

@@ -16,7 +16,7 @@
         <link rel="prev" href="../rules/">
       
       
-        <link rel="next" href="../scoreboard/">
+        <link rel="next" href="../hints/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -349,6 +349,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#expected-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected Time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-hack-means-here" class="md-nav__link">
     <span class="md-ellipsis">
       What "Hack" Means Here
@@ -385,6 +394,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#finding-your-submission-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Your Submission PR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#e-cert-progress" class="md-nav__link">
     <span class="md-ellipsis">
       E-Cert Progress
@@ -397,6 +415,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hints
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -445,10 +485,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -461,8 +501,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
@@ -606,6 +646,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/05-reading-pip-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reading Pip Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/06-submission-pr-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submission PR Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -635,10 +721,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -651,8 +737,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Labs
           </label>
@@ -1000,6 +1086,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#expected-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected Time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-hack-means-here" class="md-nav__link">
     <span class="md-ellipsis">
       What "Hack" Means Here
@@ -1030,6 +1125,15 @@
   <a href="#submission" class="md-nav__link">
     <span class="md-ellipsis">
       Submission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-your-submission-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Your Submission PR
     </span>
   </a>
   
@@ -1083,6 +1187,39 @@ challenge.</p>
 <li>optionally submit a defensive patch or writeup</li>
 </ol>
 <p>The challenge is about learning PyPI by hacking a safe toy ecosystem.</p>
+<h2 id="expected-time">Expected Time</h2>
+<p>The challenge runs for 30 calendar days, but the expected hands-on work is much
+smaller.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th style="text-align: right;">Target time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flags 01-03: index, names, resolver</td>
+<td style="text-align: right;">4-7 hours total</td>
+</tr>
+<tr>
+<td>Flags 04-09: main package hacking labs</td>
+<td style="text-align: right;">12-18 hours total</td>
+</tr>
+<tr>
+<td>Flags 10-11: defense and CI</td>
+<td style="text-align: right;">4-7 hours total</td>
+</tr>
+<tr>
+<td>Flag 12: capstone</td>
+<td style="text-align: right;">4-6 hours</td>
+</tr>
+</tbody>
+</table>
+<p>For a beginner who reads the tutorials carefully, the full trail should land
+around 25-35 hands-on hours. The tutorials are meant to replace most background
+searching. The remaining work should be investigation inside the lab, not
+learning packaging vocabulary from scratch.</p>
 <h2 id="what-hack-means-here">What "Hack" Means Here</h2>
 <p>Allowed:</p>
 <ul>
@@ -1138,6 +1275,21 @@ challenge.</p>
 <p>For hosted HKPUG mode, answers are encrypted before a pull request.</p>
 <p>For community mode, participants can self-check locally and submit a public
 writeup after the official window closes.</p>
+<h2 id="finding-your-submission-pr">Finding Your Submission PR</h2>
+<p>Hosted mode should use <strong>one long-lived pull request per participant or team</strong>.
+Do not open one pull request per flag.</p>
+<p>Use this title format:</p>
+<div class="highlight"><pre><span></span><code>[HKPUG-TEAM-AB12] submissions
+</code></pre></div>
+<p>Use this branch format:</p>
+<div class="highlight"><pre><span></span><code>submissions/HKPUG-TEAM-AB12
+</code></pre></div>
+<p>Then update the same PR as you solve more flags. To find your PR, search GitHub
+for your team code or use:</p>
+<div class="highlight"><pre><span></span><code>is:pr is:open author:@me repo:alex-au-922/HKPUG-Meetup-PyPI-Challenge
+</code></pre></div>
+<p>The team code is not secret. The flag answers are secret and should be encrypted
+in hosted mode.</p>
 <h2 id="e-cert-progress">E-Cert Progress</h2>
 <p>Suggested thresholds:</p>
 <ul>
