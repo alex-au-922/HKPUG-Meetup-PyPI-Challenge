@@ -15,7 +15,7 @@ and requirements like `<2` or `>=1.4`.
 The resolver is the part of pip that chooses one candidate. This lab teaches you
 to slow down and answer: "Why did pip choose that file instead of this one?"
 
-## Mini Tutorial
+## Background: How This Works
 
 A candidate is one possible package file.
 
@@ -35,6 +35,27 @@ Your job is to turn pip output into a small table:
 | version B | accepted | best matching candidate |
 
 Do not start by guessing the winning version. First list what pip can see.
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| requirement | what the victim asks pip to install |
+| specifier | a version rule, such as `>=1.0,<2.0` |
+| candidate | one package file pip could choose |
+| resolver | pip's process for choosing a valid set of packages |
+| pre-release | a version such as `2.0.0rc1` that may be ignored by default |
+
+Why this exists: a real project rarely says "install exactly this one file."
+It usually says "install something compatible with these requirements." The
+resolver turns that vague request into one concrete install decision.
+
+What to observe:
+
+1. the victim requirement string
+2. every candidate version pip can see
+3. skipped candidates and their skip reasons
+4. the final selected version and file
 
 ## Story
 

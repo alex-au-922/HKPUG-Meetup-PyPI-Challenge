@@ -4,7 +4,7 @@ This is the full 12-flag trail for the 30-day PyPI CTF. Each flag lasts 2 to 3
 days, so every lab has enough room for reading, poking, getting stuck, asking
 for a hint, and finally connecting the last step yourself.
 
-Every flag page includes a mini tutorial for that flag's core idea. You should
+Every flag page includes background for that flag's core idea. You should
 not need to keep another browser tab open just to understand the basic words in
 the lab.
 
@@ -48,7 +48,7 @@ but the final answer needs an explanation or patch.
 ## Expected Time
 
 The full trail is designed for roughly 25-35 hands-on hours for a beginner who
-reads the tutorials carefully.
+reads the flag pages carefully.
 
 | Flag group | Target time |
 |---|---:|
@@ -58,7 +58,7 @@ reads the tutorials carefully.
 | 12 | 4-6 hours |
 
 The final-mile solve should still take thought, but the background vocabulary
-should be available in the tutorials and hint pages.
+should be available inside the flag pages, Lab Guides, and hint pages.
 
 ## Hint Schedule
 

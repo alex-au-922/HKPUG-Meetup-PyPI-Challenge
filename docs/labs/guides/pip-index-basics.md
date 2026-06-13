@@ -126,5 +126,5 @@ Show installed package details:
 python -m pip show hkpug-ctf-hello
 ```
 
-The tutorials give you the map. The labs still expect you to decide which
-package path matters.
+The flag pages give you the map for each solve. These guides are backup
+reference when you want one idea explained again.

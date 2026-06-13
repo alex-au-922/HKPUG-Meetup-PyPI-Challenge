@@ -15,7 +15,7 @@ Older Python packages often used `setup.py`. That file is Python code. If a
 build path runs it, the build can have side effects. In this CTF, the side
 effect is harmless: a local fake flag marker under `artifacts/`.
 
-## Mini Tutorial
+## Background: How This Works
 
 The big question is artifact type:
 
@@ -32,6 +32,34 @@ does not require packaging history. It requires observation:
 3. Which build step wrote the marker?
 
 Use verbose output as your timeline.
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| sdist | source distribution, usually `.tar.gz` |
+| wheel | already-built package, usually `.whl` |
+| `setup.py` | old-style Python packaging script |
+| setuptools | the long-standing library behind many `setup.py` projects |
+| build phase | the step where source becomes an installable wheel |
+
+What is `setup.py`? It is a Python file older projects used to describe how a
+package is built and installed. A normal-looking `setup.py` may call
+`setuptools.setup(...)`, but it is still Python code. If a build path runs it,
+top-level code or custom command classes can run too.
+
+Why modern packaging changed this: `pyproject.toml` lets projects declare build
+requirements more explicitly, and pip can build inside an isolated temporary
+environment. That does not make untrusted code safe, but it reduces accidental
+coupling to your normal environment and makes the build path easier to reason
+about.
+
+What to observe:
+
+1. whether pip was forced away from wheels
+2. whether pip downloaded an sdist
+3. whether pip built a wheel locally
+4. which setup/build step produced the local marker
 
 ## Story
 

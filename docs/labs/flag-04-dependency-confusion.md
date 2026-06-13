@@ -15,7 +15,7 @@ If both sources are searched together, pip may choose the candidate that best
 matches its resolver rules. A higher version from the wrong place can beat the
 package you expected.
 
-## Mini Tutorial
+## Background: How This Works
 
 The subtle point is that `--extra-index-url` adds more candidates. It is not a
 clean security boundary.
@@ -35,6 +35,28 @@ So the lab question is not only "which index did we trust?" It is:
 
 Once you can answer those four questions, the exploit and the defense are both
 much easier to explain.
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| private index | a package source intended for internal packages |
+| public index | a package source anyone might publish to |
+| simulated public index | the safe toy public index in this CTF |
+| `--extra-index-url` | a pip option that adds another source of candidates |
+| dependency confusion | installing the wrong package because name/source intent is unclear |
+
+History: dependency confusion became widely discussed after researchers showed
+that internal package names could sometimes be claimed on public registries.
+This lab keeps the idea local and harmless, but the mental model is the same:
+if the installer sees an unexpected candidate, it may select it.
+
+What to observe:
+
+1. whether the package exists in both indexes
+2. which index has which version
+3. whether pip treats the extra index as a fallback or as more candidates
+4. which index supplied the installed file
 
 ## Story
 

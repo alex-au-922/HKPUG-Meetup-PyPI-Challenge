@@ -53,5 +53,5 @@ mkdocs serve
 ```text
 docs/       participant-facing MkDocs content
 labs/       lab workspaces and challenge material
-mkdocs.yml  tutorial site navigation
+mkdocs.yml  participant site navigation
 ```

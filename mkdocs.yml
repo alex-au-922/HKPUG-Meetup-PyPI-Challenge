@@ -43,17 +43,17 @@ nav:
   - How To Play: WORKING_FORMAT.md
   - Hints: hints.md
   - Scoreboard: scoreboard.md
-  - Tutorials:
-      - Tutorial Index: tutorials/README.md
-      - How To Play: tutorials/00-how-to-play.md
-      - Pip Index Basics: tutorials/01-pip-index-basics.md
-      - Package Build Artifacts: tutorials/02-package-build-artifacts.md
-      - Legacy Vs Modern Packaging: tutorials/03-legacy-vs-modern-packaging.md
-      - Submission And Certificates: tutorials/04-submission-and-certificates.md
-      - Reading Pip Output: tutorials/05-reading-pip-output.md
-      - Submission PR Workflow: tutorials/06-submission-pr-workflow.md
   - Labs:
       - Lab Index: labs/index.md
+      - Lab Guides:
+          - Guide Index: labs/guides/index.md
+          - How To Play Labs: labs/guides/how-to-play.md
+          - Pip Index Basics: labs/guides/pip-index-basics.md
+          - Package Build Artifacts: labs/guides/package-build-artifacts.md
+          - Legacy Vs Modern Packaging: labs/guides/legacy-vs-modern-packaging.md
+          - Reading Pip Output: labs/guides/reading-pip-output.md
+          - Submission And Certificates: labs/guides/submission-and-certificates.md
+          - Submission PR Workflow: labs/guides/submission-pr-workflow.md
       - Flag 01 Index Recon: labs/flag-01-index-recon.md
       - Flag 02 Name Maze: labs/flag-02-name-maze.md
       - Flag 03 Resolver Duel: labs/flag-03-resolver-duel.md

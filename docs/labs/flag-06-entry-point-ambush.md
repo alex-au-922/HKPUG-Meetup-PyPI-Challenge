@@ -17,7 +17,7 @@ That command is usually created from package metadata called an entry point.
 The code may not run during installation, but it can run the moment a user calls
 the command.
 
-## Mini Tutorial
+## Background: How This Works
 
 An entry point is metadata that says:
 
@@ -38,6 +38,27 @@ For this flag, keep the two ideas separate:
 
 - entry point: what command gets created?
 - extra: did installing with `[something]` pull in more packages?
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| console script | a command installed into the virtual environment |
+| entry point | metadata mapping a command to `module:function` |
+| extra | optional dependency group requested with square brackets |
+| wrapper | the small generated script that calls package code |
+
+History: entry points are a normal packaging feature. They let packages install
+commands like `black`, `pytest`, or `mkdocs`. The security lesson is not that
+entry points are bad. It is that installing a package can add commands, and
+automation may run those commands without reading where they point.
+
+What to observe:
+
+1. which files were installed
+2. which entry points the distribution declares
+3. which command exists in `.venv/bin/`
+4. whether an extra changed the dependency graph
 
 ## Story
 

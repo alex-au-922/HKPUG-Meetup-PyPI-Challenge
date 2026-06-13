@@ -13,7 +13,7 @@ special layout. You can open it before installing it.
 This lab teaches you that package review is not magic. You can inspect metadata,
 installed files, entry points, and hashes with ordinary tools.
 
-## Mini Tutorial
+## Background: How This Works
 
 Inside a wheel, the most important directory usually ends with `.dist-info`.
 
@@ -28,6 +28,28 @@ Look there first:
 
 You are not hunting for a random hidden string. You are reading the package's
 own shipping label and file list.
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| wheel | a built Python package file ending in `.whl` |
+| zip file | the container format a wheel uses |
+| `.dist-info` | the metadata directory inside a wheel |
+| `METADATA` | name, version, dependencies, and extras |
+| `RECORD` | installed file list and hashes |
+
+History: wheels were introduced so users could install built packages without
+running a source build every time. That is useful for speed and safety, but a
+wheel can still contain files, metadata, commands, and Python code worth
+reviewing.
+
+What to observe:
+
+1. the wheel filename and version
+2. the `.dist-info` directory
+3. package files that will land in `site-packages`
+4. metadata that changes install or runtime behavior
 
 ## Story
 

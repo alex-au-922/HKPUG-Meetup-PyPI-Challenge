@@ -2,7 +2,7 @@
 
 Learn PyPI by hacking a safe toy package ecosystem.
 
-This site is the participant-facing tutorial and progress hub. The GitHub repo
+This site is the participant-facing lab and progress hub. The GitHub repo
 contains the raw challenge files; this MkDocs site explains how to play, how
 each lab works, and how progress is tracked.
 
@@ -11,7 +11,7 @@ each lab works, and how progress is tracked.
 1. Read [Rules](rules.md).
 2. Read [How To Play](WORKING_FORMAT.md).
 3. Start with [Flag 01](labs/flag-01-index-recon.md).
-4. Use the [Tutorial Index](tutorials/README.md) as a reference when needed.
+4. Use [Lab Guides](labs/guides/index.md) when you want background.
 5. Check [Hints](hints.md) and the [Scoreboard](scoreboard.md).
 
 ## Learning Promise
@@ -47,22 +47,22 @@ flowchart LR
   F11 --> F12["12 Capstone Incident"]
 ```
 
-Each flag page contains its own mini tutorial. The separate tutorial pages are
-reference material for people who want to review commands, vocabulary, or the
-submission workflow without opening every flag.
+Each flag page contains the background needed for that flag. The Lab Guides sit
+inside the Labs section as backup references for commands, vocabulary, history,
+and submission workflow.
 
 ## Expected Time
 
 This is a 30-day calendar challenge, not a 60-hour homework project. A beginner
-who reads the tutorials should not need to search the web for every packaging
+who reads the flag pages should not need to search the web for every packaging
 term.
 
 | Player type | Expected hands-on time |
 |---|---:|
 | Experienced packaging/security person | 12-20 hours |
 | Normal Python developer | 20-30 hours |
-| Beginner reading the tutorials carefully | 25-35 hours |
+| Beginner reading the flag pages carefully | 25-35 hours |
 | Team of 2-3 people | 16-25 shared hours |
 
 If a beginner regularly needs more than 3 hours before the final-mile puzzle of
-a non-capstone lab, the tutorial or lab text is probably missing background.
+a non-capstone lab, the lab text is probably missing background.

@@ -16,7 +16,7 @@ publish.
 This lab does not publish anything. You audit a fake workflow and prove which
 package artifact would have been released.
 
-## Mini Tutorial
+## Background: How This Works
 
 Read a CI workflow like a security checklist:
 
@@ -33,6 +33,28 @@ maintainer-controlled branch, and untrusted pull request are not the same kind
 of input.
 
 This lab uses a fake publisher so the proof stays local.
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| CI | automation that runs on repository events |
+| workflow | YAML file describing automation jobs |
+| trigger | event that starts a workflow |
+| permission | what the workflow token is allowed to do |
+| publish job | automation step that releases a package |
+
+History: many Python projects publish from GitHub Actions or another CI system.
+That can be safer than publishing from a laptop, but only if the workflow trusts
+the right events and artifacts. The danger is not "CI is bad"; it is confusing a
+maintainer-controlled release event with untrusted contributor input.
+
+What to observe:
+
+1. which event starts the workflow
+2. which code the job checks out
+3. what token permissions the job has
+4. what artifact the fake publisher would publish
 
 ## Story
 

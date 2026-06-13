@@ -15,7 +15,7 @@ and version match, the file bytes must match this exact fingerprint."
 This lab teaches the difference between "I asked for roughly this dependency"
 and "I can reproduce exactly this install."
 
-## Mini Tutorial
+## Background: How This Works
 
 Dependency control has levels:
 
@@ -31,6 +31,27 @@ matters, use hashes or a lock process that records hashes.
 
 In this flag you must do both sides: show the weak install can be abused, then
 show the fixed install rejects the unsafe candidate.
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| pin | exact version rule such as `pkg==1.2.3` |
+| range | flexible version rule such as `pkg>=1.0` |
+| hash | fingerprint of exact file bytes |
+| lockfile | recorded dependency decision for reproducible installs |
+| tampering | replacing or swapping an artifact unexpectedly |
+
+History: version pins solve only part of reproducibility. They say which version
+you wanted, but not always which exact file bytes you received. Hash-checking
+adds that missing file identity check.
+
+What to observe:
+
+1. which requirement line is loose
+2. which artifact pip chooses before the fix
+3. the hash of the safe artifact
+4. the error pip gives after unsafe content is rejected
 
 ## Story
 

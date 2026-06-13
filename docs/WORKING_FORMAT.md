@@ -15,7 +15,7 @@ This page explains how participants should work through the challenge.
 Each flag follows the same shape:
 
 1. read the scenario
-2. read the mini tutorial inside that flag page
+2. read the background section inside that flag page
 3. run the setup command
 4. inspect or modify the toy index/package
 5. make the controlled package capture the fake flag
@@ -24,7 +24,7 @@ Each flag follows the same shape:
 
 The challenge is about learning PyPI by hacking a safe toy ecosystem.
 
-The separate Tutorial section is a reference shelf. It should help when you
+The Lab Guides inside the Labs section are a reference shelf. They help when you
 want to review pip output, artifacts, or submission format, but the core lesson
 for a flag should be inside the flag page itself.
 
@@ -40,10 +40,10 @@ smaller.
 | Flags 10-11: defense and CI | 4-7 hours total |
 | Flag 12: capstone | 4-6 hours |
 
-For a beginner who reads the tutorials carefully, the full trail should land
-around 25-35 hands-on hours. The tutorials are meant to replace most background
-searching. The remaining work should be investigation inside the lab, not
-learning packaging vocabulary from scratch.
+For a beginner who reads the flag pages carefully, the full trail should land
+around 25-35 hands-on hours. The flag background sections and Lab Guides are
+meant to replace most outside searching. The remaining work should be
+investigation inside the lab, not learning packaging vocabulary from scratch.
 
 ## What "Hack" Means Here
 
@@ -78,7 +78,7 @@ labs/flag-XX-name/
   expected/
 ```
 
-Some early tutorial labs may be lighter than this.
+Some early labs may be lighter than this.
 
 ## Standard Flag Capture
 

@@ -1,22 +1,22 @@
-# Tutorial Pages
+# Lab Guides
 
-These tutorials are reference pages. The required tutorial for each flag lives
-inside that flag page.
+These guides live inside the Labs section. The required background for each flag
+lives inside that flag page, so you can usually stay on the page while solving.
 
-Use this section when you want to review vocabulary, commands, pip output, or
-submission flow without opening every lab.
+Use this section when you want to review vocabulary, commands, pip output,
+history, or submission flow without opening every lab.
 
-Recommended reference order:
+Recommended reading order:
 
-1. `00-how-to-play.md`
-2. `01-pip-index-basics.md`
-3. `02-package-build-artifacts.md`
-4. `03-legacy-vs-modern-packaging.md`
-5. `04-submission-and-certificates.md`
-6. `05-reading-pip-output.md`
-7. `06-submission-pr-workflow.md`
+1. [How To Play Labs](how-to-play.md)
+2. [Pip Index Basics](pip-index-basics.md)
+3. [Package Build Artifacts](package-build-artifacts.md)
+4. [Legacy Vs Modern Packaging](legacy-vs-modern-packaging.md)
+5. [Reading Pip Output](reading-pip-output.md)
+6. [Submission And Certificates](submission-and-certificates.md)
+7. [Submission PR Workflow](submission-pr-workflow.md)
 
-Each reference page answers three questions:
+Each guide answers three questions:
 
 - What am I looking at?
 - What command do I run?

@@ -30,7 +30,7 @@ Participants may be asked to submit:
 Official scoring updates the progress board and certificate eligibility.
 
 Hosted mode should use one long-lived PR per participant or team. Read
-[Submission PR Workflow](06-submission-pr-workflow.md) before opening a PR.
+[Submission PR Workflow](submission-pr-workflow.md) before opening a PR.
 
 ## Community Submission
 

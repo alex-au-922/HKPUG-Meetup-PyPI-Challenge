@@ -16,7 +16,7 @@ You are not attacking the real Python ecosystem. You are showing that you can
 think like both sides: the attacker who understands pip behavior, and the
 maintainer who can remove the weakness.
 
-## Mini Tutorial
+## Background: How This Works
 
 The capstone is less about learning a new trick and more about choosing the
 right old trick.
@@ -35,6 +35,27 @@ A good capstone solve has two halves:
 
 - offense: prove your challenge-owned artifact was selected
 - defense: make the same selection impossible or harmless
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| incident | a short investigation of what happened and why |
+| attacker package | challenge-owned package artifact you control locally |
+| selection proof | evidence showing why pip chose your artifact |
+| timeline | ordered explanation of the install path and proof capture |
+| remediation | patch or policy that prevents the same issue |
+
+What makes this different: earlier flags tell you which concept matters. The
+capstone asks you to choose. Before changing files, write down the install path
+and mark the weak point. That prevents random package building.
+
+What to observe:
+
+1. the victim's requested dependency
+2. all indexes and artifacts the victim can see
+3. the selected package name, version, and file
+4. the exact defense that blocks the same path
 
 ## Story
 

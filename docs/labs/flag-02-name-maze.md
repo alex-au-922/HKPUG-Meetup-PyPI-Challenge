@@ -15,7 +15,7 @@ For Python package indexes, runs of `.`, `_`, and `-` are treated similarly for
 the project URL. That means names that look different to a human can point to
 the same normalized project page.
 
-## Mini Tutorial
+## Background: How This Works
 
 There are two names in your head:
 
@@ -31,6 +31,27 @@ The quick normalization rule for this challenge:
 
 So do not solve this by staring at punctuation. Convert each candidate to its
 lookup spelling, then compare project pages.
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| normalization | converting different-looking names into one lookup form |
+| canonical name | the normalized package name pip uses for lookup |
+| collision | two human-looking names ending up with the same lookup name |
+| project page | the index page matching the canonical name |
+
+Why this exists: Python package names have been written with different
+punctuation styles over time. Normalization lets tools treat those spellings
+consistently. The security lesson is that naming policy must account for the
+normalized form, not only the pretty display form.
+
+What to observe:
+
+1. the raw spelling the lab gives you
+2. the normalized spelling
+3. whether the normalized project page exists
+4. which artifact appears on that project page
 
 ## Story
 

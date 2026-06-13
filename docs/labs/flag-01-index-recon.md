@@ -16,7 +16,7 @@ An index is just a website with a simple listing of package files. In this lab,
 you learn to point pip at the toy challenge index and prove that real PyPI was
 not involved.
 
-## Mini Tutorial
+## Background: How This Works
 
 For this flag, think of the index as three layers:
 
@@ -34,6 +34,28 @@ When you run with `-vv`, look for:
 - the index URL pip searched
 - the links pip found
 - the artifact pip downloaded or installed
+
+Terms for this flag:
+
+| Term | Meaning |
+|---|---|
+| pip | the Python package installer |
+| index | a website or folder listing package files |
+| `/simple/` | the simple package-index API used by pip |
+| project page | the index page for one package name |
+| artifact | the actual wheel or source file pip installs |
+
+Why this exists: PyPI is not magic. It is a package index that follows a simple
+shape. Private companies and CTFs can run their own indexes with the same shape.
+Once you understand this, "installing from PyPI" becomes "pip read some index
+pages and selected a file."
+
+What to observe:
+
+1. the exact index URL pip searched
+2. the project page path for the package
+3. the artifact filename pip selected
+4. whether the artifact came from the toy challenge index
 
 ## Story
 

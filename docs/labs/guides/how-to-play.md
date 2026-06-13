@@ -86,5 +86,5 @@ Do not search randomly. Ask these questions in order:
 6. Did pip install a wheel or build from an sdist?
 7. Did the flag appear during build, install, import, or command execution?
 
-The final mile is yours: the tutorials tell you where to look, but each lab
+The final mile is yours: the flag page tells you where to look, but each lab
 still expects you to connect the last few dots.
