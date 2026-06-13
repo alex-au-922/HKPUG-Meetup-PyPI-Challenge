@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-05-wheel-autopsy/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-06-entry-point-ambush/">
       
       
-        <link rel="prev" href="../flag-04-dependency-confusion/">
+        <link rel="prev" href="../flag-05-wheel-autopsy/">
       
       
-        <link rel="next" href="../flag-06-entry-point-ambush/">
+        <link rel="next" href="../flag-07-legacy-sdist-trap/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Flag 05 Wheel Autopsy - HKPUG PyPI 30-Day CTF</title>
+        <title>Flag 06 Entry Point Ambush - HKPUG PyPI 30-Day CTF</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flag-05-wheel-autopsy" class="md-skip">
+        <a href="#flag-06-entry-point-ambush" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flag 05 Wheel Autopsy
+              Flag 06 Entry Point Ambush
             
           </span>
         </div>
@@ -681,6 +681,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../flag-05-wheel-autopsy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 05 Wheel Autopsy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -698,7 +721,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
+    Flag 06 Entry Point Ambush
     
   </span>
   
@@ -711,7 +734,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
+    Flag 06 Entry Point Ambush
     
   </span>
   
@@ -818,29 +841,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-06-entry-point-ambush/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 06 Entry Point Ambush
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1117,77 +1117,83 @@
   
 
 
-<h1 id="flag-05-wheel-autopsy">Flag 05: Wheel Autopsy</h1>
+<h1 id="flag-06-entry-point-ambush">Flag 06: Entry Point Ambush</h1>
 <div class="admonition danger">
 <p class="admonition-title">Challenge boundary</p>
-<p><strong>Inspect only the toy wheel files from this lab.</strong></p>
-<p>Do not run unknown real packages just to see what they do.</p>
+<p><strong>Run only challenge-owned console scripts inside the challenge virtual
+environment.</strong></p>
+<p>Do not create package commands that touch real user files, credentials, or
+external services.</p>
 </div>
 <h2 id="plain-english">Plain English</h2>
-<p>A wheel is a package file ending in <code>.whl</code>. It is basically a zip file with a
-special layout. You can open it before installing it.</p>
-<p>This lab teaches you that package review is not magic. You can inspect metadata,
-installed files, entry points, and hashes with ordinary tools.</p>
+<p>A package can install commands into your virtual environment. You may install a
+package named <code>hkpug-ctf-tool</code>, then suddenly get a command named
+<code>hkpug-tool</code> in <code>.venv/bin/</code>.</p>
+<p>That command is usually created from package metadata called an entry point.
+The code may not run during installation, but it can run the moment a user calls
+the command.</p>
 <h2 id="story">Story</h2>
-<p>A wheel was installed in the victim environment. Something about it leads to the
-flag. Before trusting it, you need to open the wheel and read what it contains.</p>
+<p>The victim workflow installs a toy package and then runs a helper command from
+that package. The package has normal-looking metadata, but one console script
+is wired to the flag capture path.</p>
+<p>Some optional behavior is hidden behind an extra. In packaging, an extra is the
+part inside square brackets, such as <code>package[dev]</code>.</p>
 <h2 id="what-you-are-trying-to-control">What You Are Trying To Control</h2>
-<p>You are trying to inspect an artifact before relying on it.</p>
-<p>Look for:</p>
+<p>You are trying to control which command appears after installation and which
+extra dependencies are pulled in.</p>
+<p>You should be able to answer:</p>
 <ul>
-<li><code>METADATA</code>: name, version, dependencies, extras</li>
-<li><code>WHEEL</code>: wheel generator and compatibility</li>
-<li><code>RECORD</code>: installed file list and hashes</li>
-<li>package modules</li>
-<li>entry point metadata</li>
+<li>Which package created the command?</li>
+<li>Which metadata file lists the command?</li>
+<li>Did the install include any extras?</li>
+<li>What command actually triggers the flag?</li>
 </ul>
 <h2 id="files-you-will-get">Files You Will Get</h2>
-<div class="highlight"><pre><span></span><code>labs/flag-05-wheel-autopsy/
-  wheels/
+<div class="highlight"><pre><span></span><code>labs/flag-06-entry-point-ambush/
+  indexes/
+  packages-src/
   victim/
   artifacts/
 </code></pre></div>
 <h2 id="first-checks">First Checks</h2>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>labs/flag-05-wheel-autopsy
+<p>Use a fresh environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>labs/flag-06-entry-point-ambush
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 .<span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-<span class="nb">export</span><span class="w"> </span><span class="nv">HKPUG_FAKE_FLAG</span><span class="o">=</span><span class="s2">&quot;HKPUG{practice.flag-05}&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HKPUG_FAKE_FLAG</span><span class="o">=</span><span class="s2">&quot;HKPUG{practice.flag-06}&quot;</span>
 </code></pre></div>
-<p>Open a wheel without installing it:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
-<span class="s">from pathlib import Path</span>
-<span class="s">from zipfile import ZipFile</span>
-
-<span class="s">wheel = next(Path(&quot;wheels&quot;).glob(&quot;*.whl&quot;))</span>
-<span class="s">with ZipFile(wheel) as zf:</span>
-<span class="s">    for name in zf.namelist():</span>
-<span class="s">        print(name)</span>
+<p>After installing the toy package, inspect metadata:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>-f<span class="w"> </span>hkpug-ctf-tool
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<span class="s">import importlib.metadata</span>
+<span class="s">dist = importlib.metadata.distribution(&quot;hkpug-ctf-tool&quot;)</span>
+<span class="s">for ep in dist.entry_points:</span>
+<span class="s">    print(ep)</span>
 <span class="s">PY</span>
 </code></pre></div>
-<p>You can extract it to a temporary folder if reading inside the zip is annoying.</p>
 <h2 id="your-task">Your Task</h2>
-<p>Find the metadata or installed file behavior that leads to the flag. Then prove
-the installed distribution name and version.</p>
-<p>The final mile is yours: this page tells you which files matter, but not which
-one contains the key clue.</p>
+<p>Install the correct toy package shape, identify the generated command, and run
+the command path that captures the flag.</p>
+<p>The final mile is not printed here. You must connect the entry point metadata to
+the command that appears in your virtual environment.</p>
 <h2 id="what-to-submit">What To Submit</h2>
 <ul>
-<li>captured flag or metadata flag</li>
-<li>distribution name</li>
-<li>version</li>
-<li>one suspicious or important file found</li>
+<li>captured flag</li>
+<li>console command name</li>
+<li>entry point target, such as <code>module:function</code></li>
+<li>whether an extra was required</li>
 </ul>
 <h2 id="hints">Hints</h2>
 <ol>
-<li>Nudge: start in the <code>.dist-info/</code> directory.</li>
-<li>Direction: <code>RECORD</code> tells you what files the wheel expects to install.</li>
-<li>Guided: in hosted mode, send the wheel file list before asking.</li>
+<li>Nudge: <code>pip show -f</code> tells you which files were installed.</li>
+<li>Direction: entry points live in installed distribution metadata.</li>
+<li>Guided: in hosted mode, ask only after you can show the package metadata.</li>
 </ol>
 <h2 id="defense-notes">Defense Notes</h2>
-<p>Artifact review is a useful habit. In real workflows, combine review with
-trusted sources, reproducible builds, signing or provenance where available, and
-hash-checked installs.</p>
+<p>Do not run newly installed commands blindly in automation. In real projects,
+review console entry points, restrict trusted package sources, and keep
+installation separate from privileged release steps.</p>
 
 
 

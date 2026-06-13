@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-05-wheel-autopsy/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-09-startup-surprise/">
       
       
-        <link rel="prev" href="../flag-04-dependency-confusion/">
+        <link rel="prev" href="../flag-08-build-isolation-lab/">
       
       
-        <link rel="next" href="../flag-06-entry-point-ambush/">
+        <link rel="next" href="../flag-10-pin-hash-lock/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Flag 05 Wheel Autopsy - HKPUG PyPI 30-Day CTF</title>
+        <title>Flag 09 Startup Surprise - HKPUG PyPI 30-Day CTF</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flag-05-wheel-autopsy" class="md-skip">
+        <a href="#flag-09-startup-surprise" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flag 05 Wheel Autopsy
+              Flag 09 Startup Surprise
             
           </span>
         </div>
@@ -681,6 +681,98 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../flag-05-wheel-autopsy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 05 Wheel Autopsy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flag-06-entry-point-ambush/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 06 Entry Point Ambush
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flag-07-legacy-sdist-trap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 07 Legacy Sdist Trap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flag-08-build-isolation-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 08 Build Isolation Lab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -698,7 +790,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
+    Flag 09 Startup Surprise
     
   </span>
   
@@ -711,7 +803,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
+    Flag 09 Startup Surprise
     
   </span>
   
@@ -818,98 +910,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-06-entry-point-ambush/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 06 Entry Point Ambush
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-07-legacy-sdist-trap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 07 Legacy Sdist Trap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-08-build-isolation-lab/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 08 Build Isolation Lab
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-09-startup-surprise/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 09 Startup Surprise
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1117,77 +1117,79 @@
   
 
 
-<h1 id="flag-05-wheel-autopsy">Flag 05: Wheel Autopsy</h1>
+<h1 id="flag-09-startup-surprise">Flag 09: Startup Surprise</h1>
 <div class="admonition danger">
 <p class="admonition-title">Challenge boundary</p>
-<p><strong>Inspect only the toy wheel files from this lab.</strong></p>
-<p>Do not run unknown real packages just to see what they do.</p>
+<p><strong>Use the disposable virtual environment created for this lab.</strong></p>
+<p>Do not install startup-hook experiments into your system Python or a shared
+developer environment.</p>
 </div>
 <h2 id="plain-english">Plain English</h2>
-<p>A wheel is a package file ending in <code>.whl</code>. It is basically a zip file with a
-special layout. You can open it before installing it.</p>
-<p>This lab teaches you that package review is not magic. You can inspect metadata,
-installed files, entry points, and hashes with ordinary tools.</p>
+<p>Most beginners think Python code runs only when they import it or execute a
+script. That is a good mental model, but it has exceptions.</p>
+<p>One old mechanism is a <code>.pth</code> file inside <code>site-packages</code>. It can add paths to
+Python, and lines beginning with <code>import</code> can run at interpreter startup.</p>
+<p>This lab uses a harmless toy <code>.pth</code> effect to teach you to inspect installed
+files when behavior appears before your app code runs.</p>
 <h2 id="story">Story</h2>
-<p>A wheel was installed in the victim environment. Something about it leads to the
-flag. Before trusting it, you need to open the wheel and read what it contains.</p>
+<p>The victim installs a package and then starts Python. A marker appears under
+<code>artifacts/</code>, even though the victim script does not import the suspicious
+module directly.</p>
+<p>Your job is to find what installed file caused the marker.</p>
 <h2 id="what-you-are-trying-to-control">What You Are Trying To Control</h2>
-<p>You are trying to inspect an artifact before relying on it.</p>
-<p>Look for:</p>
+<p>You are trying to observe Python startup behavior.</p>
+<p>You should be able to separate:</p>
 <ul>
-<li><code>METADATA</code>: name, version, dependencies, extras</li>
-<li><code>WHEEL</code>: wheel generator and compatibility</li>
-<li><code>RECORD</code>: installed file list and hashes</li>
-<li>package modules</li>
-<li>entry point metadata</li>
+<li>code run during package build</li>
+<li>code run during package installation</li>
+<li>code run during Python interpreter startup</li>
+<li>code run by the victim application</li>
 </ul>
 <h2 id="files-you-will-get">Files You Will Get</h2>
-<div class="highlight"><pre><span></span><code>labs/flag-05-wheel-autopsy/
-  wheels/
+<div class="highlight"><pre><span></span><code>labs/flag-09-startup-surprise/
+  indexes/
+  packages-src/
   victim/
   artifacts/
 </code></pre></div>
 <h2 id="first-checks">First Checks</h2>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>labs/flag-05-wheel-autopsy
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>labs/flag-09-startup-surprise
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 .<span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-<span class="nb">export</span><span class="w"> </span><span class="nv">HKPUG_FAKE_FLAG</span><span class="o">=</span><span class="s2">&quot;HKPUG{practice.flag-05}&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HKPUG_FAKE_FLAG</span><span class="o">=</span><span class="s2">&quot;HKPUG{practice.flag-09}&quot;</span>
 </code></pre></div>
-<p>Open a wheel without installing it:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
-<span class="s">from pathlib import Path</span>
-<span class="s">from zipfile import ZipFile</span>
-
-<span class="s">wheel = next(Path(&quot;wheels&quot;).glob(&quot;*.whl&quot;))</span>
-<span class="s">with ZipFile(wheel) as zf:</span>
-<span class="s">    for name in zf.namelist():</span>
-<span class="s">        print(name)</span>
+<p>After installation, inspect the installed files:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>-f<span class="w"> </span>hkpug-ctf-startup
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<span class="s">import site</span>
+<span class="s">for path in site.getsitepackages():</span>
+<span class="s">    print(path)</span>
 <span class="s">PY</span>
 </code></pre></div>
-<p>You can extract it to a temporary folder if reading inside the zip is annoying.</p>
+<p>Then look for <code>.pth</code> files in the virtual environment's site-packages
+directory.</p>
 <h2 id="your-task">Your Task</h2>
-<p>Find the metadata or installed file behavior that leads to the flag. Then prove
-the installed distribution name and version.</p>
-<p>The final mile is yours: this page tells you which files matter, but not which
-one contains the key clue.</p>
+<p>Find the startup mechanism, explain why the victim script did not need a direct
+import, and capture the flag.</p>
+<p>The final mile is yours: this page tells you the class of mechanism, not the
+exact file contents.</p>
 <h2 id="what-to-submit">What To Submit</h2>
 <ul>
-<li>captured flag or metadata flag</li>
-<li>distribution name</li>
-<li>version</li>
-<li>one suspicious or important file found</li>
+<li>captured flag</li>
+<li>name of the installed startup file</li>
+<li>one sentence explaining when the code ran</li>
+<li>one defensive practice</li>
 </ul>
 <h2 id="hints">Hints</h2>
 <ol>
-<li>Nudge: start in the <code>.dist-info/</code> directory.</li>
-<li>Direction: <code>RECORD</code> tells you what files the wheel expects to install.</li>
-<li>Guided: in hosted mode, send the wheel file list before asking.</li>
+<li>Nudge: <code>pip show -f</code> lists installed files by distribution.</li>
+<li>Direction: inspect <code>.pth</code> files in the active virtual environment.</li>
+<li>Guided: in hosted mode, provide your <code>site-packages</code> path when asking.</li>
 </ol>
 <h2 id="defense-notes">Defense Notes</h2>
-<p>Artifact review is a useful habit. In real workflows, combine review with
-trusted sources, reproducible builds, signing or provenance where available, and
-hash-checked installs.</p>
+<p>Use isolated environments, review installed files for untrusted packages, and do
+not run unknown package installs in privileged Python environments.</p>
 
 
 

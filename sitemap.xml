@@ -29,6 +29,10 @@
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-03-resolver-duel/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
          <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-04-dependency-confusion/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
@@ -37,7 +41,31 @@
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-06-entry-point-ambush/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
          <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-07-legacy-sdist-trap/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-08-build-isolation-lab/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-09-startup-surprise/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-10-pin-hash-lock/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-11-ci-publisher-trap/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-12-capstone-incident/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-05-wheel-autopsy/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-03-resolver-duel/">
       
       
-        <link rel="prev" href="../flag-04-dependency-confusion/">
+        <link rel="prev" href="../flag-02-name-maze/">
       
       
-        <link rel="next" href="../flag-06-entry-point-ambush/">
+        <link rel="next" href="../flag-04-dependency-confusion/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Flag 05 Wheel Autopsy - HKPUG PyPI 30-Day CTF</title>
+        <title>Flag 03 Resolver Duel - HKPUG PyPI 30-Day CTF</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flag-05-wheel-autopsy" class="md-skip">
+        <a href="#flag-03-resolver-duel" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flag 05 Wheel Autopsy
+              Flag 03 Resolver Duel
             
           </span>
         </div>
@@ -635,52 +635,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-03-resolver-duel/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 03 Resolver Duel
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-04-dependency-confusion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 04 Dependency Confusion
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -698,7 +652,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
+    Flag 03 Resolver Duel
     
   </span>
   
@@ -711,7 +665,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
+    Flag 03 Resolver Duel
     
   </span>
   
@@ -818,6 +772,52 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flag-04-dependency-confusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 04 Dependency Confusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flag-05-wheel-autopsy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 05 Wheel Autopsy
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1117,77 +1117,82 @@
   
 
 
-<h1 id="flag-05-wheel-autopsy">Flag 05: Wheel Autopsy</h1>
+<h1 id="flag-03-resolver-duel">Flag 03: Resolver Duel</h1>
 <div class="admonition danger">
 <p class="admonition-title">Challenge boundary</p>
-<p><strong>Inspect only the toy wheel files from this lab.</strong></p>
-<p>Do not run unknown real packages just to see what they do.</p>
+<p><strong>Use only the toy indexes and toy package names in this lab.</strong></p>
+<p>Do not test resolver tricks against real packages, real organizations, or
+real package indexes.</p>
 </div>
 <h2 id="plain-english">Plain English</h2>
-<p>A wheel is a package file ending in <code>.whl</code>. It is basically a zip file with a
-special layout. You can open it before installing it.</p>
-<p>This lab teaches you that package review is not magic. You can inspect metadata,
-installed files, entry points, and hashes with ordinary tools.</p>
+<p>When you type <code>pip install something</code>, pip may see many possible files. There
+can be many versions, several indexes, wheels for different Python versions,
+and requirements like <code>&lt;2</code> or <code>&gt;=1.4</code>.</p>
+<p>The resolver is the part of pip that chooses one candidate. This lab teaches you
+to slow down and answer: "Why did pip choose that file instead of this one?"</p>
 <h2 id="story">Story</h2>
-<p>A wheel was installed in the victim environment. Something about it leads to the
-flag. Before trusting it, you need to open the wheel and read what it contains.</p>
+<p>The victim app asks for a toy package called <code>hkpug-ctf-widget</code>. The challenge
+index contains several versions. Some look usable, some are too old, and one is
+the version that can capture the local fake flag.</p>
+<p>Your job is not to guess. Your job is to make pip show you the candidate list,
+then use the victim's requirement to force the winning candidate.</p>
 <h2 id="what-you-are-trying-to-control">What You Are Trying To Control</h2>
-<p>You are trying to inspect an artifact before relying on it.</p>
-<p>Look for:</p>
+<p>You are trying to control package selection.</p>
+<p>That means you care about:</p>
 <ul>
-<li><code>METADATA</code>: name, version, dependencies, extras</li>
-<li><code>WHEEL</code>: wheel generator and compatibility</li>
-<li><code>RECORD</code>: installed file list and hashes</li>
-<li>package modules</li>
-<li>entry point metadata</li>
+<li>package name</li>
+<li>version number</li>
+<li>index URL</li>
+<li>requirement specifier, such as <code>&gt;=1.0,&lt;2.0</code></li>
+<li>wheel compatibility tag</li>
+<li>whether pip is allowed to use pre-release versions</li>
 </ul>
 <h2 id="files-you-will-get">Files You Will Get</h2>
-<div class="highlight"><pre><span></span><code>labs/flag-05-wheel-autopsy/
-  wheels/
+<div class="highlight"><pre><span></span><code>labs/flag-03-resolver-duel/
+  indexes/
+  packages-src/
   victim/
   artifacts/
 </code></pre></div>
+<p>The hosted challenge may generate the package files for you. The public repo
+does not publish official flag values.</p>
 <h2 id="first-checks">First Checks</h2>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>labs/flag-05-wheel-autopsy
+<p>Start by creating a fresh environment. Fresh matters because cached installs can
+make you think pip selected something that was already present.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>labs/flag-03-resolver-duel
 python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 .<span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-<span class="nb">export</span><span class="w"> </span><span class="nv">HKPUG_FAKE_FLAG</span><span class="o">=</span><span class="s2">&quot;HKPUG{practice.flag-05}&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HKPUG_FAKE_FLAG</span><span class="o">=</span><span class="s2">&quot;HKPUG{practice.flag-03}&quot;</span>
 </code></pre></div>
-<p>Open a wheel without installing it:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
-<span class="s">from pathlib import Path</span>
-<span class="s">from zipfile import ZipFile</span>
-
-<span class="s">wheel = next(Path(&quot;wheels&quot;).glob(&quot;*.whl&quot;))</span>
-<span class="s">with ZipFile(wheel) as zf:</span>
-<span class="s">    for name in zf.namelist():</span>
-<span class="s">        print(name)</span>
-<span class="s">PY</span>
+<p>Then inspect the index before installing:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>index<span class="w"> </span>versions<span class="w"> </span>hkpug-ctf-widget<span class="w"> </span>--index-url<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHALLENGE_INDEX_URL</span><span class="s2">&quot;</span>
 </code></pre></div>
-<p>You can extract it to a temporary folder if reading inside the zip is annoying.</p>
+<p>If <code>pip index versions</code> is not enough, use verbose install output:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-vv<span class="w"> </span>--index-url<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHALLENGE_INDEX_URL</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;hkpug-ctf-widget&quot;</span>
+</code></pre></div>
 <h2 id="your-task">Your Task</h2>
-<p>Find the metadata or installed file behavior that leads to the flag. Then prove
-the installed distribution name and version.</p>
-<p>The final mile is yours: this page tells you which files matter, but not which
-one contains the key clue.</p>
+<p>Find the requirement or install command that makes pip choose the flag-bearing
+candidate. Confirm the chosen version from pip output or installed metadata.</p>
+<p>The final mile is yours: the docs will not tell you which exact version wins.</p>
 <h2 id="what-to-submit">What To Submit</h2>
 <ul>
-<li>captured flag or metadata flag</li>
-<li>distribution name</li>
-<li>version</li>
-<li>one suspicious or important file found</li>
+<li>captured flag</li>
+<li>exact requirement string used</li>
+<li>selected package version</li>
+<li>one sentence explaining why pip rejected the other candidates</li>
 </ul>
 <h2 id="hints">Hints</h2>
 <ol>
-<li>Nudge: start in the <code>.dist-info/</code> directory.</li>
-<li>Direction: <code>RECORD</code> tells you what files the wheel expects to install.</li>
-<li>Guided: in hosted mode, send the wheel file list before asking.</li>
+<li>Nudge: look for the lines in verbose pip output that say a link was skipped.</li>
+<li>Direction: compare the available versions with the victim requirement.</li>
+<li>Guided: in hosted mode, request a guided hint after you can show your
+   candidate list.</li>
 </ol>
 <h2 id="defense-notes">Defense Notes</h2>
-<p>Artifact review is a useful habit. In real workflows, combine review with
-trusted sources, reproducible builds, signing or provenance where available, and
-hash-checked installs.</p>
+<p>Real projects should not rely on "pip probably picks the one I meant." Pin
+important dependencies, keep indexes explicit, and use lockfiles or hashes when
+the install must be reproducible.</p>
 
 
 
