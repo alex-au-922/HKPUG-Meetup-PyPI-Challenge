@@ -423,240 +423,6 @@
   
   
   
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Lab Guides
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            Lab Guides
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Guide Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/how-to-play/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How To Play Labs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/pip-index-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pip Index Basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/package-build-artifacts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Package Build Artifacts
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/legacy-vs-modern-packaging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/reading-pip-output/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reading Pip Output
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-and-certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-pr-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission PR Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../flag-01-index-recon/" class="md-nav__link">
         
@@ -766,6 +532,24 @@
   <a href="#background-how-this-works" class="md-nav__link">
     <span class="md-ellipsis">
       Background: How This Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
     </span>
   </a>
   
@@ -1111,6 +895,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1288,6 +1090,32 @@ resolver turns that vague request into one concrete install decision.</p>
 <li>skipped candidates and their skip reasons</li>
 <li>the final selected version and file</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Teacher note</p>
+<p>The resolver can feel mysterious until you write down the candidates. Make
+the invisible choice visible, then the puzzle becomes much smaller.</p>
+</div>
+<h2 id="visual-map">Visual Map</h2>
+<pre class="mermaid"><code>flowchart TD
+  A["victim requirement"] --&gt; B["candidate list"]
+  B --&gt; C{"matches version rule?"}
+  C --&gt;|"no"| D["skip candidate"]
+  C --&gt;|"yes"| E{"compatible wheel or sdist?"}
+  E --&gt;|"no"| D
+  E --&gt;|"yes"| F["best candidate wins"]</code></pre>
+<h2 id="try-this-slowly">Try This Slowly</h2>
+<p>Start by asking pip what versions it can see:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>index<span class="w"> </span>versions<span class="w"> </span>hkpug-ctf-widget<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--index-url<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHALLENGE_INDEX_URL</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>Then run the install in verbose mode:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-vv<span class="w"> </span>--index-url<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHALLENGE_INDEX_URL</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;hkpug-ctf-widget&quot;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>artifacts/pip-flag-03.log
+</code></pre></div>
+<p>Search for rejected links:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;skipping link&quot;</span><span class="w"> </span>artifacts/pip-flag-03.log
+</code></pre></div>
+<p>If you can explain why one candidate was skipped, you are learning the resolver.</p>
 <h2 id="story">Story</h2>
 <p>The victim app asks for a toy package called <code>hkpug-ctf-widget</code>. The challenge
 index contains several versions. Some look usable, some are too old, and one is

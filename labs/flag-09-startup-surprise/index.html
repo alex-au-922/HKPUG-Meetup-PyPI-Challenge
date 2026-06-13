@@ -423,240 +423,6 @@
   
   
   
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Lab Guides
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            Lab Guides
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Guide Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/how-to-play/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How To Play Labs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/pip-index-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pip Index Basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/package-build-artifacts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Package Build Artifacts
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/legacy-vs-modern-packaging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/reading-pip-output/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reading Pip Output
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-and-certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-pr-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission PR Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../flag-01-index-recon/" class="md-nav__link">
         
@@ -910,6 +676,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1111,6 +895,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1271,6 +1073,39 @@ only for a harmless local marker.</p>
 <li>whether the victim imports the package directly</li>
 <li>whether the marker appears when Python starts</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Teacher note</p>
+<p>This is the "wait, I did not import that" lab. Stay calm and check startup
+files before blaming the victim script.</p>
+</div>
+<h2 id="visual-map">Visual Map</h2>
+<pre class="mermaid"><code>flowchart LR
+  A["install package"] --&gt; B["file lands in site-packages"]
+  B --&gt; C["Python starts"]
+  C --&gt; D["site module reads .pth files"]
+  D --&gt; E["startup import runs"]
+  E --&gt; F["local marker appears"]</code></pre>
+<h2 id="try-this-slowly">Try This Slowly</h2>
+<p>Find the active <code>site-packages</code> directory:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<span class="s">import site</span>
+
+<span class="s">for path in site.getsitepackages():</span>
+<span class="s">    print(path)</span>
+<span class="s">PY</span>
+</code></pre></div>
+<p>Then list <code>.pth</code> files:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<span class="s">from pathlib import Path</span>
+<span class="s">import site</span>
+
+<span class="s">for root in site.getsitepackages():</span>
+<span class="s">    for path in Path(root).glob(&quot;*.pth&quot;):</span>
+<span class="s">        print(path)</span>
+<span class="s">        print(path.read_text())</span>
+<span class="s">PY</span>
+</code></pre></div>
+<p>The suspicious line may be small. Small startup files can still matter.</p>
 <h2 id="story">Story</h2>
 <p>The victim installs a package and then starts Python. A marker appears under
 <code>artifacts/</code>, even though the victim script does not import the suspicious

@@ -423,240 +423,6 @@
   
   
   
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Lab Guides
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            Lab Guides
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Guide Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/how-to-play/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How To Play Labs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/pip-index-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pip Index Basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/package-build-artifacts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Package Build Artifacts
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/legacy-vs-modern-packaging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/reading-pip-output/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reading Pip Output
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-and-certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-pr-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission PR Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../flag-01-index-recon/" class="md-nav__link">
         
@@ -887,6 +653,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1111,6 +895,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1285,6 +1087,43 @@ and build requirements are needed.</p>
 <li>whether <code>--no-build-isolation</code> changes behavior</li>
 <li>where the local proof marker appears</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Teacher note</p>
+<p>Build isolation is like pip saying, "I will build this package in a clean
+little room." The interesting question is what pip brings into that room.</p>
+</div>
+<h2 id="visual-map">Visual Map</h2>
+<pre class="mermaid"><code>flowchart TD
+  A["source project"] --&gt; B["pyproject.toml"]
+  B --&gt; C["build requirements"]
+  C --&gt; D["temporary build env"]
+  D --&gt; E["build backend runs"]
+  E --&gt; F["wheel is produced"]
+  F --&gt; G["install result"]</code></pre>
+<h2 id="try-this-slowly">Try This Slowly</h2>
+<p>Print the build system table before you build:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<span class="s">from pathlib import Path</span>
+
+<span class="s">text = Path(&quot;victim/pyproject.toml&quot;).read_text()</span>
+<span class="s">inside = False</span>
+<span class="s">for line in text.splitlines():</span>
+<span class="s">    if line.strip() == &quot;[build-system]&quot;:</span>
+<span class="s">        inside = True</span>
+<span class="s">    elif line.startswith(&quot;[&quot;) and inside:</span>
+<span class="s">        break</span>
+<span class="s">    if inside:</span>
+<span class="s">        print(line)</span>
+<span class="s">PY</span>
+</code></pre></div>
+<p>Then compare isolated and non-isolated builds:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>wheel<span class="w"> </span>-vv<span class="w"> </span>--index-url<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHALLENGE_INDEX_URL</span><span class="s2">&quot;</span><span class="w"> </span>./victim<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>artifacts/build-isolated.log
+
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>wheel<span class="w"> </span>-vv<span class="w"> </span>--no-build-isolation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--index-url<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHALLENGE_INDEX_URL</span><span class="s2">&quot;</span><span class="w"> </span>./victim<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>artifacts/build-no-isolation.log
+</code></pre></div>
 <h2 id="story">Story</h2>
 <p>The victim package is a source distribution. Its <code>pyproject.toml</code> asks for a
 toy build helper. Two versions of that helper exist in the challenge ecosystem.

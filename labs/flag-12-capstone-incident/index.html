@@ -421,240 +421,6 @@
   
   
   
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Lab Guides
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            Lab Guides
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Guide Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/how-to-play/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How To Play Labs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/pip-index-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pip Index Basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/package-build-artifacts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Package Build Artifacts
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/legacy-vs-modern-packaging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/reading-pip-output/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reading Pip Output
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-and-certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-pr-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission PR Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../flag-01-index-recon/" class="md-nav__link">
         
@@ -977,6 +743,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1103,6 +887,24 @@
   <a href="#background-how-this-works" class="md-nav__link">
     <span class="md-ellipsis">
       Background: How This Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
     </span>
   </a>
   
@@ -1268,6 +1070,37 @@ and mark the weak point. That prevents random package building.</p>
 <li>the selected package name, version, and file</li>
 <li>the exact defense that blocks the same path</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Teacher note</p>
+<p>The capstone is not asking you to know a new trick. It is asking you to
+choose the right trick, explain it clearly, and then close the hole.</p>
+</div>
+<h2 id="visual-map">Visual Map</h2>
+<pre class="mermaid"><code>flowchart TD
+  A["victim install script"] --&gt; B["requirement"]
+  B --&gt; C["normalized name"]
+  C --&gt; D["indexes searched"]
+  D --&gt; E["candidate selected"]
+  E --&gt; F["artifact behavior"]
+  F --&gt; G["local flag proof"]
+  G --&gt; H["incident report"]
+  H --&gt; I["defensive patch"]</code></pre>
+<h2 id="try-this-slowly">Try This Slowly</h2>
+<p>Make a worksheet before you build anything:</p>
+<div class="highlight"><pre><span></span><code>Requested package:
+Normalized name:
+Indexes searched:
+Candidate versions:
+Artifact I want to win:
+Why pip should select it:
+Where proof should appear:
+Defense after capture:
+</code></pre></div>
+<p>Then read the victim files:</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>victim<span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">2</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-print
+</code></pre></div>
+<p>The capstone rewards patience. A five-minute map can save an hour of random
+package building.</p>
 <h2 id="story">Story</h2>
 <p>The victim service installs dependencies from a mixed challenge ecosystem. You
 receive a toy package namespace, a private-looking index, a public-looking

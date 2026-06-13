@@ -423,240 +423,6 @@
   
   
   
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Lab Guides
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            Lab Guides
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Guide Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/how-to-play/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How To Play Labs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/pip-index-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pip Index Basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/package-build-artifacts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Package Build Artifacts
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/legacy-vs-modern-packaging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/reading-pip-output/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reading Pip Output
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-and-certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/submission-pr-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission PR Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../flag-01-index-recon/" class="md-nav__link">
         
@@ -812,6 +578,24 @@
   <a href="#background-how-this-works" class="md-nav__link">
     <span class="md-ellipsis">
       Background: How This Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
     </span>
   </a>
   
@@ -1111,6 +895,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visual-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-this-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try This Slowly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1285,6 +1087,32 @@ reviewing.</p>
 <li>package files that will land in <code>site-packages</code></li>
 <li>metadata that changes install or runtime behavior</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Teacher note</p>
+<p>A wheel is less scary once you open it. Treat it like a zip file with a
+label, a manifest, and the package's Python files inside.</p>
+</div>
+<h2 id="visual-map">Visual Map</h2>
+<pre class="mermaid"><code>flowchart TD
+  A[".whl file"] --&gt; B["zip container"]
+  B --&gt; C["package code"]
+  B --&gt; D[".dist-info/"]
+  D --&gt; E["METADATA"]
+  D --&gt; F["WHEEL"]
+  D --&gt; G["RECORD"]
+  C --&gt; H["behavior to inspect"]</code></pre>
+<h2 id="try-this-slowly">Try This Slowly</h2>
+<p>List the wheel without installing it:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>--list<span class="w"> </span>wheels/*.whl
+</code></pre></div>
+<p>Extract it to a throwaway folder:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>artifacts/wheel-unpacked
+python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>--extract<span class="w"> </span>wheels/*.whl<span class="w"> </span>artifacts/wheel-unpacked
+find<span class="w"> </span>artifacts/wheel-unpacked<span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">3</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort
+</code></pre></div>
+<p>Then read the metadata:</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>artifacts/wheel-unpacked<span class="w"> </span>-name<span class="w"> </span>METADATA<span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span>RECORD<span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span>WHEEL
+</code></pre></div>
 <h2 id="story">Story</h2>
 <p>A wheel was installed in the victim environment. Something about it leads to the
 flag. Before trusting it, you need to open the wheel and read what it contains.</p>
