@@ -1,0 +1,61 @@
+site_name: HKPUG PyPI 30-Day CTF
+site_description: Learn PyPI by hacking a safe toy package ecosystem.
+site_url: https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/
+repo_url: https://github.com/alex-au-922/HKPUG-Meetup-PyPI-Challenge
+repo_name: alex-au-922/HKPUG-Meetup-PyPI-Challenge
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - styles/scoreboard.css
+
+extra_javascript:
+  - assets/scoreboard.js
+
+nav:
+  - Home: index.md
+  - How To Play: WORKING_FORMAT.md
+  - Scoreboard: scoreboard.md
+  - Tutorials:
+      - Tutorial Index: tutorials/README.md
+      - How To Play: tutorials/00-how-to-play.md
+      - Pip Index Basics: tutorials/01-pip-index-basics.md
+      - Package Build Artifacts: tutorials/02-package-build-artifacts.md
+      - Legacy Vs Modern Packaging: tutorials/03-legacy-vs-modern-packaging.md
+      - Submission And Certificates: tutorials/04-submission-and-certificates.md
+  - Labs:
+      - Lab Index: labs/index.md
+      - Flag 01 Custom Index Install: labs/flag-01-custom-index-install.md
+      - Flag 02 Manual Simple API: labs/flag-02-manual-simple-api.md
+      - Flag 03 Name Normalization: labs/flag-03-name-normalization.md
+      - Flag 08 Extra Index Confusion: labs/flag-08-extra-index-confusion.md
+      - Flag 11 Wheel Autopsy: labs/flag-11-wheel-autopsy.md
+      - Flag 16 Legacy Sdist Trap: labs/flag-16-legacy-sdist-trap.md
+      - Flag 25 Safer Index Patch: labs/flag-25-safer-index-patch.md
+  - Organizer:
+      - MkDocs And Scoreboard Plan: organizer/mkdocs-scoreboard-plan.md
