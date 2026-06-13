@@ -1,0 +1,251 @@
+name: Submission PR Guard
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+      - ready_for_review
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  validate:
+    name: validate
+    runs-on: ubuntu-latest
+    env:
+      AUTO_CLOSE_DUPLICATE: "true"
+      AUTO_CLOSE_INVALID: "false"
+
+    steps:
+      - name: Validate submission PR format
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const marker = "<!-- hkpug-submission-pr-guard -->";
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pr = context.payload.pull_request;
+            const pull_number = pr.number;
+            const teamPattern = /^HKPUG-TEAM-[A-Z0-9]{4}$/;
+            const titlePattern = /^\[(HKPUG-TEAM-[A-Z0-9]{4})\] submissions$/;
+            const branchPattern = /^submissions\/(HKPUG-TEAM-[A-Z0-9]{4})$/;
+            const submissionPathPattern = /^submissions\/(HKPUG-TEAM-[A-Z0-9]{4})\/(.+)$/;
+            const answerFilePattern = /^flag-(0[1-9]|1[0-2])\.json\.enc$/;
+
+            async function listChangedFiles() {
+              return await github.paginate(github.rest.pulls.listFiles, {
+                owner,
+                repo,
+                pull_number,
+                per_page: 100,
+              });
+            }
+
+            async function findGuardComment() {
+              const comments = await github.paginate(github.rest.issues.listComments, {
+                owner,
+                repo,
+                issue_number: pull_number,
+                per_page: 100,
+              });
+              return comments.find((comment) => comment.body && comment.body.includes(marker));
+            }
+
+            async function upsertComment(body) {
+              const fullBody = `${marker}\n${body}`;
+              const existing = await findGuardComment();
+              if (existing) {
+                await github.rest.issues.updateComment({
+                  owner,
+                  repo,
+                  comment_id: existing.id,
+                  body: fullBody,
+                });
+                return;
+              }
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: pull_number,
+                body: fullBody,
+              });
+            }
+
+            async function ensureLabel(name, color, description) {
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                await github.rest.issues.createLabel({ owner, repo, name, color, description });
+              }
+            }
+
+            async function removeLabelIfPresent(name) {
+              try {
+                await github.rest.issues.removeLabel({
+                  owner,
+                  repo,
+                  issue_number: pull_number,
+                  name,
+                });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+            }
+
+            const files = await listChangedFiles();
+            const filenames = files.map((file) => file.filename);
+            const titleMatch = pr.title.match(titlePattern);
+            const branchMatch = pr.head.ref.match(branchPattern);
+            const submissionFiles = filenames.filter((filename) => filename.startsWith("submissions/"));
+            const submissionLike =
+              pr.title.includes("HKPUG-TEAM-") ||
+              pr.head.ref.startsWith("submissions/") ||
+              submissionFiles.length > 0;
+
+            if (!submissionLike) {
+              core.info("Not a submission PR. Skipping submission guard.");
+              return;
+            }
+
+            const errors = [];
+            const teamCodes = new Set();
+
+            if (!titleMatch) {
+              errors.push("PR title must be exactly `[HKPUG-TEAM-AB12] submissions` using your assigned team code.");
+            } else {
+              teamCodes.add(titleMatch[1]);
+            }
+
+            if (!branchMatch) {
+              errors.push("Branch name must be exactly `submissions/HKPUG-TEAM-AB12` using your assigned team code.");
+            } else {
+              teamCodes.add(branchMatch[1]);
+            }
+
+            if (submissionFiles.length === 0) {
+              errors.push("Submission PRs must add or update files under `submissions/HKPUG-TEAM-AB12/`.");
+            }
+
+            for (const filename of filenames) {
+              const pathMatch = filename.match(submissionPathPattern);
+              if (!pathMatch) {
+                errors.push(`Submission PRs may only change files under \`submissions/<team-code>/\`. Invalid path: \`${filename}\`.`);
+                continue;
+              }
+
+              const [, teamCode, relativePath] = pathMatch;
+              teamCodes.add(teamCode);
+
+              if (relativePath !== "README.md" && !answerFilePattern.test(relativePath)) {
+                errors.push(`Submission file \`${filename}\` must be \`README.md\` or \`flag-01.json.enc\` through \`flag-12.json.enc\`.`);
+              }
+            }
+
+            if (teamCodes.size > 1) {
+              errors.push(`Use exactly one team code per PR. Found: ${Array.from(teamCodes).join(", ")}.`);
+            }
+
+            const [teamCode] = Array.from(teamCodes);
+            if (teamCode && !teamPattern.test(teamCode)) {
+              errors.push(`Team code \`${teamCode}\` must match \`HKPUG-TEAM-AB12\` style: four uppercase letters or numbers at the end.`);
+            }
+
+            if (teamCode && pr.body && !pr.body.includes(teamCode)) {
+              errors.push(`PR body should include your team code: \`${teamCode}\`.`);
+            }
+
+            const duplicateNumbers = [];
+            if (teamCode) {
+              const pulls = await github.paginate(github.rest.pulls.list, {
+                owner,
+                repo,
+                state: "open",
+                base: pr.base.ref,
+                per_page: 100,
+              });
+              for (const other of pulls) {
+                if (other.number === pull_number) continue;
+                const sameTitle = other.title.includes(`[${teamCode}]`);
+                const sameBranch = other.head.ref === `submissions/${teamCode}`;
+                if (sameTitle || sameBranch) duplicateNumbers.push(other.number);
+              }
+            }
+
+            if (duplicateNumbers.length > 0) {
+              errors.push(`This team already has an open submission PR: ${duplicateNumbers.map((n) => `#${n}`).join(", ")}. Update the existing PR instead of opening another one.`);
+            }
+
+            await ensureLabel("submission", "0e8a16", "Participant submission PR");
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: pull_number,
+              labels: ["submission"],
+            });
+
+            if (errors.length === 0) {
+              await removeLabelIfPresent("invalid-submission");
+              const existing = await findGuardComment();
+              if (existing) {
+                await upsertComment([
+                  "### Submission PR format: OK",
+                  "",
+                  `Team code: \`${teamCode}\``,
+                  "",
+                  "Keep updating this same PR as you solve more flags.",
+                ].join("\n"));
+              }
+              core.info("Submission PR format is valid.");
+              return;
+            }
+
+            await ensureLabel("invalid-submission", "d73a4a", "Submission PR needs format fixes");
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: pull_number,
+              labels: ["invalid-submission"],
+            });
+
+            const shouldCloseDuplicate =
+              duplicateNumbers.length > 0 && process.env.AUTO_CLOSE_DUPLICATE === "true";
+            const shouldCloseInvalid = process.env.AUTO_CLOSE_INVALID === "true";
+            const willClose = shouldCloseDuplicate || shouldCloseInvalid;
+
+            await upsertComment([
+              "### Submission PR format needs fixing",
+              "",
+              "Please fix the items below. Hosted submissions use one long-lived PR per team.",
+              "",
+              ...errors.map((error) => `- ${error}`),
+              "",
+              "Expected format:",
+              "",
+              "```text",
+              "Title:  [HKPUG-TEAM-AB12] submissions",
+              "Branch: submissions/HKPUG-TEAM-AB12",
+              "Files:  submissions/HKPUG-TEAM-AB12/flag-01.json.enc",
+              "```",
+              "",
+              willClose
+                ? "This PR will be closed automatically. Please update the existing PR or reopen after fixing the format."
+                : "This check will stay red until the PR format is fixed.",
+            ].join("\n"));
+
+            if (willClose) {
+              await github.rest.pulls.update({
+                owner,
+                repo,
+                pull_number,
+                state: "closed",
+              });
+            }
+
+            core.setFailed(errors.join("\n"));

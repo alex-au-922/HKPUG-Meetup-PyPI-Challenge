@@ -25,6 +25,22 @@ one participant or team = one long-lived pull request
 
 You update the same PR as you solve more flags.
 
+## Enforcement
+
+The repository has a submission guard workflow. It checks PR title, branch name,
+team folder, and duplicate PRs.
+
+GitHub does not usually "delete" pull requests. The guard does this instead:
+
+- labels submission PRs as `submission`
+- fails the PR check when the format is wrong
+- comments with the exact fix
+- auto-closes duplicate PRs for the same team
+
+Maintainers can switch on stricter mode later to auto-close every invalid
+submission PR, but the default is friendlier: fix the PR and the check turns
+green.
+
 ## Team Code
 
 Each participant or team gets a short code during registration:
