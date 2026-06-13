@@ -642,30 +642,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 01 Custom Index Install
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="labs/flag-02-manual-simple-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 02 Manual Simple API
+    Flag 01 Index Recon
     
   </span>
   
@@ -688,7 +665,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 03 Name Normalization
+    Flag 02 Name Maze
     
   </span>
   
@@ -711,7 +688,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 08 Extra Index Confusion
+    Flag 04 Dependency Confusion
     
   </span>
   
@@ -734,7 +711,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 11 Wheel Autopsy
+    Flag 05 Wheel Autopsy
     
   </span>
   
@@ -757,30 +734,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 16 Legacy Sdist Trap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="labs/flag-25-safer-index-patch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 25 Safer Index Patch
+    Flag 07 Legacy Sdist Trap
     
   </span>
   
@@ -856,6 +810,29 @@
   
   <span class="md-ellipsis">
     MkDocs And Scoreboard Plan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="organizer/private-hint-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Private Hint Design
     
   </span>
   
@@ -970,9 +947,10 @@ each lab works, and how progress is tracked.</p>
 <p>No real PyPI uploads, no real package names, no real credentials.</p>
 <h2 id="mvp-trail">MVP Trail</h2>
 <pre class="mermaid"><code>flowchart LR
-  F01["01 Install"] --&gt; F02["02 Inspect Index"] --&gt; F03["03 Normalize"]
-  F03 --&gt; F08["08 Confuse Resolver"] --&gt; F11["11 Autopsy Wheel"]
-  F11 --&gt; F16["16 Legacy Build Trap"] --&gt; F25["25 Patch Defense"]</code></pre>
+  F01["01 Index Recon"] --&gt; F02["02 Name Maze"]
+  F02 --&gt; F04["04 Dependency Confusion"]
+  F04 --&gt; F05["05 Wheel Autopsy"]
+  F05 --&gt; F07["07 Legacy Sdist Trap"]</code></pre>
 
 
 

@@ -16,7 +16,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../flag-02-manual-simple-api/">
+        <link rel="next" href="../flag-03-name-normalization/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Flag 01 Custom Index Install - HKPUG PyPI 30-Day CTF</title>
+        <title>Flag 01 Index Recon - HKPUG PyPI 30-Day CTF</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flag-01-custom-index-install" class="md-skip">
+        <a href="#flag-01-index-recon" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flag 01 Custom Index Install
+              Flag 01 Index Recon
             
           </span>
         </div>
@@ -584,7 +584,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 01 Custom Index Install
+    Flag 01 Index Recon
     
   </span>
   
@@ -597,7 +597,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 01 Custom Index Install
+    Flag 01 Index Recon
     
   </span>
   
@@ -671,35 +671,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../flag-02-manual-simple-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 02 Manual Simple API
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../flag-03-name-normalization/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Flag 03 Name Normalization
+    Flag 02 Name Maze
     
   </span>
   
@@ -722,7 +699,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 08 Extra Index Confusion
+    Flag 04 Dependency Confusion
     
   </span>
   
@@ -745,7 +722,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 11 Wheel Autopsy
+    Flag 05 Wheel Autopsy
     
   </span>
   
@@ -768,30 +745,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 16 Legacy Sdist Trap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-25-safer-index-patch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 25 Safer Index Patch
+    Flag 07 Legacy Sdist Trap
     
   </span>
   
@@ -867,6 +821,29 @@
   
   <span class="md-ellipsis">
     MkDocs And Scoreboard Plan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../organizer/private-hint-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Private Hint Design
     
   </span>
   
@@ -965,13 +942,13 @@
   
 
 
-<h1 id="flag-01-custom-index-install">Flag 01: Custom Index Install</h1>
+<h1 id="flag-01-index-recon">Flag 01: Index Recon</h1>
 <h2 id="scenario">Scenario</h2>
-<p>You are given a package that is not on real PyPI. Your first job is to install
-it from the challenge index.</p>
+<p>You are given a package that is not on real PyPI. Your first job is to map the
+challenge index, identify the project page, and install the selected artifact.</p>
 <h2 id="objective">Objective</h2>
-<p>Make pip install <code>hkpug-ctf-hello</code> from the trusted challenge index and print
-the practice flag.</p>
+<p>Make pip install <code>hkpug-ctf-hello</code> from the trusted challenge index and write
+proof under <code>artifacts/flag-01.json</code>.</p>
 <h2 id="working-notes">Working Notes</h2>
 <p>This lab should eventually point to:</p>
 <div class="highlight"><pre><span></span><code>labs/flag-01-custom-index-install/
@@ -980,6 +957,7 @@ the practice flag.</p>
 <ul>
 <li>captured flag</li>
 <li>install command used</li>
+<li>selected artifact URL or path</li>
 <li>one sentence explaining why real PyPI was not involved</li>
 </ul>
 

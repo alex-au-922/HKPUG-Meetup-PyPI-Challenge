@@ -348,6 +348,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hint-multipliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint Multipliers
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -626,30 +635,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 01 Custom Index Install
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../labs/flag-02-manual-simple-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 02 Manual Simple API
+    Flag 01 Index Recon
     
   </span>
   
@@ -672,7 +658,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 03 Name Normalization
+    Flag 02 Name Maze
     
   </span>
   
@@ -695,7 +681,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 08 Extra Index Confusion
+    Flag 04 Dependency Confusion
     
   </span>
   
@@ -718,7 +704,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 11 Wheel Autopsy
+    Flag 05 Wheel Autopsy
     
   </span>
   
@@ -741,30 +727,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 16 Legacy Sdist Trap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../labs/flag-25-safer-index-patch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 25 Safer Index Patch
+    Flag 07 Legacy Sdist Trap
     
   </span>
   
@@ -850,6 +813,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizer/private-hint-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Private Hint Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -892,6 +878,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hint-multipliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hint Multipliers
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -917,7 +912,8 @@ status before pure ranking.</p>
 <p>The first version reads static data from:</p>
 <div class="highlight"><pre><span></span><code>assets/leaderboard.json
 </code></pre></div>
-<p>Later, the trusted scorer can update the same JSON file on the Pages branch.</p>
+<p>Later, the trusted scorer can update the same JSON file on the Pages branch.
+The same scorer can also apply hint multipliers.</p>
 <div class="scoreboard-toolbar">
   <label for="scoreboard-filter">Filter</label>
   <input id="scoreboard-filter" type="search" placeholder="team, tier, region" />
@@ -937,15 +933,15 @@ status before pure ranking.</p>
 <tbody>
 <tr>
 <td>Participation</td>
-<td>3 valid flags</td>
+<td>2 valid flags</td>
 </tr>
 <tr>
 <td>Explorer</td>
-<td>10 valid flags across at least 2 tracks</td>
+<td>5 valid flags including one resolver/build flag</td>
 </tr>
 <tr>
 <td>Completion</td>
-<td>21 valid flags across at least 5 tracks</td>
+<td>9 valid flags</td>
 </tr>
 <tr>
 <td>Finisher</td>
@@ -953,6 +949,36 @@ status before pure ranking.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="hint-multipliers">Hint Multipliers</h2>
+<p>For the MVP, hint state can be global per flag:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th style="text-align: right;">Max Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fresh</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>Hint 1 open</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td>Hint 2 open</td>
+<td style="text-align: right;">70%</td>
+</tr>
+<tr>
+<td>Guided open</td>
+<td style="text-align: right;">50%</td>
+</tr>
+</tbody>
+</table>
+<p>For a later private tracked hint system, the scorer can store per-team unlocks
+and apply the multiplier only to teams that requested hints.</p>
 
 
 

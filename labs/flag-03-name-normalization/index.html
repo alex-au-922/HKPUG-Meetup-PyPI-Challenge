@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-03-name-normalization/">
       
       
-        <link rel="prev" href="../flag-02-manual-simple-api/">
+        <link rel="prev" href="../flag-01-custom-index-install/">
       
       
         <link rel="next" href="../flag-08-extra-index-confusion/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Flag 03 Name Normalization - HKPUG PyPI 30-Day CTF</title>
+        <title>Flag 02 Name Maze - HKPUG PyPI 30-Day CTF</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flag-03-name-normalization" class="md-skip">
+        <a href="#flag-02-name-maze" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flag 03 Name Normalization
+              Flag 02 Name Maze
             
           </span>
         </div>
@@ -575,30 +575,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 01 Custom Index Install
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-02-manual-simple-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 02 Manual Simple API
+    Flag 01 Index Recon
     
   </span>
   
@@ -630,7 +607,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 03 Name Normalization
+    Flag 02 Name Maze
     
   </span>
   
@@ -643,7 +620,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 03 Name Normalization
+    Flag 02 Name Maze
     
   </span>
   
@@ -713,7 +690,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 08 Extra Index Confusion
+    Flag 04 Dependency Confusion
     
   </span>
   
@@ -736,7 +713,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 11 Wheel Autopsy
+    Flag 05 Wheel Autopsy
     
   </span>
   
@@ -759,30 +736,7 @@
   
   
   <span class="md-ellipsis">
-    Flag 16 Legacy Sdist Trap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-25-safer-index-patch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 25 Safer Index Patch
+    Flag 07 Legacy Sdist Trap
     
   </span>
   
@@ -858,6 +812,29 @@
   
   <span class="md-ellipsis">
     MkDocs And Scoreboard Plan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../organizer/private-hint-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Private Hint Design
     
   </span>
   
@@ -947,16 +924,18 @@
   
 
 
-<h1 id="flag-03-name-normalization">Flag 03: Name Normalization</h1>
+<h1 id="flag-02-name-maze">Flag 02: Name Maze</h1>
 <h2 id="scenario">Scenario</h2>
 <p>The same package can be requested with different punctuation. Pip normalizes the
 name before looking up the project page.</p>
 <h2 id="objective">Objective</h2>
-<p>Show that package name variants resolve to the same normalized project name.</p>
+<p>Show that package name variants resolve to the same normalized project name, then
+find the correct project page.</p>
 <h2 id="submission">Submission</h2>
 <ul>
 <li>normalized name</li>
 <li>package variants tested</li>
+<li>project page path</li>
 <li>practice flag</li>
 </ul>
 
