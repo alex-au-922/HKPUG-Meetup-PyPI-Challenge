@@ -60,6 +60,50 @@ What to observe:
 3. whether the victim imports the package directly
 4. whether the marker appears when Python starts
 
+!!! note "Teacher note"
+    This is the "wait, I did not import that" lab. Stay calm and check startup
+    files before blaming the victim script.
+
+## Visual Map
+
+```mermaid
+flowchart LR
+  A["install package"] --> B["file lands in site-packages"]
+  B --> C["Python starts"]
+  C --> D["site module reads .pth files"]
+  D --> E["startup import runs"]
+  E --> F["local marker appears"]
+```
+
+## Try This Slowly
+
+Find the active `site-packages` directory:
+
+```bash
+python - <<'PY'
+import site
+
+for path in site.getsitepackages():
+    print(path)
+PY
+```
+
+Then list `.pth` files:
+
+```bash
+python - <<'PY'
+from pathlib import Path
+import site
+
+for root in site.getsitepackages():
+    for path in Path(root).glob("*.pth"):
+        print(path)
+        print(path.read_text())
+PY
+```
+
+The suspicious line may be small. Small startup files can still matter.
+
 ## Story
 
 The victim installs a package and then starts Python. A marker appears under

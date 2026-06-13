@@ -54,6 +54,53 @@ What to observe:
 3. whether `--no-build-isolation` changes behavior
 4. where the local proof marker appears
 
+!!! note "Teacher note"
+    Build isolation is like pip saying, "I will build this package in a clean
+    little room." The interesting question is what pip brings into that room.
+
+## Visual Map
+
+```mermaid
+flowchart TD
+  A["source project"] --> B["pyproject.toml"]
+  B --> C["build requirements"]
+  C --> D["temporary build env"]
+  D --> E["build backend runs"]
+  E --> F["wheel is produced"]
+  F --> G["install result"]
+```
+
+## Try This Slowly
+
+Print the build system table before you build:
+
+```bash
+python - <<'PY'
+from pathlib import Path
+
+text = Path("victim/pyproject.toml").read_text()
+inside = False
+for line in text.splitlines():
+    if line.strip() == "[build-system]":
+        inside = True
+    elif line.startswith("[") and inside:
+        break
+    if inside:
+        print(line)
+PY
+```
+
+Then compare isolated and non-isolated builds:
+
+```bash
+python -m pip wheel -vv --index-url "$CHALLENGE_INDEX_URL" ./victim \
+  2>&1 | tee artifacts/build-isolated.log
+
+python -m pip wheel -vv --no-build-isolation \
+  --index-url "$CHALLENGE_INDEX_URL" ./victim \
+  2>&1 | tee artifacts/build-no-isolation.log
+```
+
 ## Story
 
 The victim package is a source distribution. Its `pyproject.toml` asks for a

@@ -53,6 +53,46 @@ What to observe:
 3. the hash of the safe artifact
 4. the error pip gives after unsafe content is rejected
 
+!!! note "Teacher note"
+    A version pin answers "which version?" A hash answers "which exact file?"
+    This lab is about feeling that difference in your hands.
+
+## Visual Map
+
+```mermaid
+flowchart TD
+  A["requirements.txt"] --> B{"loose or exact?"}
+  B --> C["pip chooses candidate"]
+  C --> D{"hash required?"}
+  D -->|"no"| E["file installs"]
+  D -->|"yes"| F{"hash matches?"}
+  F -->|"yes"| E
+  F -->|"no"| G["install rejected"]
+```
+
+## Try This Slowly
+
+Read the requirements file:
+
+```bash
+nl -ba victim/requirements.txt
+```
+
+Hash a known-good artifact:
+
+```bash
+python -m pip hash path/to/package.whl
+```
+
+Try a hash-checked install:
+
+```bash
+python -m pip install --require-hashes -r victim/requirements.lock \
+  2>&1 | tee artifacts/pip-hash-check.log
+```
+
+The failed install after the fix is success. It proves the swap was blocked.
+
 ## Story
 
 The victim app has a weak requirements file. A toy malicious candidate can win

@@ -57,6 +57,40 @@ What to observe:
 3. the artifact filename pip selected
 4. whether the artifact came from the toy challenge index
 
+!!! note "Teacher note"
+    If this is your first packaging lab, do not try to be clever yet. Your
+    first win is simply proving that pip looked where you told it to look.
+
+## Visual Map
+
+```mermaid
+flowchart LR
+  A["pip install hkpug-ctf-hello"] --> B["challenge /simple/ index"]
+  B --> C["project page"]
+  C --> D["wheel or sdist link"]
+  D --> E["installed package"]
+  E --> F["local flag proof"]
+```
+
+## Try This Slowly
+
+Use verbose mode and save the output so you can search it:
+
+```bash
+python -m pip install -vv --index-url "$CHALLENGE_INDEX_URL" hkpug-ctf-hello \
+  2>&1 | tee artifacts/pip-flag-01.log
+```
+
+Then look for the important lines:
+
+```bash
+grep -E "Looking in indexes|Found link|Downloading|Installing collected" \
+  artifacts/pip-flag-01.log
+```
+
+The exact words may differ by pip version. The idea is the same: find where pip
+looked, what it saw, and what it finally used.
+
 ## Story
 
 You are given a package named `hkpug-ctf-hello`. It is not meant to exist on

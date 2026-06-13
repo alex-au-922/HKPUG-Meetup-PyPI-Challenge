@@ -11,8 +11,7 @@ each lab works, and how progress is tracked.
 1. Read [Rules](rules.md).
 2. Read [How To Play](WORKING_FORMAT.md).
 3. Start with [Flag 01](labs/flag-01-index-recon.md).
-4. Use [Lab Guides](labs/guides/index.md) when you want background.
-5. Check [Hints](hints.md) and the [Scoreboard](scoreboard.md).
+4. Check [Hints](hints.md) and the [Scoreboard](scoreboard.md).
 
 ## Learning Promise
 
@@ -47,9 +46,8 @@ flowchart LR
   F11 --> F12["12 Capstone Incident"]
 ```
 
-Each flag page contains the background needed for that flag. The Lab Guides sit
-inside the Labs section as backup references for commands, vocabulary, history,
-and submission workflow.
+Each flag page is written as a small textbook chapter: background, vocabulary,
+visual map, commands, what to observe, and the final-mile challenge.
 
 ## Expected Time
 

@@ -57,6 +57,48 @@ What to observe:
 3. the selected package name, version, and file
 4. the exact defense that blocks the same path
 
+!!! note "Teacher note"
+    The capstone is not asking you to know a new trick. It is asking you to
+    choose the right trick, explain it clearly, and then close the hole.
+
+## Visual Map
+
+```mermaid
+flowchart TD
+  A["victim install script"] --> B["requirement"]
+  B --> C["normalized name"]
+  C --> D["indexes searched"]
+  D --> E["candidate selected"]
+  E --> F["artifact behavior"]
+  F --> G["local flag proof"]
+  G --> H["incident report"]
+  H --> I["defensive patch"]
+```
+
+## Try This Slowly
+
+Make a worksheet before you build anything:
+
+```text
+Requested package:
+Normalized name:
+Indexes searched:
+Candidate versions:
+Artifact I want to win:
+Why pip should select it:
+Where proof should appear:
+Defense after capture:
+```
+
+Then read the victim files:
+
+```bash
+find victim -maxdepth 2 -type f -print
+```
+
+The capstone rewards patience. A five-minute map can save an hour of random
+package building.
+
 ## Story
 
 The victim service installs dependencies from a mixed challenge ecosystem. You

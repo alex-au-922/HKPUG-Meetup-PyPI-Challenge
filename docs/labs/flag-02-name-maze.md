@@ -53,6 +53,44 @@ What to observe:
 3. whether the normalized project page exists
 4. which artifact appears on that project page
 
+!!! note "Teacher note"
+    This lab is not about memorizing a standard. It is about noticing that the
+    name you type is not always the name pip uses for lookup.
+
+## Visual Map
+
+```mermaid
+flowchart LR
+  A["Human spelling"] --> B["lowercase"]
+  B --> C["collapse . _ - into -"]
+  C --> D["normalized project name"]
+  D --> E["/simple/project-name/"]
+  E --> F["artifact links"]
+```
+
+## Try This Slowly
+
+You can practice the normalization rule with a tiny Python snippet:
+
+```bash
+python - <<'PY'
+import re
+
+names = [
+    "HKPUG_CTF.Normalize.Me",
+    "hkpug-ctf-normalize-me",
+    "hkpug.ctf_normalize-me",
+]
+
+for name in names:
+    normalized = re.sub(r"[-_.]+", "-", name).lower()
+    print(f"{name:28} -> {normalized}")
+PY
+```
+
+When you inspect the toy index, look for the normalized form, not the prettiest
+human spelling.
+
 ## Story
 
 The challenge gives you several package name spellings. Some are noisy on

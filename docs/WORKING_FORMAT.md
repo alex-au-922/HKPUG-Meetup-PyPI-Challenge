@@ -24,9 +24,8 @@ Each flag follows the same shape:
 
 The challenge is about learning PyPI by hacking a safe toy ecosystem.
 
-The Lab Guides inside the Labs section are a reference shelf. They help when you
-want to review pip output, artifacts, or submission format, but the core lesson
-for a flag should be inside the flag page itself.
+The core lesson for a flag should be inside the flag page itself. If a flag
+uses a packaging word, the page should define it before asking you to use it.
 
 ## Expected Time
 
@@ -41,9 +40,9 @@ smaller.
 | Flag 12: capstone | 4-6 hours |
 
 For a beginner who reads the flag pages carefully, the full trail should land
-around 25-35 hands-on hours. The flag background sections and Lab Guides are
-meant to replace most outside searching. The remaining work should be
-investigation inside the lab, not learning packaging vocabulary from scratch.
+around 25-35 hands-on hours. The flag background sections are meant to replace
+most outside searching. The remaining work should be investigation inside the
+lab, not learning packaging vocabulary from scratch.
 
 ## What "Hack" Means Here
 
@@ -145,6 +144,41 @@ is:pr is:open author:@me repo:alex-au-922/HKPUG-Meetup-PyPI-Challenge
 
 The team code is not secret. The flag answers are secret and should be encrypted
 in hosted mode.
+
+## Submission PR Format
+
+Use this folder shape:
+
+```text
+submissions/
+  HKPUG-TEAM-AB12/
+    README.md
+    flag-01.json.enc
+    flag-02.json.enc
+```
+
+Use this PR body checklist:
+
+```markdown
+Team code: HKPUG-TEAM-AB12
+
+- [x] Flag 01 submitted
+- [ ] Flag 02 submitted
+- [ ] Flag 03 submitted
+- [ ] Flag 04 submitted
+- [ ] Flag 05 submitted
+- [ ] Flag 06 submitted
+- [ ] Flag 07 submitted
+- [ ] Flag 08 submitted
+- [ ] Flag 09 submitted
+- [ ] Flag 10 submitted
+- [ ] Flag 11 submitted
+- [ ] Flag 12 submitted
+```
+
+The repository guard checks submission PRs automatically. It labels submission
+PRs, comments with the exact fix when the format is wrong, and auto-closes
+duplicate PRs for the same team.
 
 ## E-Cert Progress
 

@@ -60,6 +60,44 @@ What to observe:
 3. which command exists in `.venv/bin/`
 4. whether an extra changed the dependency graph
 
+!!! note "Teacher note"
+    Think of an entry point as a shortcut placed on your desk. The shortcut is
+    small, but it points to real Python code.
+
+## Visual Map
+
+```mermaid
+flowchart LR
+  A["install package"] --> B["read entry point metadata"]
+  B --> C["create command in .venv/bin"]
+  C --> D["user runs command"]
+  D --> E["module:function executes"]
+  E --> F["local flag proof"]
+```
+
+## Try This Slowly
+
+After install, ask Python what entry points the package registered:
+
+```bash
+python - <<'PY'
+import importlib.metadata
+
+dist = importlib.metadata.distribution("hkpug-ctf-tool")
+print(dist.metadata["Name"], dist.version)
+for entry_point in dist.entry_points:
+    print(entry_point)
+PY
+```
+
+Then list the virtual environment commands:
+
+```bash
+ls -1 .venv/bin | grep -E "hkpug|ctf|tool"
+```
+
+You are not expected to guess the command name. Let the metadata tell you.
+
 ## Story
 
 The victim workflow installs a toy package and then runs a helper command from

@@ -56,6 +56,49 @@ What to observe:
 3. what token permissions the job has
 4. what artifact the fake publisher would publish
 
+!!! note "Teacher note"
+    Read CI YAML like a recipe. The bug is often not one scary line; it is the
+    wrong ingredients being trusted together.
+
+## Visual Map
+
+```mermaid
+flowchart TD
+  A["GitHub event"] --> B["workflow starts"]
+  B --> C["checkout code"]
+  C --> D["build package"]
+  D --> E["fake publish step"]
+  B --> F["token permissions"]
+  F --> E
+  E --> G["local proof"]
+```
+
+## Try This Slowly
+
+Print the workflow files:
+
+```bash
+python - <<'PY'
+from pathlib import Path
+
+for path in Path(".github/workflows").glob("*.yml"):
+    print(f"\n--- {path} ---")
+    print(path.read_text())
+PY
+```
+
+Mark the trust boundary by hand:
+
+```text
+event:
+code being built:
+permissions:
+artifact:
+publisher:
+```
+
+If you cannot fill those five fields, keep reading before running anything.
+
 ## Story
 
 The challenge gives you a toy repository with a release workflow. The workflow

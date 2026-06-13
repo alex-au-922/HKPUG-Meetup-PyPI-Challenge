@@ -51,6 +51,45 @@ What to observe:
 3. package files that will land in `site-packages`
 4. metadata that changes install or runtime behavior
 
+!!! note "Teacher note"
+    A wheel is less scary once you open it. Treat it like a zip file with a
+    label, a manifest, and the package's Python files inside.
+
+## Visual Map
+
+```mermaid
+flowchart TD
+  A[".whl file"] --> B["zip container"]
+  B --> C["package code"]
+  B --> D[".dist-info/"]
+  D --> E["METADATA"]
+  D --> F["WHEEL"]
+  D --> G["RECORD"]
+  C --> H["behavior to inspect"]
+```
+
+## Try This Slowly
+
+List the wheel without installing it:
+
+```bash
+python -m zipfile --list wheels/*.whl
+```
+
+Extract it to a throwaway folder:
+
+```bash
+mkdir -p artifacts/wheel-unpacked
+python -m zipfile --extract wheels/*.whl artifacts/wheel-unpacked
+find artifacts/wheel-unpacked -maxdepth 3 -type f | sort
+```
+
+Then read the metadata:
+
+```bash
+find artifacts/wheel-unpacked -name METADATA -o -name RECORD -o -name WHEEL
+```
+
 ## Story
 
 A wheel was installed in the victim environment. Something about it leads to the

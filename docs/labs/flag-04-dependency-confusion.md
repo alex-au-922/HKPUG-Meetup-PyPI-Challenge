@@ -58,6 +58,41 @@ What to observe:
 3. whether pip treats the extra index as a fallback or as more candidates
 4. which index supplied the installed file
 
+!!! note "Teacher note"
+    The surprising part is not that pip is broken. Pip is doing what it was
+    asked to do: search the configured sources and choose a candidate. The
+    mistake is giving it a risky set of sources.
+
+## Visual Map
+
+```mermaid
+flowchart LR
+  A["victim requirement"] --> B["private toy index"]
+  A --> C["public-sim toy index"]
+  B --> D["candidate pool"]
+  C --> D
+  D --> E["resolver selects version"]
+  E --> F["installed package captures local flag"]
+```
+
+## Try This Slowly
+
+Capture the verbose install output:
+
+```bash
+python -m pip install -vv -r victim/requirements.txt \
+  2>&1 | tee artifacts/pip-flag-04.log
+```
+
+Then ask two very plain questions:
+
+```bash
+grep -E "Looking in indexes|Found link|Downloading" artifacts/pip-flag-04.log
+python -m pip show hkpug-ctf-internal-utils
+```
+
+You are looking for the selected version and the URL or path it came from.
+
 ## Story
 
 The victim app trusts a private toy index but also uses a simulated public toy

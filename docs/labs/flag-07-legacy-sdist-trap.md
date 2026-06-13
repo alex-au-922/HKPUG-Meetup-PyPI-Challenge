@@ -61,6 +61,45 @@ What to observe:
 3. whether pip built a wheel locally
 4. which setup/build step produced the local marker
 
+!!! note "Teacher note"
+    If you have never seen `setup.py`, that is completely fine. For this lab,
+    remember only this: it is a Python file, and Python files can run code.
+
+## Visual Map
+
+```mermaid
+flowchart TD
+  A["pip install"] --> B{"wheel allowed?"}
+  B -->|"yes"| C["install built wheel"]
+  B -->|"no or unavailable"| D["download sdist"]
+  D --> E["run build logic"]
+  E --> F["legacy setup.py path"]
+  F --> G["local marker appears"]
+```
+
+## Try This Slowly
+
+Compare the two paths:
+
+```bash
+python -m pip install -vv --only-binary=:all: \
+  --index-url "$CHALLENGE_INDEX_URL" hkpug-ctf-legacy \
+  2>&1 | tee artifacts/pip-wheel-only.log
+
+python -m pip install -vv --no-binary=hkpug-ctf-legacy \
+  --index-url "$CHALLENGE_INDEX_URL" hkpug-ctf-legacy \
+  2>&1 | tee artifacts/pip-sdist.log
+```
+
+Search the source-build log:
+
+```bash
+grep -E "Downloading|Building wheel|setup.py|Successfully built" \
+  artifacts/pip-sdist.log
+```
+
+The goal is to make a timeline, not to memorize old packaging history.
+
 ## Story
 
 The victim is forced to install from a source distribution. A legacy

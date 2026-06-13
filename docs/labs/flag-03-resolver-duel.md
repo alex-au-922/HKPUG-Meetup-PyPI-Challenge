@@ -57,6 +57,46 @@ What to observe:
 3. skipped candidates and their skip reasons
 4. the final selected version and file
 
+!!! note "Teacher note"
+    The resolver can feel mysterious until you write down the candidates. Make
+    the invisible choice visible, then the puzzle becomes much smaller.
+
+## Visual Map
+
+```mermaid
+flowchart TD
+  A["victim requirement"] --> B["candidate list"]
+  B --> C{"matches version rule?"}
+  C -->|"no"| D["skip candidate"]
+  C -->|"yes"| E{"compatible wheel or sdist?"}
+  E -->|"no"| D
+  E -->|"yes"| F["best candidate wins"]
+```
+
+## Try This Slowly
+
+Start by asking pip what versions it can see:
+
+```bash
+python -m pip index versions hkpug-ctf-widget \
+  --index-url "$CHALLENGE_INDEX_URL"
+```
+
+Then run the install in verbose mode:
+
+```bash
+python -m pip install -vv --index-url "$CHALLENGE_INDEX_URL" \
+  "hkpug-ctf-widget" 2>&1 | tee artifacts/pip-flag-03.log
+```
+
+Search for rejected links:
+
+```bash
+grep -i "skipping link" artifacts/pip-flag-03.log
+```
+
+If you can explain why one candidate was skipped, you are learning the resolver.
+
 ## Story
 
 The victim app asks for a toy package called `hkpug-ctf-widget`. The challenge
