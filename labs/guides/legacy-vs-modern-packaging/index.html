@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/legacy-vs-modern-packaging/">
       
       
-        <link rel="prev" href="../scoreboard/">
+        <link rel="prev" href="../package-build-artifacts/">
       
       
-        <link rel="next" href="00-how-to-play/">
+        <link rel="next" href="../reading-pip-output/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Tutorial Index - HKPUG PyPI 30-Day CTF</title>
+        <title>Legacy Vs Modern Packaging - HKPUG PyPI 30-Day CTF</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../styles/scoreboard.css">
+      <link rel="stylesheet" href="../../../styles/scoreboard.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial-pages" class="md-skip">
+        <a href="#legacy-setuppy-versus-modern-packaging" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorial Index
+              Legacy Vs Modern Packaging
             
           </span>
         </div>
@@ -216,7 +216,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rules/" class="md-nav__link">
+      <a href="../../../rules/" class="md-nav__link">
         
   
   
@@ -290,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WORKING_FORMAT/" class="md-nav__link">
+      <a href="../../../WORKING_FORMAT/" class="md-nav__link">
         
   
   
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hints/" class="md-nav__link">
+      <a href="../../../hints/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scoreboard/" class="md-nav__link">
+      <a href="../../../scoreboard/" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorials
+    Labs
     
   </span>
   
@@ -390,7 +390,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Tutorials
+            Labs
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -398,75 +398,66 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
           
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
-    Tutorial Index
+    Lab Guides
     
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-  
-  
-  <span class="md-ellipsis">
-    Tutorial Index
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-should-know-after-reading" class="md-nav__link">
-    <span class="md-ellipsis">
-      What You Should Know After Reading
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lab Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -475,12 +466,12 @@
   
   
     <li class="md-nav__item">
-      <a href="00-how-to-play/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How To Play
+    Guide Index
     
   </span>
   
@@ -498,7 +489,30 @@
   
   
     <li class="md-nav__item">
-      <a href="01-pip-index-basics/" class="md-nav__link">
+      <a href="../how-to-play/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How To Play Labs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pip-index-basics/" class="md-nav__link">
         
   
   
@@ -521,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="02-package-build-artifacts/" class="md-nav__link">
+      <a href="../package-build-artifacts/" class="md-nav__link">
         
   
   
@@ -541,10 +555,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="03-legacy-vs-modern-packaging/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Legacy Vs Modern Packaging
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -555,29 +591,71 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="04-submission-and-certificates/" class="md-nav__link">
+      
         
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
-    
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-simple-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Simple Story
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-setuppy-is-interesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Setup.py Is Interesting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-build-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Build Isolation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modern-does-not-mean-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Does Not Mean Safe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-look-for-in-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What To Look For In Labs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -590,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-reading-pip-output/" class="md-nav__link">
+      <a href="../reading-pip-output/" class="md-nav__link">
         
   
   
@@ -613,7 +691,30 @@
   
   
     <li class="md-nav__item">
-      <a href="06-submission-pr-workflow/" class="md-nav__link">
+      <a href="../submission-and-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submission And Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submission-pr-workflow/" class="md-nav__link">
         
   
   
@@ -635,73 +736,6 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Labs
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Labs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../labs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -711,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-01-index-recon/" class="md-nav__link">
+      <a href="../../flag-01-index-recon/" class="md-nav__link">
         
   
   
@@ -734,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-02-name-maze/" class="md-nav__link">
+      <a href="../../flag-02-name-maze/" class="md-nav__link">
         
   
   
@@ -757,7 +791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-03-resolver-duel/" class="md-nav__link">
+      <a href="../../flag-03-resolver-duel/" class="md-nav__link">
         
   
   
@@ -780,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-04-dependency-confusion/" class="md-nav__link">
+      <a href="../../flag-04-dependency-confusion/" class="md-nav__link">
         
   
   
@@ -803,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-05-wheel-autopsy/" class="md-nav__link">
+      <a href="../../flag-05-wheel-autopsy/" class="md-nav__link">
         
   
   
@@ -826,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-06-entry-point-ambush/" class="md-nav__link">
+      <a href="../../flag-06-entry-point-ambush/" class="md-nav__link">
         
   
   
@@ -849,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-07-legacy-sdist-trap/" class="md-nav__link">
+      <a href="../../flag-07-legacy-sdist-trap/" class="md-nav__link">
         
   
   
@@ -872,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-08-build-isolation-lab/" class="md-nav__link">
+      <a href="../../flag-08-build-isolation-lab/" class="md-nav__link">
         
   
   
@@ -895,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-09-startup-surprise/" class="md-nav__link">
+      <a href="../../flag-09-startup-surprise/" class="md-nav__link">
         
   
   
@@ -918,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-10-pin-hash-lock/" class="md-nav__link">
+      <a href="../../flag-10-pin-hash-lock/" class="md-nav__link">
         
   
   
@@ -941,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-11-ci-publisher-trap/" class="md-nav__link">
+      <a href="../../flag-11-ci-publisher-trap/" class="md-nav__link">
         
   
   
@@ -964,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../labs/flag-12-capstone-incident/" class="md-nav__link">
+      <a href="../../flag-12-capstone-incident/" class="md-nav__link">
         
   
   
@@ -1014,9 +1048,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-should-know-after-reading" class="md-nav__link">
+  <a href="#the-simple-story" class="md-nav__link">
     <span class="md-ellipsis">
-      What You Should Know After Reading
+      The Simple Story
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-setuppy-is-interesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Setup.py Is Interesting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-build-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Build Isolation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modern-does-not-mean-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Does Not Mean Safe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-look-for-in-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What To Look For In Labs
     </span>
   </a>
   
@@ -1041,93 +1111,53 @@
   
 
 
-<h1 id="tutorial-pages">Tutorial Pages</h1>
-<p>These tutorials are reference pages. The required tutorial for each flag lives
-inside that flag page.</p>
-<p>Use this section when you want to review vocabulary, commands, pip output, or
-submission flow without opening every lab.</p>
-<p>Recommended reference order:</p>
-<ol>
-<li><code>00-how-to-play.md</code></li>
-<li><code>01-pip-index-basics.md</code></li>
-<li><code>02-package-build-artifacts.md</code></li>
-<li><code>03-legacy-vs-modern-packaging.md</code></li>
-<li><code>04-submission-and-certificates.md</code></li>
-<li><code>05-reading-pip-output.md</code></li>
-<li><code>06-submission-pr-workflow.md</code></li>
-</ol>
-<p>Each reference page answers three questions:</p>
+<h1 id="legacy-setuppy-versus-modern-packaging">Legacy Setup.py Versus Modern Packaging</h1>
+<p>This page explains why old packaging behavior matters.</p>
+<h2 id="the-simple-story">The Simple Story</h2>
+<p>Old Python packages often used a file named:</p>
+<div class="highlight"><pre><span></span><code>setup.py
+</code></pre></div>
+<p>That file is Python code. If a tool runs it, code can run.</p>
+<p>Modern packages often use:</p>
+<div class="highlight"><pre><span></span><code>pyproject.toml
+</code></pre></div>
+<p>That file declares the build system more explicitly.</p>
+<h2 id="why-setuppy-is-interesting">Why Setup.py Is Interesting</h2>
+<p><code>setup.py</code> can describe the package, but it can also execute Python code during
+some old build paths.</p>
+<p>That means a package can behave differently depending on how it is installed:</p>
 <ul>
-<li>What am I looking at?</li>
-<li>What command do I run?</li>
-<li>What should I observe?</li>
+<li>from a wheel</li>
+<li>from an sdist</li>
+<li>by direct <code>setup.py</code> invocation</li>
+<li>by a modern build frontend</li>
 </ul>
-<h2 id="what-you-should-know-after-reading">What You Should Know After Reading</h2>
-<p>You should be comfortable with these words before you start the harder labs:</p>
-<table>
-<thead>
-<tr>
-<th>Word</th>
-<th>Plain meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>virtual environment</td>
-<td>a disposable Python install area for one project</td>
-</tr>
-<tr>
-<td>pip</td>
-<td>the installer that searches indexes and installs packages</td>
-</tr>
-<tr>
-<td>index</td>
-<td>a website or folder listing package files</td>
-</tr>
-<tr>
-<td>candidate</td>
-<td>one possible package file pip might install</td>
-</tr>
-<tr>
-<td>resolver</td>
-<td>pip's decision process for picking candidates</td>
-</tr>
-<tr>
-<td>wheel</td>
-<td>a built package file, usually <code>.whl</code></td>
-</tr>
-<tr>
-<td>sdist</td>
-<td>a source archive that may need a build step</td>
-</tr>
-<tr>
-<td>metadata</td>
-<td>package name, version, dependencies, entry points, and file records</td>
-</tr>
-<tr>
-<td>extra</td>
-<td>optional dependency group, like <code>pkg[report]</code></td>
-</tr>
-<tr>
-<td>entry point</td>
-<td>metadata that creates a command-line script</td>
-</tr>
-<tr>
-<td>build isolation</td>
-<td>a temporary environment for building a package</td>
-</tr>
-<tr>
-<td>hash</td>
-<td>a fingerprint of exact package file bytes</td>
-</tr>
-<tr>
-<td>lockfile</td>
-<td>a reproducible dependency decision record</td>
-</tr>
-</tbody>
-</table>
-<p>You do not need to memorize everything. You only need enough vocabulary to know
-which file or command output to inspect.</p>
+<p>The labs do not ask you to memorize history. They ask you to observe which path
+ran.</p>
+<h2 id="what-is-build-isolation">What Is Build Isolation?</h2>
+<p>Build isolation means the build happens in a temporary environment instead of
+your normal environment.</p>
+<p>This helps because the build sees fewer accidental packages and variables.</p>
+<p>It does not make malicious packages safe. It narrows where the risk lives.</p>
+<h2 id="modern-does-not-mean-safe">Modern Does Not Mean Safe</h2>
+<p>Modern packaging helps because:</p>
+<ul>
+<li>build requirements are declared</li>
+<li>build environments can be isolated</li>
+<li>wheels avoid running project build logic at install time</li>
+<li>hashes and lockfiles can detect artifact swaps</li>
+</ul>
+<p>But if you install and run a malicious package, Python code can still run.</p>
+<h2 id="what-to-look-for-in-labs">What To Look For In Labs</h2>
+<p>When a lab mentions legacy packaging, ask:</p>
+<ol>
+<li>Is pip using a wheel or sdist?</li>
+<li>Is a build step happening?</li>
+<li>Is <code>setup.py</code> involved?</li>
+<li>Is <code>pyproject.toml</code> involved?</li>
+<li>Does isolation change what the build can see?</li>
+</ol>
+<p>The final mile is identifying the exact phase where the fake flag appears.</p>
 
 
 
@@ -1182,12 +1212,12 @@ which file or command output to inspect.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../assets/scoreboard.js"></script>
+        <script src="../../../assets/scoreboard.js"></script>
       
     
   </body>

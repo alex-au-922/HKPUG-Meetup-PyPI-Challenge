@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/02-package-build-artifacts/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/submission-pr-workflow/">
       
       
-        <link rel="prev" href="../01-pip-index-basics/">
+        <link rel="prev" href="../submission-and-certificates/">
       
       
-        <link rel="next" href="../03-legacy-vs-modern-packaging/">
+        <link rel="next" href="../../flag-01-index-recon/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Package Build Artifacts - HKPUG PyPI 30-Day CTF</title>
+        <title>Submission PR Workflow - HKPUG PyPI 30-Day CTF</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../../styles/scoreboard.css">
+      <link rel="stylesheet" href="../../../styles/scoreboard.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#package-build-artifacts" class="md-skip">
+        <a href="#submission-pr-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Package Build Artifacts
+              Submission PR Workflow
             
           </span>
         </div>
@@ -216,7 +216,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rules/" class="md-nav__link">
+      <a href="../../../rules/" class="md-nav__link">
         
   
   
@@ -290,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WORKING_FORMAT/" class="md-nav__link">
+      <a href="../../../WORKING_FORMAT/" class="md-nav__link">
         
   
   
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hints/" class="md-nav__link">
+      <a href="../../../hints/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scoreboard/" class="md-nav__link">
+      <a href="../../../scoreboard/" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorials
+    Labs
     
   </span>
   
@@ -390,7 +390,72 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Tutorials
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lab Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lab Guides
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -406,7 +471,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorial Index
+    Guide Index
     
   </span>
   
@@ -424,12 +489,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-how-to-play/" class="md-nav__link">
+      <a href="../how-to-play/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How To Play
+    How To Play Labs
     
   </span>
   
@@ -447,12 +512,104 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-pip-index-basics/" class="md-nav__link">
+      <a href="../pip-index-basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Pip Index Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-build-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Package Build Artifacts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legacy-vs-modern-packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Legacy Vs Modern Packaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-pip-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reading Pip Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submission-and-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submission And Certificates
     
   </span>
   
@@ -484,7 +641,7 @@
   
   
   <span class="md-ellipsis">
-    Package Build Artifacts
+    Submission PR Workflow
     
   </span>
   
@@ -497,7 +654,7 @@
   
   
   <span class="md-ellipsis">
-    Package Build Artifacts
+    Submission PR Workflow
     
   </span>
   
@@ -520,63 +677,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-dumb-version" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      The Dumb Version
+      The Problem
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wheel" class="md-nav__link">
+  <a href="#the-rule" class="md-nav__link">
     <span class="md-ellipsis">
-      Wheel
+      The Rule
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#source-distribution" class="md-nav__link">
+  <a href="#enforcement" class="md-nav__link">
     <span class="md-ellipsis">
-      Source Distribution
+      Enforcement
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wheel-versus-sdist" class="md-nav__link">
+  <a href="#team-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Wheel Versus Sdist
+      Team Code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
+  <a href="#branch-name" class="md-nav__link">
     <span class="md-ellipsis">
-      Entry Points
+      Branch Name
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
+  <a href="#pull-request-title" class="md-nav__link">
     <span class="md-ellipsis">
-      Extras
+      Pull Request Title
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lab-question" class="md-nav__link">
+  <a href="#submission-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab Question
+      Submission Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Request Body
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-your-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Your PR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewer-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reviewer Labels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Mode
     </span>
   </a>
   
@@ -591,171 +784,12 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-legacy-vs-modern-packaging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-submission-and-certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-reading-pip-output/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reading Pip Output
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-submission-pr-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission PR Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Labs
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Labs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -765,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-01-index-recon/" class="md-nav__link">
+      <a href="../../flag-01-index-recon/" class="md-nav__link">
         
   
   
@@ -788,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-02-name-maze/" class="md-nav__link">
+      <a href="../../flag-02-name-maze/" class="md-nav__link">
         
   
   
@@ -811,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-03-resolver-duel/" class="md-nav__link">
+      <a href="../../flag-03-resolver-duel/" class="md-nav__link">
         
   
   
@@ -834,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-04-dependency-confusion/" class="md-nav__link">
+      <a href="../../flag-04-dependency-confusion/" class="md-nav__link">
         
   
   
@@ -857,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-05-wheel-autopsy/" class="md-nav__link">
+      <a href="../../flag-05-wheel-autopsy/" class="md-nav__link">
         
   
   
@@ -880,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-06-entry-point-ambush/" class="md-nav__link">
+      <a href="../../flag-06-entry-point-ambush/" class="md-nav__link">
         
   
   
@@ -903,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-07-legacy-sdist-trap/" class="md-nav__link">
+      <a href="../../flag-07-legacy-sdist-trap/" class="md-nav__link">
         
   
   
@@ -926,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-08-build-isolation-lab/" class="md-nav__link">
+      <a href="../../flag-08-build-isolation-lab/" class="md-nav__link">
         
   
   
@@ -949,7 +983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-09-startup-surprise/" class="md-nav__link">
+      <a href="../../flag-09-startup-surprise/" class="md-nav__link">
         
   
   
@@ -972,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-10-pin-hash-lock/" class="md-nav__link">
+      <a href="../../flag-10-pin-hash-lock/" class="md-nav__link">
         
   
   
@@ -995,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-11-ci-publisher-trap/" class="md-nav__link">
+      <a href="../../flag-11-ci-publisher-trap/" class="md-nav__link">
         
   
   
@@ -1018,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-12-capstone-incident/" class="md-nav__link">
+      <a href="../../flag-12-capstone-incident/" class="md-nav__link">
         
   
   
@@ -1068,63 +1102,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-dumb-version" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      The Dumb Version
+      The Problem
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wheel" class="md-nav__link">
+  <a href="#the-rule" class="md-nav__link">
     <span class="md-ellipsis">
-      Wheel
+      The Rule
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#source-distribution" class="md-nav__link">
+  <a href="#enforcement" class="md-nav__link">
     <span class="md-ellipsis">
-      Source Distribution
+      Enforcement
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wheel-versus-sdist" class="md-nav__link">
+  <a href="#team-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Wheel Versus Sdist
+      Team Code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entry-points" class="md-nav__link">
+  <a href="#branch-name" class="md-nav__link">
     <span class="md-ellipsis">
-      Entry Points
+      Branch Name
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
+  <a href="#pull-request-title" class="md-nav__link">
     <span class="md-ellipsis">
-      Extras
+      Pull Request Title
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lab-question" class="md-nav__link">
+  <a href="#submission-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab Question
+      Submission Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Request Body
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-your-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Your PR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewer-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reviewer Labels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Mode
     </span>
   </a>
   
@@ -1149,69 +1219,102 @@
   
 
 
-<h1 id="package-build-artifacts">Package Build Artifacts</h1>
-<p>This page explains the files pip installs.</p>
-<h2 id="the-dumb-version">The Dumb Version</h2>
-<p>A Python package is not just a folder of code. Pip usually installs a package
-file.</p>
-<p>The two important package file types are:</p>
+<h1 id="submission-pr-workflow">Submission PR Workflow</h1>
+<p>This page explains the hosted submission workflow and the GitHub usability
+problem it is designed to avoid.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>If every participant opens one pull request per flag, a 12-flag event becomes
+noisy very quickly.</p>
+<div class="highlight"><pre><span></span><code>100 participants x 12 flags = 1200 pull requests
+</code></pre></div>
+<p>That is bad for players and bad for reviewers. Players cannot find their own
+work. Reviewers cannot see progress clearly.</p>
+<h2 id="the-rule">The Rule</h2>
+<p>Hosted mode should use:</p>
+<div class="highlight"><pre><span></span><code>one participant or team = one long-lived pull request
+</code></pre></div>
+<p>You update the same PR as you solve more flags.</p>
+<h2 id="enforcement">Enforcement</h2>
+<p>The repository has a submission guard workflow. It checks PR title, branch name,
+team folder, and duplicate PRs.</p>
+<p>GitHub does not usually "delete" pull requests. The guard does this instead:</p>
 <ul>
-<li>wheel</li>
-<li>source distribution, usually called sdist</li>
+<li>labels submission PRs as <code>submission</code></li>
+<li>fails the PR check when the format is wrong</li>
+<li>comments with the exact fix</li>
+<li>auto-closes duplicate PRs for the same team</li>
 </ul>
-<h2 id="wheel">Wheel</h2>
-<p>A wheel is a built package. It usually ends with:</p>
-<div class="highlight"><pre><span></span><code>.whl
+<p>Maintainers can switch on stricter mode later to auto-close every invalid
+submission PR, but the default is friendlier: fix the PR and the check turns
+green.</p>
+<h2 id="team-code">Team Code</h2>
+<p>Each participant or team gets a short code during registration:</p>
+<div class="highlight"><pre><span></span><code>HKPUG-TEAM-AB12
 </code></pre></div>
-<p>A wheel is a zip file. You can list it:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>--list<span class="w"> </span>dist/example.whl
+<p>The team code is not a secret. It is only an identifier for search, scoring, and
+certificate matching.</p>
+<p>Do not put real names, emails, tokens, or private flags in filenames.</p>
+<h2 id="branch-name">Branch Name</h2>
+<p>Use this branch pattern:</p>
+<div class="highlight"><pre><span></span><code>submissions/HKPUG-TEAM-AB12
 </code></pre></div>
-<p>You can extract it:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>--extract<span class="w"> </span>dist/example.whl<span class="w"> </span>/tmp/example-wheel
+<h2 id="pull-request-title">Pull Request Title</h2>
+<p>Use this PR title:</p>
+<div class="highlight"><pre><span></span><code>[HKPUG-TEAM-AB12] submissions
 </code></pre></div>
-<p>Important files inside a wheel:</p>
-<ul>
-<li><code>METADATA</code>: package name, version, dependencies, extras, entry points hints</li>
-<li><code>WHEEL</code>: wheel format information</li>
-<li><code>RECORD</code>: installed file list and hashes</li>
-<li>package files: the Python code</li>
-</ul>
-<h2 id="source-distribution">Source Distribution</h2>
-<p>An sdist is source code that may need to be built before install.</p>
-<p>It usually ends with:</p>
-<div class="highlight"><pre><span></span><code>.tar.gz
+<p>This makes the PR easy to find with GitHub search.</p>
+<h2 id="submission-files">Submission Files</h2>
+<p>Hosted mode should use encrypted answer bundles:</p>
+<div class="highlight"><pre><span></span><code>submissions/
+  HKPUG-TEAM-AB12/
+    flag-01.json.enc
+    flag-02.json.enc
+    flag-04.json.enc
 </code></pre></div>
-<p>The scary part: source builds can run build logic. In old projects, that often
-means <code>setup.py</code> behavior.</p>
-<h2 id="wheel-versus-sdist">Wheel Versus Sdist</h2>
-<p>Ask this every time:</p>
-<div class="highlight"><pre><span></span><code>Did pip install a ready-made wheel, or did pip build from source?
+<p>Add one file per solved flag. Do not rewrite another team's folder.</p>
+<h2 id="pull-request-body">Pull Request Body</h2>
+<p>Use a checklist so progress is visible:</p>
+<div class="highlight"><pre><span></span><code>Team code: HKPUG-TEAM-AB12
+
+<span class="k">- [x]</span> Flag 01 submitted
+<span class="k">- [x]</span> Flag 02 submitted
+<span class="k">- [ ]</span> Flag 03 submitted
+<span class="k">- [ ]</span> Flag 04 submitted
+<span class="k">- [ ]</span> Flag 05 submitted
+<span class="k">- [ ]</span> Flag 06 submitted
+<span class="k">- [ ]</span> Flag 07 submitted
+<span class="k">- [ ]</span> Flag 08 submitted
+<span class="k">- [ ]</span> Flag 09 submitted
+<span class="k">- [ ]</span> Flag 10 submitted
+<span class="k">- [ ]</span> Flag 11 submitted
+<span class="k">- [ ]</span> Flag 12 submitted
 </code></pre></div>
-<p>That one question changes where code may run.</p>
-<h2 id="entry-points">Entry Points</h2>
-<p>Some packages install commands.</p>
-<p>For example, installing a package can create a command like:</p>
-<div class="highlight"><pre><span></span><code>hkpug-proof
+<h2 id="finding-your-pr">Finding Your PR</h2>
+<p>In GitHub search, use:</p>
+<div class="highlight"><pre><span></span><code>is:pr is:open author:@me repo:alex-au-922/HKPUG-Meetup-PyPI-Challenge
 </code></pre></div>
-<p>That command may run code from the package. Flag 06 uses this idea.</p>
-<h2 id="extras">Extras</h2>
-<p>An extra is an optional dependency group.</p>
-<p>This:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;hkpug-ctf-tool[report]&quot;</span>
+<p>Or search your team code:</p>
+<div class="highlight"><pre><span></span><code>HKPUG-TEAM-AB12
 </code></pre></div>
-<p>does not mean "install a different package." It means:</p>
-<div class="highlight"><pre><span></span><code>install hkpug-ctf-tool plus the dependencies listed under the report extra
+<p>If the event site adds a participant dashboard later, it should link directly to
+the PR search for your team code.</p>
+<h2 id="reviewer-labels">Reviewer Labels</h2>
+<p>Maintainers can apply labels such as:</p>
+<div class="highlight"><pre><span></span><code>submission
+needs-review
+accepted
+needs-fix
+flag-01
+flag-02
 </code></pre></div>
-<p>Extras can change the dependency graph. That can change what gets installed.</p>
-<h2 id="lab-question">Lab Question</h2>
-<p>For any artifact, ask:</p>
-<ol>
-<li>Where did pip download it from?</li>
-<li>Is it a wheel or sdist?</li>
-<li>What version did pip select?</li>
-<li>What metadata changed the install?</li>
-<li>What code ran during build, install, import, or command execution?</li>
-</ol>
+<p>Participants do not need to manage labels. The title and team folder are enough
+for them to find their work.</p>
+<h2 id="community-mode">Community Mode</h2>
+<p>Community mode does not need encrypted PR submissions. Community players can
+solve locally, keep notes, and publish writeups after the official window.</p>
+<p>The same rule still helps:</p>
+<div class="highlight"><pre><span></span><code>one player fork = one visible progress place
+</code></pre></div>
 
 
 
@@ -1266,12 +1369,12 @@ means <code>setup.py</code> behavior.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../assets/scoreboard.js"></script>
+        <script src="../../../assets/scoreboard.js"></script>
       
     
   </body>

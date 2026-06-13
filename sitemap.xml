@@ -73,35 +73,35 @@
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/00-how-to-play/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/how-to-play/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/01-pip-index-basics/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/legacy-vs-modern-packaging/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/02-package-build-artifacts/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/package-build-artifacts/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/03-legacy-vs-modern-packaging/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/pip-index-basics/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/04-submission-and-certificates/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/reading-pip-output/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/05-reading-pip-output/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/submission-and-certificates/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/06-submission-pr-workflow/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/submission-pr-workflow/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
 </urlset>

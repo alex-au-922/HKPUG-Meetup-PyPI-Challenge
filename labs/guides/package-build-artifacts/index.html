@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/05-reading-pip-output/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/package-build-artifacts/">
       
       
-        <link rel="prev" href="../04-submission-and-certificates/">
+        <link rel="prev" href="../pip-index-basics/">
       
       
-        <link rel="next" href="../06-submission-pr-workflow/">
+        <link rel="next" href="../legacy-vs-modern-packaging/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Reading Pip Output - HKPUG PyPI 30-Day CTF</title>
+        <title>Package Build Artifacts - HKPUG PyPI 30-Day CTF</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../../styles/scoreboard.css">
+      <link rel="stylesheet" href="../../../styles/scoreboard.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reading-pip-output" class="md-skip">
+        <a href="#package-build-artifacts" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reading Pip Output
+              Package Build Artifacts
             
           </span>
         </div>
@@ -216,7 +216,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rules/" class="md-nav__link">
+      <a href="../../../rules/" class="md-nav__link">
         
   
   
@@ -290,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WORKING_FORMAT/" class="md-nav__link">
+      <a href="../../../WORKING_FORMAT/" class="md-nav__link">
         
   
   
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hints/" class="md-nav__link">
+      <a href="../../../hints/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scoreboard/" class="md-nav__link">
+      <a href="../../../scoreboard/" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorials
+    Labs
     
   </span>
   
@@ -390,7 +390,72 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Tutorials
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lab Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lab Guides
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -406,7 +471,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorial Index
+    Guide Index
     
   </span>
   
@@ -424,12 +489,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-how-to-play/" class="md-nav__link">
+      <a href="../how-to-play/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How To Play
+    How To Play Labs
     
   </span>
   
@@ -447,81 +512,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-pip-index-basics/" class="md-nav__link">
+      <a href="../pip-index-basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Pip Index Basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-package-build-artifacts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Package Build Artifacts
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-legacy-vs-modern-packaging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-submission-and-certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Submission And Certificates
     
   </span>
   
@@ -553,7 +549,7 @@
   
   
   <span class="md-ellipsis">
-    Reading Pip Output
+    Package Build Artifacts
     
   </span>
   
@@ -566,7 +562,7 @@
   
   
   <span class="md-ellipsis">
-    Reading Pip Output
+    Package Build Artifacts
     
   </span>
   
@@ -589,81 +585,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#always-know-the-command" class="md-nav__link">
+  <a href="#the-dumb-version" class="md-nav__link">
     <span class="md-ellipsis">
-      Always Know The Command
+      The Dumb Version
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-verbose-mode" class="md-nav__link">
+  <a href="#wheel" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Verbose Mode
+      Wheel
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lines-that-matter" class="md-nav__link">
+  <a href="#source-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Lines That Matter
+      Source Distribution
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-three-questions" class="md-nav__link">
+  <a href="#wheel-versus-sdist" class="md-nav__link">
     <span class="md-ellipsis">
-      The Three Questions
+      Wheel Versus Sdist
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#candidate-selection" class="md-nav__link">
+  <a href="#entry-points" class="md-nav__link">
     <span class="md-ellipsis">
-      Candidate Selection
+      Entry Points
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wheel-or-sdist" class="md-nav__link">
+  <a href="#extras" class="md-nav__link">
     <span class="md-ellipsis">
-      Wheel Or Sdist
+      Extras
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cache-confusion" class="md-nav__link">
+  <a href="#lab-question" class="md-nav__link">
     <span class="md-ellipsis">
-      Cache Confusion
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#after-install" class="md-nav__link">
-    <span class="md-ellipsis">
-      After Install
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stuck-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stuck Checklist
+      Lab Question
     </span>
   </a>
   
@@ -685,7 +663,76 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-submission-pr-workflow/" class="md-nav__link">
+      <a href="../legacy-vs-modern-packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Legacy Vs Modern Packaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-pip-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reading Pip Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submission-and-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submission And Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submission-pr-workflow/" class="md-nav__link">
         
   
   
@@ -707,73 +754,6 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Labs
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Labs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -783,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-01-index-recon/" class="md-nav__link">
+      <a href="../../flag-01-index-recon/" class="md-nav__link">
         
   
   
@@ -806,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-02-name-maze/" class="md-nav__link">
+      <a href="../../flag-02-name-maze/" class="md-nav__link">
         
   
   
@@ -829,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-03-resolver-duel/" class="md-nav__link">
+      <a href="../../flag-03-resolver-duel/" class="md-nav__link">
         
   
   
@@ -852,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-04-dependency-confusion/" class="md-nav__link">
+      <a href="../../flag-04-dependency-confusion/" class="md-nav__link">
         
   
   
@@ -875,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-05-wheel-autopsy/" class="md-nav__link">
+      <a href="../../flag-05-wheel-autopsy/" class="md-nav__link">
         
   
   
@@ -898,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-06-entry-point-ambush/" class="md-nav__link">
+      <a href="../../flag-06-entry-point-ambush/" class="md-nav__link">
         
   
   
@@ -921,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-07-legacy-sdist-trap/" class="md-nav__link">
+      <a href="../../flag-07-legacy-sdist-trap/" class="md-nav__link">
         
   
   
@@ -944,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-08-build-isolation-lab/" class="md-nav__link">
+      <a href="../../flag-08-build-isolation-lab/" class="md-nav__link">
         
   
   
@@ -967,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-09-startup-surprise/" class="md-nav__link">
+      <a href="../../flag-09-startup-surprise/" class="md-nav__link">
         
   
   
@@ -990,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-10-pin-hash-lock/" class="md-nav__link">
+      <a href="../../flag-10-pin-hash-lock/" class="md-nav__link">
         
   
   
@@ -1013,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-11-ci-publisher-trap/" class="md-nav__link">
+      <a href="../../flag-11-ci-publisher-trap/" class="md-nav__link">
         
   
   
@@ -1036,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-12-capstone-incident/" class="md-nav__link">
+      <a href="../../flag-12-capstone-incident/" class="md-nav__link">
         
   
   
@@ -1086,81 +1066,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#always-know-the-command" class="md-nav__link">
+  <a href="#the-dumb-version" class="md-nav__link">
     <span class="md-ellipsis">
-      Always Know The Command
+      The Dumb Version
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-verbose-mode" class="md-nav__link">
+  <a href="#wheel" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Verbose Mode
+      Wheel
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lines-that-matter" class="md-nav__link">
+  <a href="#source-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Lines That Matter
+      Source Distribution
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-three-questions" class="md-nav__link">
+  <a href="#wheel-versus-sdist" class="md-nav__link">
     <span class="md-ellipsis">
-      The Three Questions
+      Wheel Versus Sdist
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#candidate-selection" class="md-nav__link">
+  <a href="#entry-points" class="md-nav__link">
     <span class="md-ellipsis">
-      Candidate Selection
+      Entry Points
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wheel-or-sdist" class="md-nav__link">
+  <a href="#extras" class="md-nav__link">
     <span class="md-ellipsis">
-      Wheel Or Sdist
+      Extras
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cache-confusion" class="md-nav__link">
+  <a href="#lab-question" class="md-nav__link">
     <span class="md-ellipsis">
-      Cache Confusion
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#after-install" class="md-nav__link">
-    <span class="md-ellipsis">
-      After Install
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stuck-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stuck Checklist
+      Lab Question
     </span>
   </a>
   
@@ -1185,146 +1147,69 @@
   
 
 
-<h1 id="reading-pip-output">Reading Pip Output</h1>
-<p>This page is for the moment where you run pip and the output looks like a wall
-of text.</p>
-<p>You do not need to understand every line. You need to find the lines that answer
-the lab questions.</p>
-<h2 id="always-know-the-command">Always Know The Command</h2>
-<p>Before reading output, write down the exact command:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-vv<span class="w"> </span>--index-url<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CHALLENGE_INDEX_URL</span><span class="s2">&quot;</span><span class="w"> </span>hkpug-ctf-hello
-</code></pre></div>
-<p>The command tells you:</p>
+<h1 id="package-build-artifacts">Package Build Artifacts</h1>
+<p>This page explains the files pip installs.</p>
+<h2 id="the-dumb-version">The Dumb Version</h2>
+<p>A Python package is not just a folder of code. Pip usually installs a package
+file.</p>
+<p>The two important package file types are:</p>
 <ul>
-<li>which package was requested</li>
-<li>which index was used</li>
-<li>whether extra indexes were used</li>
-<li>whether wheels or source builds were allowed</li>
-<li>whether a requirements file was involved</li>
+<li>wheel</li>
+<li>source distribution, usually called sdist</li>
 </ul>
-<h2 id="use-verbose-mode">Use Verbose Mode</h2>
-<p>Use <code>-v</code>, <code>-vv</code>, or <code>-vvv</code> when the normal output is too quiet.</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-vv<span class="w"> </span>...
+<h2 id="wheel">Wheel</h2>
+<p>A wheel is a built package. It usually ends with:</p>
+<div class="highlight"><pre><span></span><code>.whl
 </code></pre></div>
-<p>For these labs, <code>-vv</code> is usually enough.</p>
-<h2 id="lines-that-matter">Lines That Matter</h2>
-<p>Look for these phrases.</p>
-<table>
-<thead>
-<tr>
-<th>Output phrase</th>
-<th>What it usually means</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Looking in indexes</code></td>
-<td>pip is telling you which indexes it will search</td>
-</tr>
-<tr>
-<td><code>Collecting NAME</code></td>
-<td>pip is trying to satisfy a requirement</td>
-</tr>
-<tr>
-<td><code>Found link</code></td>
-<td>pip found a possible package file</td>
-</tr>
-<tr>
-<td><code>Skipping link</code></td>
-<td>pip rejected a possible file and usually says why</td>
-</tr>
-<tr>
-<td><code>Using cached</code></td>
-<td>pip reused a local cached file</td>
-</tr>
-<tr>
-<td><code>Downloading</code></td>
-<td>pip selected and fetched a file</td>
-</tr>
-<tr>
-<td><code>Installing build dependencies</code></td>
-<td>pip is building from source with build isolation</td>
-</tr>
-<tr>
-<td><code>Building wheel for NAME</code></td>
-<td>pip is building a wheel locally</td>
-</tr>
-<tr>
-<td><code>Successfully built NAME</code></td>
-<td>local build completed</td>
-</tr>
-<tr>
-<td><code>Successfully installed</code></td>
-<td>the final selected distributions are installed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="the-three-questions">The Three Questions</h2>
-<p>For most flags, reduce the output to three answers:</p>
-<div class="highlight"><pre><span></span><code>Requested: what did the victim ask for?
-Candidates: what possible files did pip see?
-Selected: which file/version/index won?
+<p>A wheel is a zip file. You can list it:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>--list<span class="w"> </span>dist/example.whl
 </code></pre></div>
-<p>If you can answer those, you are usually close.</p>
-<h2 id="candidate-selection">Candidate Selection</h2>
-<p>A candidate is one possible package file pip might install.</p>
-<p>Candidates can lose because:</p>
+<p>You can extract it:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>--extract<span class="w"> </span>dist/example.whl<span class="w"> </span>/tmp/example-wheel
+</code></pre></div>
+<p>Important files inside a wheel:</p>
 <ul>
-<li>the version does not match the requirement</li>
-<li>the wheel tag does not match your Python or platform</li>
-<li>the package needs a Python version you do not have</li>
-<li>hashes are required and the hash is missing or wrong</li>
-<li>a newer or better-matching candidate exists</li>
+<li><code>METADATA</code>: package name, version, dependencies, extras, entry points hints</li>
+<li><code>WHEEL</code>: wheel format information</li>
+<li><code>RECORD</code>: installed file list and hashes</li>
+<li>package files: the Python code</li>
 </ul>
-<p>Do not guess. Search the verbose output for why pip skipped a link.</p>
-<h2 id="wheel-or-sdist">Wheel Or Sdist</h2>
-<p>This is one of the most important lab questions.</p>
-<p>If pip downloads a <code>.whl</code>, it is using a wheel:</p>
-<div class="highlight"><pre><span></span><code>Downloading hkpug_ctf_hello-1.0.0-py3-none-any.whl
+<h2 id="source-distribution">Source Distribution</h2>
+<p>An sdist is source code that may need to be built before install.</p>
+<p>It usually ends with:</p>
+<div class="highlight"><pre><span></span><code>.tar.gz
 </code></pre></div>
-<p>If pip downloads <code>.tar.gz</code> and then builds, it is using an sdist:</p>
-<div class="highlight"><pre><span></span><code>Downloading hkpug-ctf-legacy-1.0.0.tar.gz
-Installing build dependencies
-Building wheel for hkpug-ctf-legacy
+<p>The scary part: source builds can run build logic. In old projects, that often
+means <code>setup.py</code> behavior.</p>
+<h2 id="wheel-versus-sdist">Wheel Versus Sdist</h2>
+<p>Ask this every time:</p>
+<div class="highlight"><pre><span></span><code>Did pip install a ready-made wheel, or did pip build from source?
 </code></pre></div>
-<p>Wheel and sdist paths can behave differently.</p>
-<h2 id="cache-confusion">Cache Confusion</h2>
-<p>Pip may reuse files from its cache. That can confuse CTF testing.</p>
-<p>If you suspect cache confusion, use a fresh virtual environment and add:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-vv<span class="w"> </span>...
+<p>That one question changes where code may run.</p>
+<h2 id="entry-points">Entry Points</h2>
+<p>Some packages install commands.</p>
+<p>For example, installing a package can create a command like:</p>
+<div class="highlight"><pre><span></span><code>hkpug-proof
 </code></pre></div>
-<p>Also check what is already installed:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>list
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>PACKAGE_NAME
+<p>That command may run code from the package. Flag 06 uses this idea.</p>
+<h2 id="extras">Extras</h2>
+<p>An extra is an optional dependency group.</p>
+<p>This:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;hkpug-ctf-tool[report]&quot;</span>
 </code></pre></div>
-<h2 id="after-install">After Install</h2>
-<p>Once a package is installed, inspect it:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>-f<span class="w"> </span>PACKAGE_NAME
+<p>does not mean "install a different package." It means:</p>
+<div class="highlight"><pre><span></span><code>install hkpug-ctf-tool plus the dependencies listed under the report extra
 </code></pre></div>
-<p>For Python metadata:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
-<span class="s">import importlib.metadata</span>
-
-<span class="s">dist = importlib.metadata.distribution(&quot;PACKAGE_NAME&quot;)</span>
-<span class="s">print(dist.metadata[&quot;Name&quot;], dist.version)</span>
-<span class="s">for ep in dist.entry_points:</span>
-<span class="s">    print(ep)</span>
-<span class="s">PY</span>
-</code></pre></div>
-<p>Replace <code>PACKAGE_NAME</code> with the real toy package name from the lab.</p>
-<h2 id="stuck-checklist">Stuck Checklist</h2>
-<p>If you are stuck, answer these in order:</p>
+<p>Extras can change the dependency graph. That can change what gets installed.</p>
+<h2 id="lab-question">Lab Question</h2>
+<p>For any artifact, ask:</p>
 <ol>
-<li>What package name did pip receive?</li>
-<li>What normalized name did pip search?</li>
-<li>Which indexes did pip search?</li>
-<li>What versions did pip see?</li>
-<li>Which links did pip skip?</li>
-<li>Which file did pip download or build?</li>
-<li>Did the flag happen during build, install, startup, import, or command run?</li>
+<li>Where did pip download it from?</li>
+<li>Is it a wheel or sdist?</li>
+<li>What version did pip select?</li>
+<li>What metadata changed the install?</li>
+<li>What code ran during build, install, import, or command execution?</li>
 </ol>
-<p>You should not need to search the web to answer those questions. The answer
-should be in the command, pip output, package metadata, or lab files.</p>
 
 
 
@@ -1379,12 +1264,12 @@ should be in the command, pip output, package metadata, or lab files.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../assets/scoreboard.js"></script>
+        <script src="../../../assets/scoreboard.js"></script>
       
     
   </body>

@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/tutorials/03-legacy-vs-modern-packaging/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/guides/pip-index-basics/">
       
       
-        <link rel="prev" href="../02-package-build-artifacts/">
+        <link rel="prev" href="../how-to-play/">
       
       
-        <link rel="next" href="../04-submission-and-certificates/">
+        <link rel="next" href="../package-build-artifacts/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Legacy Vs Modern Packaging - HKPUG PyPI 30-Day CTF</title>
+        <title>Pip Index Basics - HKPUG PyPI 30-Day CTF</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../../styles/scoreboard.css">
+      <link rel="stylesheet" href="../../../styles/scoreboard.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#legacy-setuppy-versus-modern-packaging" class="md-skip">
+        <a href="#pip-index-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Legacy Vs Modern Packaging
+              Pip Index Basics
             
           </span>
         </div>
@@ -216,7 +216,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href="../../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rules/" class="md-nav__link">
+      <a href="../../../rules/" class="md-nav__link">
         
   
   
@@ -290,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WORKING_FORMAT/" class="md-nav__link">
+      <a href="../../../WORKING_FORMAT/" class="md-nav__link">
         
   
   
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hints/" class="md-nav__link">
+      <a href="../../../hints/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scoreboard/" class="md-nav__link">
+      <a href="../../../scoreboard/" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorials
+    Labs
     
   </span>
   
@@ -390,7 +390,72 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Tutorials
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lab Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lab Guides
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -406,7 +471,7 @@
   
   
   <span class="md-ellipsis">
-    Tutorial Index
+    Guide Index
     
   </span>
   
@@ -424,58 +489,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-how-to-play/" class="md-nav__link">
+      <a href="../how-to-play/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How To Play
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-pip-index-basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pip Index Basics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-package-build-artifacts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Package Build Artifacts
+    How To Play Labs
     
   </span>
   
@@ -507,7 +526,7 @@
   
   
   <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
+    Pip Index Basics
     
   </span>
   
@@ -520,7 +539,7 @@
   
   
   <span class="md-ellipsis">
-    Legacy Vs Modern Packaging
+    Pip Index Basics
     
   </span>
   
@@ -543,45 +562,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-simple-story" class="md-nav__link">
+  <a href="#what-is-pip" class="md-nav__link">
     <span class="md-ellipsis">
-      The Simple Story
+      What Is Pip?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-setuppy-is-interesting" class="md-nav__link">
+  <a href="#what-is-pypi" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Setup.py Is Interesting
+      What Is PyPI?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-build-isolation" class="md-nav__link">
+  <a href="#what-is-an-index" class="md-nav__link">
     <span class="md-ellipsis">
-      What Is Build Isolation?
+      What Is An Index?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#modern-does-not-mean-safe" class="md-nav__link">
+  <a href="#what-is-simple" class="md-nav__link">
     <span class="md-ellipsis">
-      Modern Does Not Mean Safe
+      What Is /simple/?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-to-look-for-in-labs" class="md-nav__link">
+  <a href="#one-index" class="md-nav__link">
     <span class="md-ellipsis">
-      What To Look For In Labs
+      One Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#name-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Name Normalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Commands
     </span>
   </a>
   
@@ -603,12 +649,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-submission-and-certificates/" class="md-nav__link">
+      <a href="../package-build-artifacts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Submission And Certificates
+    Package Build Artifacts
     
   </span>
   
@@ -626,7 +672,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-reading-pip-output/" class="md-nav__link">
+      <a href="../legacy-vs-modern-packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Legacy Vs Modern Packaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-pip-output/" class="md-nav__link">
         
   
   
@@ -649,7 +718,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-submission-pr-workflow/" class="md-nav__link">
+      <a href="../submission-and-certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submission And Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submission-pr-workflow/" class="md-nav__link">
         
   
   
@@ -671,73 +763,6 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Labs
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Labs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -747,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-01-index-recon/" class="md-nav__link">
+      <a href="../../flag-01-index-recon/" class="md-nav__link">
         
   
   
@@ -770,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-02-name-maze/" class="md-nav__link">
+      <a href="../../flag-02-name-maze/" class="md-nav__link">
         
   
   
@@ -793,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-03-resolver-duel/" class="md-nav__link">
+      <a href="../../flag-03-resolver-duel/" class="md-nav__link">
         
   
   
@@ -816,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-04-dependency-confusion/" class="md-nav__link">
+      <a href="../../flag-04-dependency-confusion/" class="md-nav__link">
         
   
   
@@ -839,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-05-wheel-autopsy/" class="md-nav__link">
+      <a href="../../flag-05-wheel-autopsy/" class="md-nav__link">
         
   
   
@@ -862,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-06-entry-point-ambush/" class="md-nav__link">
+      <a href="../../flag-06-entry-point-ambush/" class="md-nav__link">
         
   
   
@@ -885,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-07-legacy-sdist-trap/" class="md-nav__link">
+      <a href="../../flag-07-legacy-sdist-trap/" class="md-nav__link">
         
   
   
@@ -908,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-08-build-isolation-lab/" class="md-nav__link">
+      <a href="../../flag-08-build-isolation-lab/" class="md-nav__link">
         
   
   
@@ -931,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-09-startup-surprise/" class="md-nav__link">
+      <a href="../../flag-09-startup-surprise/" class="md-nav__link">
         
   
   
@@ -954,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-10-pin-hash-lock/" class="md-nav__link">
+      <a href="../../flag-10-pin-hash-lock/" class="md-nav__link">
         
   
   
@@ -977,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-11-ci-publisher-trap/" class="md-nav__link">
+      <a href="../../flag-11-ci-publisher-trap/" class="md-nav__link">
         
   
   
@@ -1000,7 +1025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../labs/flag-12-capstone-incident/" class="md-nav__link">
+      <a href="../../flag-12-capstone-incident/" class="md-nav__link">
         
   
   
@@ -1050,45 +1075,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-simple-story" class="md-nav__link">
+  <a href="#what-is-pip" class="md-nav__link">
     <span class="md-ellipsis">
-      The Simple Story
+      What Is Pip?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-setuppy-is-interesting" class="md-nav__link">
+  <a href="#what-is-pypi" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Setup.py Is Interesting
+      What Is PyPI?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-build-isolation" class="md-nav__link">
+  <a href="#what-is-an-index" class="md-nav__link">
     <span class="md-ellipsis">
-      What Is Build Isolation?
+      What Is An Index?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#modern-does-not-mean-safe" class="md-nav__link">
+  <a href="#what-is-simple" class="md-nav__link">
     <span class="md-ellipsis">
-      Modern Does Not Mean Safe
+      What Is /simple/?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-to-look-for-in-labs" class="md-nav__link">
+  <a href="#one-index" class="md-nav__link">
     <span class="md-ellipsis">
-      What To Look For In Labs
+      One Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#name-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Name Normalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Commands
     </span>
   </a>
   
@@ -1113,53 +1165,86 @@
   
 
 
-<h1 id="legacy-setuppy-versus-modern-packaging">Legacy Setup.py Versus Modern Packaging</h1>
-<p>This page explains why old packaging behavior matters.</p>
-<h2 id="the-simple-story">The Simple Story</h2>
-<p>Old Python packages often used a file named:</p>
-<div class="highlight"><pre><span></span><code>setup.py
+<h1 id="pip-index-basics">Pip Index Basics</h1>
+<p>This page explains the first mental model.</p>
+<h2 id="what-is-pip">What Is Pip?</h2>
+<p><code>pip</code> is the tool that installs Python packages.</p>
+<p>When you type:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
 </code></pre></div>
-<p>That file is Python code. If a tool runs it, code can run.</p>
-<p>Modern packages often use:</p>
-<div class="highlight"><pre><span></span><code>pyproject.toml
-</code></pre></div>
-<p>That file declares the build system more explicitly.</p>
-<h2 id="why-setuppy-is-interesting">Why Setup.py Is Interesting</h2>
-<p><code>setup.py</code> can describe the package, but it can also execute Python code during
-some old build paths.</p>
-<p>That means a package can behave differently depending on how it is installed:</p>
-<ul>
-<li>from a wheel</li>
-<li>from an sdist</li>
-<li>by direct <code>setup.py</code> invocation</li>
-<li>by a modern build frontend</li>
-</ul>
-<p>The labs do not ask you to memorize history. They ask you to observe which path
-ran.</p>
-<h2 id="what-is-build-isolation">What Is Build Isolation?</h2>
-<p>Build isolation means the build happens in a temporary environment instead of
-your normal environment.</p>
-<p>This helps because the build sees fewer accidental packages and variables.</p>
-<p>It does not make malicious packages safe. It narrows where the risk lives.</p>
-<h2 id="modern-does-not-mean-safe">Modern Does Not Mean Safe</h2>
-<p>Modern packaging helps because:</p>
-<ul>
-<li>build requirements are declared</li>
-<li>build environments can be isolated</li>
-<li>wheels avoid running project build logic at install time</li>
-<li>hashes and lockfiles can detect artifact swaps</li>
-</ul>
-<p>But if you install and run a malicious package, Python code can still run.</p>
-<h2 id="what-to-look-for-in-labs">What To Look For In Labs</h2>
-<p>When a lab mentions legacy packaging, ask:</p>
+<p>you are asking pip to:</p>
 <ol>
-<li>Is pip using a wheel or sdist?</li>
-<li>Is a build step happening?</li>
-<li>Is <code>setup.py</code> involved?</li>
-<li>Is <code>pyproject.toml</code> involved?</li>
-<li>Does isolation change what the build can see?</li>
+<li>find a package named <code>requests</code></li>
+<li>choose a version</li>
+<li>download a file</li>
+<li>install that file into your Python environment</li>
 </ol>
-<p>The final mile is identifying the exact phase where the fake flag appears.</p>
+<h2 id="what-is-pypi">What Is PyPI?</h2>
+<p>PyPI is the default public package index. It is where pip usually looks.</p>
+<p>This challenge does <strong>not</strong> use real PyPI as the target. We use toy indexes that
+look like PyPI indexes.</p>
+<h2 id="what-is-an-index">What Is An Index?</h2>
+<p>An index is a website or folder that says:</p>
+<div class="highlight"><pre><span></span><code>Here are package names.
+Here are package files for each name.
+Here are links to download those files.
+</code></pre></div>
+<p>A very small index can just be HTML files.</p>
+<h2 id="what-is-simple">What Is <code>/simple/</code>?</h2>
+<p>Python package indexes expose a "simple" API. In this challenge, it often looks
+like:</p>
+<div class="highlight"><pre><span></span><code>indexes/trusted/simple/
+  index.html
+  hkpug-ctf-hello/
+    index.html
+packages/
+  hkpug_ctf_hello-1.0.0-py3-none-any.whl
+</code></pre></div>
+<p>The root page lists projects. The project page lists package files.</p>
+<h2 id="one-index">One Index</h2>
+<p>This asks pip to use one trusted toy index:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--index-url<span class="w"> </span>file://<span class="nv">$PWD</span>/indexes/trusted/simple<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>hkpug-ctf-hello
+</code></pre></div>
+<p>The key phrase is <code>--index-url</code>.</p>
+<h2 id="two-indexes">Two Indexes</h2>
+<p>This asks pip to use one main index and one extra index:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--index-url<span class="w"> </span>file://<span class="nv">$PWD</span>/indexes/trusted/simple<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--extra-index-url<span class="w"> </span>file://<span class="nv">$PWD</span>/indexes/public-sim/simple<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>hkpug-ctf-hello
+</code></pre></div>
+<p>The dangerous phrase is <code>--extra-index-url</code>.</p>
+<p>If the same package exists in both places, you must ask:</p>
+<div class="highlight"><pre><span></span><code>Which candidate does pip think is best?
+</code></pre></div>
+<p>That question powers several flags.</p>
+<h2 id="name-normalization">Name Normalization</h2>
+<p>Package names are normalized before lookup.</p>
+<p>These can point to the same normalized name:</p>
+<ul>
+<li><code>HKPUG_CTF.Hello</code></li>
+<li><code>hkpug-ctf-hello</code></li>
+<li><code>hkpug.ctf_hello</code></li>
+</ul>
+<p>They normalize to:</p>
+<div class="highlight"><pre><span></span><code>hkpug-ctf-hello
+</code></pre></div>
+<p>So when a lab gives you weird punctuation, do not panic. Normalize the name and
+look for the matching project page.</p>
+<h2 id="useful-commands">Useful Commands</h2>
+<p>Run pip with more detail:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-vv<span class="w"> </span>...
+</code></pre></div>
+<p>Download without installing:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>download<span class="w"> </span>...
+</code></pre></div>
+<p>Show installed package details:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>hkpug-ctf-hello
+</code></pre></div>
+<p>The flag pages give you the map for each solve. These guides are backup
+reference when you want one idea explained again.</p>
 
 
 
@@ -1214,12 +1299,12 @@ your normal environment.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../assets/scoreboard.js"></script>
+        <script src="../../../assets/scoreboard.js"></script>
       
     
   </body>
