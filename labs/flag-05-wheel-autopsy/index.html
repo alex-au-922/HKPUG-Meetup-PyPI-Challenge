@@ -811,6 +811,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1196,6 +1214,37 @@
 special layout. You can open it before installing it.</p>
 <p>This lab teaches you that package review is not magic. You can inspect metadata,
 installed files, entry points, and hashes with ordinary tools.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>Inside a wheel, the most important directory usually ends with <code>.dist-info</code>.</p>
+<p>Look there first:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>METADATA</code></td>
+<td>package name, version, dependencies, extras</td>
+</tr>
+<tr>
+<td><code>WHEEL</code></td>
+<td>wheel format and compatibility information</td>
+</tr>
+<tr>
+<td><code>RECORD</code></td>
+<td>file list and hashes for installed files</td>
+</tr>
+<tr>
+<td>entry point metadata</td>
+<td>commands the package may install</td>
+</tr>
+</tbody>
+</table>
+<p>You are not hunting for a random hidden string. You are reading the package's
+own shipping label and file list.</p>
 <h2 id="story">Story</h2>
 <p>A wheel was installed in the victim environment. Something about it leads to the
 flag. Before trusting it, you need to open the wheel and read what it contains.</p>

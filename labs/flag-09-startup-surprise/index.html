@@ -903,6 +903,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1199,6 +1217,20 @@ script. That is a good mental model, but it has exceptions.</p>
 Python, and lines beginning with <code>import</code> can run at interpreter startup.</p>
 <p>This lab uses a harmless toy <code>.pth</code> effect to teach you to inspect installed
 files when behavior appears before your app code runs.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p><code>site-packages</code> is where packages are installed inside your virtual environment.
+Python checks that location during startup.</p>
+<p>A <code>.pth</code> file can do two things:</p>
+<ul>
+<li>add an import path</li>
+<li>run an <code>import ...</code> line during startup</li>
+</ul>
+<p>That means the victim script may be innocent. The marker can appear before the
+victim imports the suspicious package directly.</p>
+<p>For this flag, separate the timeline:</p>
+<div class="highlight"><pre><span></span><code>install package -&gt; start Python -&gt; victim code runs
+</code></pre></div>
+<p>The interesting behavior may happen in the middle step.</p>
 <h2 id="story">Story</h2>
 <p>The victim installs a package and then starts Python. A marker appears under
 <code>artifacts/</code>, even though the victim script does not import the suspicious

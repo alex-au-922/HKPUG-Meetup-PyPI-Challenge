@@ -857,6 +857,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1198,6 +1216,37 @@ may need to run build logic to create a wheel first.</p>
 <p>Older Python packages often used <code>setup.py</code>. That file is Python code. If a
 build path runs it, the build can have side effects. In this CTF, the side
 effect is harmless: a local fake flag marker under <code>artifacts/</code>.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>The big question is artifact type:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>What pip receives</th>
+<th>Why you care</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wheel</td>
+<td>already built package</td>
+<td>less build logic needed locally</td>
+</tr>
+<tr>
+<td>sdist</td>
+<td>source archive</td>
+<td>pip may need to run build logic</td>
+</tr>
+</tbody>
+</table>
+<p>Legacy <code>setup.py</code> is interesting because it is executable Python code. The lab
+does not require packaging history. It requires observation:</p>
+<ol>
+<li>Did pip download a wheel or an sdist?</li>
+<li>Did pip build a wheel locally?</li>
+<li>Which build step wrote the marker?</li>
+</ol>
+<p>Use verbose output as your timeline.</p>
 <h2 id="story">Story</h2>
 <p>The victim is forced to install from a source distribution. A legacy
 <code>setup.py</code> path writes a local marker during the controlled build.</p>

@@ -880,6 +880,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1199,6 +1217,34 @@ wheel locally first. Modern Python projects describe their build tools in
 <p>Build isolation means pip creates a temporary build environment and installs the
 build requirements there. This is usually safer and more reproducible, but it
 also means build dependencies have their own resolver story.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>Runtime dependencies and build dependencies are not the same.</p>
+<table>
+<thead>
+<tr>
+<th>Dependency type</th>
+<th>Where it appears</th>
+<th>When it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>build dependency</td>
+<td><code>pyproject.toml</code> <code>[build-system]</code></td>
+<td>before the package is built</td>
+</tr>
+<tr>
+<td>runtime dependency</td>
+<td>package metadata or requirements file</td>
+<td>after the package is installed</td>
+</tr>
+</tbody>
+</table>
+<p>With build isolation, pip creates a temporary environment and installs build
+dependencies there. That means you may see pip resolving packages before the
+victim package itself exists as a wheel.</p>
+<p>In this flag, the build log is the map. Search for build dependency installation
+before looking at normal runtime imports.</p>
 <h2 id="story">Story</h2>
 <p>The victim package is a source distribution. Its <code>pyproject.toml</code> asks for a
 toy build helper. Two versions of that helper exist in the challenge ecosystem.

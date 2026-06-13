@@ -765,6 +765,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1198,6 +1216,39 @@ can be many versions, several indexes, wheels for different Python versions,
 and requirements like <code>&lt;2</code> or <code>&gt;=1.4</code>.</p>
 <p>The resolver is the part of pip that chooses one candidate. This lab teaches you
 to slow down and answer: "Why did pip choose that file instead of this one?"</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>A candidate is one possible package file.</p>
+<p>Pip may reject a candidate because:</p>
+<ul>
+<li>the version is outside the requirement range</li>
+<li>the wheel is not compatible with your Python</li>
+<li>a newer matching version exists</li>
+<li>hashes are required and the file does not match</li>
+<li>pre-release versions are not allowed</li>
+</ul>
+<p>Your job is to turn pip output into a small table:</p>
+<table>
+<thead>
+<tr>
+<th>Candidate</th>
+<th>Accepted or skipped?</th>
+<th>Why?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version A</td>
+<td>skipped</td>
+<td>does not match requirement</td>
+</tr>
+<tr>
+<td>version B</td>
+<td>accepted</td>
+<td>best matching candidate</td>
+</tr>
+</tbody>
+</table>
+<p>Do not start by guessing the winning version. First list what pip can see.</p>
 <h2 id="story">Story</h2>
 <p>The victim app asks for a toy package called <code>hkpug-ctf-widget</code>. The challenge
 index contains several versions. Some look usable, some are too old, and one is

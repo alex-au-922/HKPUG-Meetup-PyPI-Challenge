@@ -926,6 +926,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1198,6 +1216,43 @@ like <code>package==1.2.3</code> gives pip much less room. A hash says: "even if
 and version match, the file bytes must match this exact fingerprint."</p>
 <p>This lab teaches the difference between "I asked for roughly this dependency"
 and "I can reproduce exactly this install."</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>Dependency control has levels:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement style</th>
+<th>Example</th>
+<th>What it protects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loose range</td>
+<td><code>pkg&gt;=1.0</code></td>
+<td>allows many future versions</td>
+</tr>
+<tr>
+<td>exact pin</td>
+<td><code>pkg==1.2.3</code></td>
+<td>fixes the version</td>
+</tr>
+<tr>
+<td>hash check</td>
+<td><code>--hash=sha256:...</code></td>
+<td>fixes the exact file bytes</td>
+</tr>
+<tr>
+<td>lockfile</td>
+<td>generated dependency record</td>
+<td>fixes the whole dependency decision</td>
+</tr>
+</tbody>
+</table>
+<p>The trap is that "same name and version" is not always enough. If the exact file
+matters, use hashes or a lock process that records hashes.</p>
+<p>In this flag you must do both sides: show the weak install can be abused, then
+show the fixed install rejects the unsafe candidate.</p>
 <h2 id="story">Story</h2>
 <p>The victim app has a weak requirements file. A toy malicious candidate can win
 without changing the victim source code. Later, you must patch the requirements

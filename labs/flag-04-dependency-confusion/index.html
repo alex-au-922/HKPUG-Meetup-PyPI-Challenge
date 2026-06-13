@@ -788,6 +788,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1198,6 +1216,21 @@ but the installer can also see a public-looking package with the same name.</p>
 <p>If both sources are searched together, pip may choose the candidate that best
 matches its resolver rules. A higher version from the wrong place can beat the
 package you expected.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>The subtle point is that <code>--extra-index-url</code> adds more candidates. It is not a
+clean security boundary.</p>
+<p>Think of pip seeing one combined candidate pool:</p>
+<div class="highlight"><pre><span></span><code>private index candidates + extra index candidates -&gt; resolver chooses one
+</code></pre></div>
+<p>So the lab question is not only "which index did we trust?" It is:</p>
+<ol>
+<li>Which package name did the victim request?</li>
+<li>Which indexes contained that name?</li>
+<li>Which versions existed in each index?</li>
+<li>Which candidate did pip choose?</li>
+</ol>
+<p>Once you can answer those four questions, the exploit and the defense are both
+much easier to explain.</p>
 <h2 id="story">Story</h2>
 <p>The victim app trusts a private toy index but also uses a simulated public toy
 index. The same package name exists in both places.</p>

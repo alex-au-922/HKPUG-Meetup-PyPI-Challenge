@@ -970,6 +970,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1093,6 +1102,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1197,6 +1215,20 @@ local, harmless, and designed to prove a packaging weakness.</p>
 <p>You are not attacking the real Python ecosystem. You are showing that you can
 think like both sides: the attacker who understands pip behavior, and the
 maintainer who can remove the weakness.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>The capstone is less about learning a new trick and more about choosing the
+right old trick.</p>
+<p>Draw the install path first:</p>
+<div class="highlight"><pre><span></span><code>victim requirement -&gt; package name normalization -&gt; indexes searched
+-&gt; candidates found -&gt; artifact selected -&gt; code path that captures proof
+</code></pre></div>
+<p>Then mark each part as known or unknown. Do not build a package until you know
+which selection rule you are trying to influence.</p>
+<p>A good capstone solve has two halves:</p>
+<ul>
+<li>offense: prove your challenge-owned artifact was selected</li>
+<li>defense: make the same selection impossible or harmless</li>
+</ul>
 <h2 id="story">Story</h2>
 <p>The victim service installs dependencies from a mixed challenge ecosystem. You
 receive a toy package namespace, a private-looking index, a public-looking

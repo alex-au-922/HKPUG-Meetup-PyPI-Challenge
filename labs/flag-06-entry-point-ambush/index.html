@@ -834,6 +834,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1200,6 +1218,20 @@ package named <code>hkpug-ctf-tool</code>, then suddenly get a command named
 <p>That command is usually created from package metadata called an entry point.
 The code may not run during installation, but it can run the moment a user calls
 the command.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>An entry point is metadata that says:</p>
+<div class="highlight"><pre><span></span><code>command name -&gt; Python module:function
+</code></pre></div>
+<p>After install, pip creates a small command wrapper in the virtual environment.
+When the user runs that command, Python calls the target function.</p>
+<p>Extras are different. An extra is an optional dependency group:</p>
+<div class="highlight"><pre><span></span><code>package[extra-name]
+</code></pre></div>
+<p>For this flag, keep the two ideas separate:</p>
+<ul>
+<li>entry point: what command gets created?</li>
+<li>extra: did installing with <code>[something]</code> pull in more packages?</li>
+</ul>
 <h2 id="story">Story</h2>
 <p>The victim workflow installs a toy package and then runs a helper command from
 that package. The package has normal-looking metadata, but one console script

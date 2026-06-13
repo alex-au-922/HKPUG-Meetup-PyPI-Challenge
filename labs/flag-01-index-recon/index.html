@@ -719,6 +719,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1199,6 +1217,38 @@ give it <code>--index-url</code>.</p>
 <p>An index is just a website with a simple listing of package files. In this lab,
 you learn to point pip at the toy challenge index and prove that real PyPI was
 not involved.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>For this flag, think of the index as three layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index root</td>
+<td>the page that lists project names</td>
+</tr>
+<tr>
+<td>project page</td>
+<td>the page for one normalized package name</td>
+</tr>
+<tr>
+<td>artifact link</td>
+<td>the wheel or source file pip can download</td>
+</tr>
+</tbody>
+</table>
+<p>Pip is not doing a broad web search. It reads the index pages, follows package
+links, then chooses a file. Your evidence should connect those three layers.</p>
+<p>When you run with <code>-vv</code>, look for:</p>
+<ul>
+<li>the index URL pip searched</li>
+<li>the links pip found</li>
+<li>the artifact pip downloaded or installed</li>
+</ul>
 <h2 id="story">Story</h2>
 <p>You are given a package named <code>hkpug-ctf-hello</code>. It is not meant to exist on
 real PyPI. It exists only in the challenge ecosystem.</p>

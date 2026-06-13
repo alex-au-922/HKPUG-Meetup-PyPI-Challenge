@@ -742,6 +742,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1095,6 +1104,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mini-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#story" class="md-nav__link">
     <span class="md-ellipsis">
       Story
@@ -1198,6 +1216,36 @@ maintainers.</p>
 <p>For Python package indexes, runs of <code>.</code>, <code>_</code>, and <code>-</code> are treated similarly for
 the project URL. That means names that look different to a human can point to
 the same normalized project page.</p>
+<h2 id="mini-tutorial">Mini Tutorial</h2>
+<p>There are two names in your head:</p>
+<table>
+<thead>
+<tr>
+<th>Name type</th>
+<th>Example</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>display spelling</td>
+<td><code>HKPUG_CTF.Normalize.Me</code></td>
+<td>what a human typed</td>
+</tr>
+<tr>
+<td>lookup spelling</td>
+<td><code>hkpug-ctf-normalize-me</code></td>
+<td>what the index page usually uses</td>
+</tr>
+</tbody>
+</table>
+<p>The quick normalization rule for this challenge:</p>
+<ol>
+<li>lowercase the name</li>
+<li>replace runs of <code>.</code>, <code>_</code>, and <code>-</code> with one <code>-</code></li>
+</ol>
+<p>So do not solve this by staring at punctuation. Convert each candidate to its
+lookup spelling, then compare project pages.</p>
 <h2 id="story">Story</h2>
 <p>The challenge gives you several package name spellings. Some are noisy on
 purpose. Your job is to normalize them, find the one real project page in the
