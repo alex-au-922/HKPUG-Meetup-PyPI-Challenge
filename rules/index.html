@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-11-wheel-autopsy/">
+        <link rel="canonical" href="https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/rules/">
       
       
-        <link rel="prev" href="../flag-08-extra-index-confusion/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../flag-16-legacy-sdist-trap/">
+        <link rel="next" href="../WORKING_FORMAT/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Flag 05 Wheel Autopsy - HKPUG PyPI 30-Day CTF</title>
+        <title>Rules - HKPUG PyPI 30-Day CTF</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../../styles/scoreboard.css">
+      <link rel="stylesheet" href="../styles/scoreboard.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#flag-05-wheel-autopsy" class="md-skip">
+        <a href="#rules" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href=".." title="HKPUG PyPI 30-Day CTF" class="md-header__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flag 05 Wheel Autopsy
+              Rules
             
           </span>
         </div>
@@ -216,7 +216,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
+    <a href=".." title="HKPUG PyPI 30-Day CTF" class="md-nav__button md-logo" aria-label="HKPUG PyPI 30-Day CTF" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -265,10 +265,92 @@
       
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Rules
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rules
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Boundary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submission-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submission Rule
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../WORKING_FORMAT/" class="md-nav__link">
+      <a href="../WORKING_FORMAT/" class="md-nav__link">
         
   
   
@@ -290,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scoreboard/" class="md-nav__link">
+      <a href="../scoreboard/" class="md-nav__link">
         
   
   
@@ -327,10 +409,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -343,8 +425,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
@@ -357,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         
   
   
@@ -380,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/00-how-to-play/" class="md-nav__link">
+      <a href="../tutorials/00-how-to-play/" class="md-nav__link">
         
   
   
@@ -403,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/01-pip-index-basics/" class="md-nav__link">
+      <a href="../tutorials/01-pip-index-basics/" class="md-nav__link">
         
   
   
@@ -426,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/02-package-build-artifacts/" class="md-nav__link">
+      <a href="../tutorials/02-package-build-artifacts/" class="md-nav__link">
         
   
   
@@ -449,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/03-legacy-vs-modern-packaging/" class="md-nav__link">
+      <a href="../tutorials/03-legacy-vs-modern-packaging/" class="md-nav__link">
         
   
   
@@ -472,271 +554,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/04-submission-and-certificates/" class="md-nav__link">
+      <a href="../tutorials/04-submission-and-certificates/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Submission And Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Labs
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Labs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab Index
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-01-custom-index-install/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 01 Index Recon
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-03-name-normalization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 02 Name Maze
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-08-extra-index-confusion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 04 Dependency Confusion
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 05 Wheel Autopsy
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scenario
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objective
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    <span class="md-ellipsis">
-      Submission
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../flag-16-legacy-sdist-trap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Flag 07 Legacy Sdist Trap
     
   </span>
   
@@ -784,7 +607,7 @@
   
   
   <span class="md-ellipsis">
-    Organizer
+    Labs
     
   </span>
   
@@ -795,7 +618,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Organizer
+            Labs
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -806,12 +629,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organizer/mkdocs-scoreboard-plan/" class="md-nav__link">
+      <a href="../labs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    MkDocs And Scoreboard Plan
+    Lab Index
     
   </span>
   
@@ -829,12 +652,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organizer/private-hint-design/" class="md-nav__link">
+      <a href="../labs/flag-01-index-recon/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Private Hint Design
+    Flag 01 Index Recon
     
   </span>
   
@@ -852,12 +675,81 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organizer/repository-safety-model/" class="md-nav__link">
+      <a href="../labs/flag-02-name-maze/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Repository Safety Model
+    Flag 02 Name Maze
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../labs/flag-04-dependency-confusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 04 Dependency Confusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../labs/flag-05-wheel-autopsy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 05 Wheel Autopsy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../labs/flag-07-legacy-sdist-trap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag 07 Legacy Sdist Trap
     
   </span>
   
@@ -902,27 +794,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
+  <a href="#challenge-boundary" class="md-nav__link">
     <span class="md-ellipsis">
-      Scenario
+      Challenge Boundary
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
+  <a href="#submission-rule" class="md-nav__link">
     <span class="md-ellipsis">
-      Objective
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    <span class="md-ellipsis">
-      Submission
+      Submission Rule
     </span>
   </a>
   
@@ -947,19 +830,46 @@
   
 
 
-<h1 id="flag-05-wheel-autopsy">Flag 05: Wheel Autopsy</h1>
-<h2 id="scenario">Scenario</h2>
-<p>A wheel was installed. Before trusting it, inspect it.</p>
-<h2 id="objective">Objective</h2>
-<p>Unzip the wheel, inspect the metadata files, and find the behavior that leads to
-the flag.</p>
-<h2 id="submission">Submission</h2>
+<h1 id="rules">Rules</h1>
+<div class="admonition danger">
+<p class="admonition-title">Do not use real targets</p>
+<p><strong>Do not upload challenge packages to real PyPI.</strong></p>
+<p><strong>Do not target real package names, real maintainers, real companies, or
+real organizations.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">No real secrets</p>
+<p><strong>Do not read real credentials, tokens, SSH keys, browser data, cloud
+credentials, or files outside the challenge workspace.</strong></p>
+<p>The labs use fake flags such as <code>HKPUG{practice.flag-04}</code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">No external callbacks</p>
+<p><strong>Do not contact external callback servers, webhooks, pastebins, or logging
+endpoints from challenge package code.</strong></p>
+<p>Safe flag capture happens locally under <code>artifacts/</code>.</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">What is allowed</p>
+<p>You may safely:</p>
 <ul>
-<li>metadata flag</li>
-<li>distribution name</li>
-<li>version</li>
-<li>one suspicious or important file found</li>
+<li>point pip at the provided challenge indexes</li>
+<li>inspect toy <code>/simple/</code> index pages</li>
+<li>build toy wheels and source distributions inside this repo</li>
+<li>run victim apps inside the challenge workspace</li>
+<li>write fake flag proof under <code>artifacts/</code></li>
+<li>explain and patch the vulnerable configuration</li>
 </ul>
+</div>
+<h2 id="challenge-boundary">Challenge Boundary</h2>
+<p>This CTF is about learning how package indexes, resolvers, and package artifacts
+work. The goal is to prove control inside the sandbox, then explain the defense.</p>
+<p>If a technique would affect a real user, a real package, a real credential, or a
+real service, it is outside the challenge boundary.</p>
+<h2 id="submission-rule">Submission Rule</h2>
+<p>For official HKPUG mode, submit only the requested answer bundle or writeup.
+Do not submit real exploit payloads, real secrets, or screenshots containing
+private information.</p>
 
 
 
@@ -1014,12 +924,12 @@ the flag.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../assets/scoreboard.js"></script>
+        <script src="../assets/scoreboard.js"></script>
       
     
   </body>

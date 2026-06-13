@@ -9,6 +9,10 @@
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/rules/</loc>
+         <lastmod>2026-06-13</lastmod>
+    </url>
+    <url>
          <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/scoreboard/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
@@ -17,43 +21,23 @@
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-01-custom-index-install/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-01-index-recon/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-02-manual-simple-api/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-02-name-maze/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-03-name-normalization/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-04-dependency-confusion/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-08-extra-index-confusion/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-05-wheel-autopsy/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-11-wheel-autopsy/</loc>
-         <lastmod>2026-06-13</lastmod>
-    </url>
-    <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-16-legacy-sdist-trap/</loc>
-         <lastmod>2026-06-13</lastmod>
-    </url>
-    <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-25-safer-index-patch/</loc>
-         <lastmod>2026-06-13</lastmod>
-    </url>
-    <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/organizer/mkdocs-scoreboard-plan/</loc>
-         <lastmod>2026-06-13</lastmod>
-    </url>
-    <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/organizer/private-hint-design/</loc>
-         <lastmod>2026-06-13</lastmod>
-    </url>
-    <url>
-         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/organizer/repository-safety-model/</loc>
+         <loc>https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/labs/flag-07-legacy-sdist-trap/</loc>
          <lastmod>2026-06-13</lastmod>
     </url>
     <url>
