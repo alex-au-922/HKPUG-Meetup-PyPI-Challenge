@@ -27,11 +27,10 @@ Community participants can:
 
 Suggested tiers:
 
-- Participation: 3 valid flags
-- Explorer: 10 valid flags
-- Completion: 21 valid flags
+- Participation: 2 valid flags
+- Explorer: 5 valid flags including one resolver/build flag
+- Completion: 9 valid flags
 - Finisher: capstone plus defense checklist
 
 Registration should collect a certificate display name separately from GitHub
 username.
-

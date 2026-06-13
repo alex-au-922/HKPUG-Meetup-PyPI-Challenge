@@ -10,6 +10,7 @@ assets/leaderboard.json
 ```
 
 Later, the trusted scorer can update the same JSON file on the Pages branch.
+The same scorer can also apply hint multipliers.
 
 <div class="scoreboard-toolbar">
   <label for="scoreboard-filter">Filter</label>
@@ -23,8 +24,21 @@ Later, the trusted scorer can update the same JSON file on the Pages branch.
 
 | Tier | Suggested Requirement |
 |---|---|
-| Participation | 3 valid flags |
-| Explorer | 10 valid flags across at least 2 tracks |
-| Completion | 21 valid flags across at least 5 tracks |
+| Participation | 2 valid flags |
+| Explorer | 5 valid flags including one resolver/build flag |
+| Completion | 9 valid flags |
 | Finisher | capstone plus defense checklist |
 
+## Hint Multipliers
+
+For the MVP, hint state can be global per flag:
+
+| State | Max Score |
+|---|---:|
+| Fresh | 100% |
+| Hint 1 open | 85% |
+| Hint 2 open | 70% |
+| Guided open | 50% |
+
+For a later private tracked hint system, the scorer can store per-team unlocks
+and apply the multiplier only to teams that requested hints.

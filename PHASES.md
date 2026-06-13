@@ -29,13 +29,11 @@ Goal: ship a complete mini-CTF story.
 
 Flags:
 
-- 01 custom index install
-- 02 manual simple API inspection
-- 03 package name normalization
-- 08 extra-index dependency confusion
-- 11 wheel autopsy
-- 16 legacy sdist trap
-- 25 safer index patch
+- 01 index recon
+- 02 name maze
+- 04 dependency confusion
+- 05 wheel autopsy
+- 07 legacy sdist trap
 
 Success check:
 
@@ -48,12 +46,8 @@ Goal: make participants comfortable hacking package indexes.
 
 Flags:
 
-- 04 local mini index
-- 05 broken index repair
-- 06 version selection
-- 07 single-index install
-- 09 normalized-name collision
-- 10 resolver report
+- 03 resolver duel
+- 04 dependency confusion, if not already shipped in MVP
 
 Success check:
 
@@ -65,12 +59,9 @@ Goal: teach what packages actually install.
 
 Flags:
 
-- 12 RECORD tamper check
-- 13 console entry point
-- 14 import-time behavior
-- 15 extras path
-- 21 `.pth` startup surprise
-- 22 detect installed surprise
+- 05 wheel autopsy, if not already shipped in MVP
+- 06 entry point ambush
+- 09 startup surprise
 
 Success check:
 
@@ -83,13 +74,9 @@ narrows some risks.
 
 Flags:
 
-- 17 direct setup.py legacy path
-- 18 dynamic metadata
-- 19 build dependency trust
-- 20 build isolation toggle
-- 23 hash-checked requirements
-- 24 pinning bypass lesson
-- 28 lockfile comparison
+- 07 legacy sdist trap, if not already shipped in MVP
+- 08 build isolation lab
+- 10 pin, hash, lock
 
 Success check:
 
@@ -102,12 +89,9 @@ Goal: turn hacking into remediation.
 
 Flags:
 
-- 26 CI token trap
-- 27 trusted publishing design
-- 29 incident timeline
-- 30 capstone
+- 11 CI publisher trap
+- 12 capstone incident
 
 Success check:
 
 - participants can produce a practical PyPI supply-chain defense checklist.
-

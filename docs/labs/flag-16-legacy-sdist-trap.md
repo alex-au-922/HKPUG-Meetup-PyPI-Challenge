@@ -1,4 +1,4 @@
-# Flag 16: Legacy Sdist Trap
+# Flag 07: Legacy Sdist Trap
 
 ## Scenario
 
@@ -16,4 +16,3 @@ Trigger the legacy source-build path and capture the fake flag under
 - whether pip used wheel or sdist
 - which build phase created the marker
 - one modern packaging mitigation
-

@@ -50,12 +50,11 @@ nav:
       - Submission And Certificates: tutorials/04-submission-and-certificates.md
   - Labs:
       - Lab Index: labs/index.md
-      - Flag 01 Custom Index Install: labs/flag-01-custom-index-install.md
-      - Flag 02 Manual Simple API: labs/flag-02-manual-simple-api.md
-      - Flag 03 Name Normalization: labs/flag-03-name-normalization.md
-      - Flag 08 Extra Index Confusion: labs/flag-08-extra-index-confusion.md
-      - Flag 11 Wheel Autopsy: labs/flag-11-wheel-autopsy.md
-      - Flag 16 Legacy Sdist Trap: labs/flag-16-legacy-sdist-trap.md
-      - Flag 25 Safer Index Patch: labs/flag-25-safer-index-patch.md
+      - Flag 01 Index Recon: labs/flag-01-custom-index-install.md
+      - Flag 02 Name Maze: labs/flag-03-name-normalization.md
+      - Flag 04 Dependency Confusion: labs/flag-08-extra-index-confusion.md
+      - Flag 05 Wheel Autopsy: labs/flag-11-wheel-autopsy.md
+      - Flag 07 Legacy Sdist Trap: labs/flag-16-legacy-sdist-trap.md
   - Organizer:
       - MkDocs And Scoreboard Plan: organizer/mkdocs-scoreboard-plan.md
+      - Private Hint Design: organizer/private-hint-design.md

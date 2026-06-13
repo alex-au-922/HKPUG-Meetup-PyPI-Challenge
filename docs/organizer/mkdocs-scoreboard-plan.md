@@ -31,7 +31,7 @@ Recommended fields:
   "flags": 7,
   "tracks": 3,
   "tier": "Explorer",
-  "latest_flag": "flag-25",
+  "latest_flag": "flag-07",
   "score": 70,
   "certificate_eligible": true
 }

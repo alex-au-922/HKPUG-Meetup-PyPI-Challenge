@@ -31,8 +31,8 @@ company. They investigate and fix a simulated private package ecosystem:
 - fake tokens and generated flags
 - defender writeups and remediation tasks
 
-The recommended first version is a normal CTF-style learning journey: daily or
-phased tasks, flags, hints, short explanations, and optional writeups. The repo
+The recommended first version is a normal CTF-style learning journey: phased
+tasks, deeper flags, hints, short explanations, and optional writeups. The repo
 should never ask participants to upload anything to real PyPI, attack real
 packages, or exfiltrate real credentials.
 
@@ -129,15 +129,16 @@ Optional, after the HK-first run is stable.
 
 ## Challenge Flow
 
-Recommended headline format: 30 days, with a live kickoff, weekly checkpoint
-posts, and a live wrap-up.
+Recommended headline format: 30 days, with a live kickoff, scheduled public
+hint drops, and a live wrap-up.
 
-Every day should be a hacking lab. The participant is not passively learning
-"what PyPI is"; they are trying to make pip choose their package, make a toy
-package capture a fake flag, or prove why a modern packaging rule blocks an old
-trick.
+Every flag should be a hacking lab, but not every day needs a new flag. The
+better rhythm is 12 substantial flags over 30 days, with each flag spanning 2
+to 3 days. Participants should spend time inspecting, experimenting, and
+reasoning, but once they understand the idea they should be able to complete
+the hack quickly.
 
-The daily loop:
+The lab loop:
 
 1. read a short scenario
 2. run or inspect a controlled install
@@ -147,44 +148,74 @@ The daily loop:
 
 ### 30-Day Hacking Trail
 
-| Day | Hack | What Participants Learn |
-|---:|---|---|
-| 1 | Point pip at the challenge index and install a toy package | pip talks to a package index, not magic |
-| 2 | Read the `/simple/` root and project pages manually | PyPI-compatible indexes can be simple static HTML |
-| 3 | Normalize a package name to find the real project URL | `-`, `_`, and `.` normalization matters |
-| 4 | Build a local static index with one wheel | a package index is just links plus files |
-| 5 | Break an index page and repair it until pip resolves again | which HTML/link details pip relies on |
-| 6 | Publish two versions and make pip choose the higher one | version ordering controls selection |
-| 7 | Add `--index-url` and prove only one index is searched | single-index installs are easier to reason about |
-| 8 | Add `--extra-index-url` and win with a higher fake version | dependency confusion mechanics |
-| 9 | Abuse a normalized name collision in the toy index | private package naming needs policy |
-| 10 | Capture a fake flag by making pip pick the attacker wheel | resolver behavior can become code execution |
-| 11 | Compare wheel vs sdist installation behavior | built artifacts and source builds have different risk |
-| 12 | Inspect `METADATA`, `WHEEL`, and `RECORD` | wheels are zip files with standardized metadata |
-| 13 | Add a console entry point that reveals a flag when run | entry points create installed commands |
-| 14 | Hide behavior in package import time and then detect it | importing a package can execute code |
-| 15 | Add an extra dependency path through `extras` | optional dependency groups can change attack surface |
-| 16 | Target a legacy `setup.py` source build in a sandbox | old build hooks can run during build/install flows |
-| 17 | Compare `setup.py` direct invocation with modern build frontend behavior | direct `setup.py` workflows are legacy |
-| 18 | Move build requirements into `pyproject.toml` | build dependencies become inspectable before build |
-| 19 | Try to smuggle behavior through a build dependency | build backends and build requirements are part of trust |
-| 20 | Repeat the build with isolation enabled and disabled | build isolation changes what code can see |
-| 21 | Use a toy `.pth` startup surprise to write a local marker | installed files can affect interpreter startup |
-| 22 | Detect the `.pth` surprise from installed files | defenders must inspect more than imports |
-| 23 | Use a requirements file with hashes and break tampering | hashes make artifact substitution visible |
-| 24 | Pin versions, then show what remains vulnerable | pinning helps but does not prove artifact safety alone |
-| 25 | Patch the install command to remove dependency confusion | safer index configuration |
-| 26 | Audit a fake GitHub Actions publishing workflow | release automation is part of package security |
-| 27 | Replace a fake long-lived token with trusted publishing design | OIDC reduces stored secret exposure |
-| 28 | Solve a mixed incident: wrong index, bad pin, suspicious wheel | real incidents combine small mistakes |
-| 29 | Submit a defender report with exploit path and fix | hacking should end in remediation |
-| 30 | Final challenge: capture all safe flags and produce a PyPI defense checklist | consolidation and e-cert eligibility |
+| Flag | Days | Lab | What Participants Learn |
+|---:|---|---|---|
+| 01 | 1-2 | Index Recon | map a PyPI-compatible index and install from it |
+| 02 | 3-5 | Name Maze | normalize project names and find the right project page |
+| 03 | 6-7 | Resolver Duel | predict and force candidate selection |
+| 04 | 8-10 | Dependency Confusion | make the simulated public package win |
+| 05 | 11-13 | Wheel Autopsy | inspect wheel internals and installed metadata |
+| 06 | 14-15 | Entry Point Ambush | abuse console entry points and extras safely |
+| 07 | 16-18 | Legacy Sdist Trap | trigger a controlled `setup.py` source-build path |
+| 08 | 19-21 | Build Isolation Lab | compare build dependencies with isolation on/off |
+| 09 | 22-23 | Startup Surprise | find and explain a toy `.pth` startup effect |
+| 10 | 24-26 | Pin, Hash, Lock | defeat weak pinning, then fix with hashes/locks |
+| 11 | 27-28 | CI Publisher Trap | audit and patch a fake publish workflow |
+| 12 | 29-30 | Capstone Incident | build a toy attacker package, capture flag, submit defense |
+
+### Difficulty Calibration
+
+The item can be easy to state, but finding the flag should require real
+inspection. The intended solve shape is:
+
+```text
+hard to understand at first, quick to execute once understood
+```
+
+Good difficulty comes from realistic files, pip output, resolver ambiguity,
+wheel-vs-sdist comparison, and needing to explain why the selected package won.
+Bad difficulty comes from random hiding places, brute force, or hours of work
+after the participant already understands the trick.
+
+### Hint Schedule
+
+Use scheduled public hint drops for the MVP:
+
+| State | Timing | Max Score |
+|---|---|---:|
+| Fresh | release time | 100% |
+| Hint 1 | after 24 hours | 85% |
+| Hint 2 | after 48 hours, for 3-day flags | 70% |
+| Guided | after the flag window closes | 50% |
+
+Score is based on the public hint state at submission time. This avoids per-user
+hint accounting for the MVP while still rewarding early solvers.
+
+For the real HKPUG run, a good upgrade is encrypted scheduled hints:
+
+- generate hint text per flag and hint level
+- encrypt each hint to each registered team's certificate
+- publish encrypted hint files only when their scheduled release time arrives
+- let teams decrypt locally with their team private key
+- keep score decay based on the public release schedule
+
+Fully private per-team hint unlocks are possible, but they add more machinery:
+a hint request workflow, encrypted hint response, `hint_unlocks.json`, and
+scorer logic that applies score decay only to teams that requested hints. GitHub
+cannot privately DM hint text from a public repo, so private content still needs
+encryption or an external channel. The preferred version is a signed hint
+request: the page prepares a request, the team signs it, and GitHub Actions
+verifies the signature, encrypts the hint, and records the unlock.
+
+Organizer design note:
+
+- `docs/organizer/private-hint-design.md`
 
 ### Phased Rollout
 
 Phase 1 should be enough to launch:
 
-- 5 to 7 beginner-friendly tasks
+- 5 substantial flags
 - public self-checks
 - encrypted official answer submission
 - progress board

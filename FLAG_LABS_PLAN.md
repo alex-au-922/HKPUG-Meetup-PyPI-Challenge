@@ -1,13 +1,26 @@
-# HKPUG PyPI 30-Day CTF Flag Lab Plan
+# HKPUG PyPI CTF Flag Lab Plan
 
 Planning snapshot: 2026-06-13
 
 ## Concept
 
-This challenge is a 30-day "learn PyPI by hacking it safely" trail. Every flag
-is tied to one practical lab. Participants are not just reading about PyPI; they
-are manipulating a controlled index, package, resolver path, build path, or CI
-workflow until a toy package captures a fake flag.
+This is a 30-day "learn PyPI by hacking it safely" trail, but it should not
+have one small flag every day. A better rhythm is 12 substantial flags, with
+each flag open for 2 to 3 days.
+
+Each flag should contain enough material to feel like a mini incident:
+
+- a scenario
+- a toy package index
+- one or more package artifacts
+- a victim command or victim app
+- a clear fake flag capture objective
+- a short defensive explanation
+
+The challenge should be hard enough that participants need to inspect,
+experiment, and reason. But once they understand the idea, the actual exploit
+path should be short. No stupidly long hiding places, no arbitrary word hunts,
+and no trick where the participant loses sight of what they are hacking.
 
 All package behavior is local-only:
 
@@ -35,161 +48,280 @@ HKPUG{practice.<flag_id>}
 
 ```mermaid
 flowchart LR
-  A["Index Control<br/>Flags 01-05"] --> B["Resolver Control<br/>Flags 06-10"]
-  B --> C["Package Artifact Control<br/>Flags 11-15"]
-  C --> D["Legacy Build Control<br/>Flags 16-20"]
-  D --> E["Install/Runtime Surprise<br/>Flags 21-24"]
-  E --> F["Defense & CI Control<br/>Flags 25-29"]
-  F --> G["Capstone<br/>Flag 30"]
+  A["Index Recon<br/>Flags 01-02"] --> B["Resolver Control<br/>Flags 03-04"]
+  B --> C["Artifact Autopsy<br/>Flags 05-06"]
+  C --> D["Build-Time Hacking<br/>Flags 07-08"]
+  D --> E["Install/Runtime Surprise<br/>Flags 09-10"]
+  E --> F["CI & Capstone<br/>Flags 11-12"]
 ```
+
+## Release Calendar
+
+| Flag | Days | Lab | Main Skill |
+|---:|---|---|---|
+| 01 | 1-2 | Index Recon | map a PyPI-compatible index and install from it |
+| 02 | 3-5 | Name Maze | normalize project names and find the right project page |
+| 03 | 6-7 | Resolver Duel | predict and force candidate selection |
+| 04 | 8-10 | Dependency Confusion | make the simulated public package win |
+| 05 | 11-13 | Wheel Autopsy | inspect wheel internals and installed metadata |
+| 06 | 14-15 | Entry Point Ambush | abuse console entry points and extras safely |
+| 07 | 16-18 | Legacy Sdist Trap | trigger a controlled `setup.py` source-build path |
+| 08 | 19-21 | Build Isolation Breakout-ish | compare build dependencies with isolation on/off |
+| 09 | 22-23 | Startup Surprise | find and explain a toy `.pth` startup effect |
+| 10 | 24-26 | Pin, Hash, Lock | defeat weak pinning, then fix with hashes/locks |
+| 11 | 27-28 | CI Publisher Trap | audit and patch a fake publish workflow |
+| 12 | 29-30 | Capstone Incident | build a toy attacker package, capture flag, submit defense |
 
 ## Flag Lab Matrix
 
-| Flag | Lab | Participant Hack | Package/Index | Capture Proof | Main Lesson |
-|---:|---|---|---|---|---|
-| 01 | First custom index install | Install from the challenge index instead of PyPI | `indexes/trusted/simple`, `hkpug-ctf-hello` | command prints flag | pip resolves from an index URL |
-| 02 | Manual simple API inspection | Find a wheel link by reading `/simple/` HTML | `simple/hkpug-ctf-hello/` | submit wheel URL/hash | the simple index is static HTML |
-| 03 | Name normalization | Resolve the same package through `-`, `_`, and `.` variants | `hkpug-ctf-normalize-me` | normalized name answer | names normalize before lookup |
-| 04 | Build your own mini index | Add a wheel to a local `file://` index | local `simple/` directory | pip installs from local index | indexes are links plus files |
-| 05 | Broken index repair | Fix a malformed project page until pip accepts it | intentionally broken HTML | install succeeds | link shape, filenames, hashes matter |
-| 06 | Version selection | Publish two toy versions and make pip select the winner | `0.1.0` vs `9.9.9` wheels | selected version captures flag | version ordering drives selection |
-| 07 | Single-index install | Prove `--index-url` searches only the trusted index | trusted index only | trusted flag captured | single-index installs reduce ambiguity |
-| 08 | Extra-index confusion | Make a higher-version public-sim package win | trusted + public-sim indexes | attacker wheel captures flag | `--extra-index-url` can be unsafe |
-| 09 | Normalized-name collision | Use a name variant to collide with a private package | `hkpug.ctf.internal_utils` style variant | collision flag captured | naming policy matters for private packages |
-| 10 | Resolver report | Predict which file pip will choose before installing | mixed indexes and versions | JSON report accepted | resolver reasoning is observable |
-| 11 | Wheel autopsy | Unzip a wheel and find metadata fields | `hkpug-ctf-wheel-autopsy` | metadata flag | wheels are inspectable zip files |
-| 12 | RECORD tamper check | Modify a wheel file and detect hash mismatch | wheel `RECORD` | tamper flag | installed file hashes support review |
-| 13 | Console entry point | Install a package that exposes a flag-printing CLI | `hkpug-ctf-cli-tool` | CLI prints flag | entry points create installed commands |
-| 14 | Import-time behavior | Import a package and detect local marker creation | `hkpug-ctf-import-marker` | marker file | imports execute package code |
-| 15 | Extras path | Install `pkg[extra]` and trigger an optional dependency | `hkpug-ctf-extras-demo` | extra dependency captures flag | extras change dependency graph |
-| 16 | Legacy sdist trap | Force install from sdist instead of wheel | `hkpug-ctf-sdist-trap` | build marker | source builds can run project build logic |
-| 17 | Direct `setup.py` legacy path | Compare direct `setup.py` behavior with frontend build | legacy source tree | phase marker | direct `setup.py` workflows are legacy |
-| 18 | Dynamic metadata | Make package metadata depend on a fake environment value | old setuptools package | metadata flag | dynamic metadata is harder to review |
-| 19 | Build dependency trust | Route execution through a toy build helper dependency | `hkpug-ctf-build-helper` | build-helper marker | build dependencies are part of trust |
-| 20 | Build isolation toggle | Run the same build with isolation on/off and compare access | modern package | isolation report | isolation narrows environment exposure |
-| 21 | `.pth` startup surprise | Install a package whose `.pth` writes a local marker | `hkpug-ctf-startup-surprise` | startup marker | startup files can run without explicit import |
-| 22 | Detect installed surprise | Inspect site-packages to locate the `.pth` cause | installed environment | submit filename/path | defenders inspect installed files |
-| 23 | Hash-checked requirements | Break a wheel and make `--require-hashes` reject it | requirements file | rejection output | hashes make substitution visible |
-| 24 | Pinning bypass lesson | Pin a version but swap artifact source in toy index | pinned requirement | artifact-origin answer | pinning is not enough without artifact trust |
-| 25 | Safer index patch | Fix an unsafe pip command/config | victim app config | patch accepted | remove dependency confusion pattern |
-| 26 | CI token trap | Audit a fake publish workflow with a long-lived token | GitHub Actions YAML | workflow flag | release automation can leak trust |
-| 27 | Trusted publishing design | Replace fake token release with OIDC/trusted publishing plan | workflow patch | design answer | short-lived identity beats stored tokens |
-| 28 | Lockfile comparison | Compare pip requirements and uv lock behavior | victim app | lock report | lockfiles improve reproducibility |
-| 29 | Incident timeline | Reconstruct how the toy package captured the flag | mixed logs/artifacts | timeline answer | real incidents combine resolver + package + CI |
-| 30 | Capstone | Capture final flags and submit defense checklist | all labs | final bundle accepted | hacking should end in remediation |
+| Flag | Lab | Participant Hack | Capture Proof | Why It Takes Time |
+|---:|---|---|---|---|
+| 01 | Index Recon | Point pip at the challenge index, map `/simple/`, and identify selected artifact | `artifacts/flag-01.json` | participants must connect pip command, index HTML, and downloaded file |
+| 02 | Name Maze | Try package name variants and find the canonical normalized project page | normalized-name answer + flag | the package is not hidden, but punctuation and redirects can mislead |
+| 03 | Resolver Duel | Given several wheels/sdists across indexes, predict then force pip's selected candidate | resolver report + captured flag | the participant must reason before installing |
+| 04 | Dependency Confusion | Add or choose a higher-version package in `public-sim` so the victim installs it | attacker package writes local flag | the idea is simple, but they must prove which index won |
+| 05 | Wheel Autopsy | Unzip a wheel, inspect `METADATA`, `WHEEL`, `RECORD`, and locate the relevant behavior | metadata/artifact flag | the flag is found through structured inspection, not guessing |
+| 06 | Entry Point Ambush | Use an installed console script or optional extra to trigger flag capture | CLI output or `artifacts/flag-06.json` | they must inspect metadata to find the executable path |
+| 07 | Legacy Sdist Trap | Force sdist install and identify which legacy build phase ran | build marker + phase answer | the exploit is short after they realize wheel vs sdist matters |
+| 08 | Build Isolation Breakout-ish | Compare a build with isolation on/off and route through a toy build helper dependency | isolation report + marker | they must understand build dependency trust boundaries |
+| 09 | Startup Surprise | Install a package and find why Python startup writes a marker without explicit import | `.pth` path + marker | they must inspect installed files, not only source imports |
+| 10 | Pin, Hash, Lock | Show why a pinned version can still be unsafe, then make tampering fail with hashes/lockfile | rejection output + fixed config | the hack and fix are paired |
+| 11 | CI Publisher Trap | Exploit the logic of a fake release workflow on paper, then patch permissions/trust | workflow flag + patch | no real exploit code; the work is understanding trust boundaries |
+| 12 | Capstone Incident | Build a toy attacker package, publish to simulated index, capture flag, and patch victim | final flag + defense report | combines index, resolver, artifact, build, and defense |
 
-## Lab Tracks
+## Difficulty Rule
 
-### Track 1: Index Control
+Each flag should satisfy this test:
 
-Goal: understand that pip asks an index for project files and then chooses a
-candidate.
+```text
+If the participant understands the core idea, the final exploit should take
+about 10 to 30 minutes. If they do not understand the idea, the lab should push
+them into the right docs, files, and commands.
+```
 
-Flags:
+Good difficulty comes from:
 
-- 01 custom index install
-- 02 manual simple API inspection
-- 03 name normalization
-- 04 local mini index
-- 05 broken index repair
+- multiple plausible files to inspect
+- realistic pip output
+- small misleading assumptions
+- needing to compare wheel vs sdist
+- needing to explain why pip selected an artifact
 
-### Track 2: Resolver Control
+Bad difficulty comes from:
 
-Goal: make pip pick the intended toy package.
+- hiding flags in random strings
+- requiring brute force
+- requiring obscure trivia not taught by the lab
+- making participants spend hours after they already know the intended idea
+- giving no visible feedback about what they are trying to control
 
-Flags:
+## Hint System
 
-- 06 version selection
-- 07 single-index install
-- 08 extra-index confusion
-- 09 normalized-name collision
-- 10 resolver report
+There are three workable hint models.
 
-### Track 3: Package Artifact Control
+### Model A: Public Scheduled Hints
 
-Goal: inspect what gets installed and where execution paths appear.
+Use scheduled public hint drops. This is easiest to operate and should be the
+MVP fallback.
 
-Flags:
+Each flag has three published states:
 
-- 11 wheel autopsy
-- 12 RECORD tamper check
-- 13 console entry point
-- 14 import-time behavior
-- 15 extras path
+| State | Timing | Max Score | Content |
+|---|---|---:|---|
+| Fresh | release time | 100% | scenario and objective only |
+| Hint 1 | after 24 hours | 85% | where to look, not what to do |
+| Hint 2 | after 48 hours | 70% | key concept and one useful command |
+| Guided | after flag window closes | 50% | near-walkthrough, still requires execution |
 
-### Track 4: Legacy Build Control
+For 2-day flags, release Hint 1 after 24 hours and Guided after the window.
+For 3-day flags, release Hint 1 after 24 hours, Hint 2 after 48 hours, and
+Guided after the window.
 
-Goal: understand why old source-build and `setup.py` paths are risky.
+Score should be based on the public hint state at the time of submission:
 
-Flags:
+```text
+awarded_points = base_points * current_hint_multiplier
+```
 
-- 16 legacy sdist trap
-- 17 direct `setup.py` legacy path
-- 18 dynamic metadata
-- 19 build dependency trust
-- 20 build isolation toggle
+This is easier to operate than tracking which team clicked which hint.
 
-### Track 5: Install And Runtime Surprise
+### Model B: Encrypted Scheduled Hints
 
-Goal: learn that installed packages can affect later execution even without
-obvious imports.
+This is the best middle ground for HKPUG if we want hints to feel private
+without building a full web app.
 
-Flags:
+Mechanism:
 
-- 21 `.pth` startup surprise
-- 22 detect installed surprise
-- 23 hash-checked requirements
-- 24 pinning bypass lesson
+1. each registered team already has a private key
+2. organizers generate hint text for each flag and level
+3. at the scheduled release time, a workflow encrypts hints to each team's
+   public certificate
+4. encrypted hint files are published in the repo or Pages branch
+5. teams decrypt only their own hint locally
 
-### Track 6: Defense And CI Control
+Example layout:
 
-Goal: turn the hack into a fix.
+```text
+hints/
+  flag-04/
+    hint-1/
+      hk-01.cms
+      hk-02.cms
+    hint-2/
+      hk-01.cms
+      hk-02.cms
+```
 
-Flags:
+This keeps hint content private, but scoring is still based on the public
+release schedule:
 
-- 25 safer index patch
-- 26 CI token trap
-- 27 trusted publishing design
-- 28 lockfile comparison
-- 29 incident timeline
-- 30 capstone
+```text
+if Hint 1 has been released publicly, all later submissions use the Hint 1 max.
+```
+
+Pros:
+
+- private hint content
+- no separate server
+- reuses the workshop certificate model
+- low operational complexity
+
+Cons:
+
+- no per-team "I used this hint" tracking
+- once a scheduled hint opens, everybody's max score for that flag drops
+
+### Model C: Signed Private Hint Unlocks
+
+This is the best long-term model if per-team hint penalties matter.
+
+Mechanism:
+
+1. the frontend shows the selected flag and hint level
+2. the frontend creates a request payload with a nonce
+3. the team signs that payload with its team private key
+4. the frontend submits the request and signature to a trusted workflow
+5. the workflow verifies the signature against `team_allowlist.json`
+6. the workflow encrypts the hint to that team's public certificate
+7. the workflow records the unlock in `hint_unlocks.json`
+8. the scorer applies decay only to that team and flag
+
+Example unlock state:
+
+```json
+{
+  "hk-01": {
+    "flag-04": {
+      "hint_level": 1,
+      "unlocked_at": "2026-06-15T10:30:00Z"
+    }
+  }
+}
+```
+
+Important GitHub limitation:
+
+- comments in a public repo are public
+- GitHub Actions artifacts are not a private messaging system
+- true private hint content needs encryption or an external channel
+- a static frontend cannot securely choose secret hint text or write trusted
+  unlock state by itself
+
+The practical GitHub-native version is:
+
+- request metadata can be public
+- request authorization is a team signature
+- hint content is encrypted to the team
+- scoring state is stored on the leaderboard branch
+- GitHub Actions acts as the trusted verifier/encrypter/ledger writer
+
+Extra moving parts:
+
+- per-team hint unlock form
+- browser-side signing or a small local CLI to sign the request
+- workflow dispatch, issue command, or PR-based request submission
+- each unlock creates an audit event in `hint_unlocks.json`
+- score decays only for teams that unlocked the hint
+- hints become fully public after the flag window closes
+
+### Recommendation
+
+Use Model A for the first dry run if speed matters. Use Model B for the real
+HKPUG run if we want hints to feel more special without adding much operational
+burden. Use Model C when we are ready to build the signed request UX. Model C is
+not conceptually hard, but it has more edge cases: nonce replay, browser key
+handling, failed workflow runs, and scoreboard merge conflicts.
+
+## Hint Style
+
+Hints should teach direction, not dump answers.
+
+Example for dependency confusion:
+
+- Hint 1: "Compare all candidate files pip can see, not only the trusted index."
+- Hint 2: "Run with `-vv` and look for the version and URL of the selected candidate."
+- Guided: "The public-sim index has a higher version. Make the victim install that artifact, then inspect `artifacts/flag-04.json`."
+
+Example for legacy sdist:
+
+- Hint 1: "The wheel path and source path do not behave the same."
+- Hint 2: "Force pip away from wheels and watch which build step creates files."
+- Guided: "Use `--no-binary` for the challenge package and inspect the build marker."
 
 ## Scoring And E-Cert Mapping
 
-Score should be a progress indicator, not the main emotional reward.
+Score is a progress indicator, not the main emotional reward.
+
+Suggested base points:
+
+| Flag | Base Points |
+|---:|---:|
+| 01 | 50 |
+| 02 | 75 |
+| 03 | 75 |
+| 04 | 100 |
+| 05 | 100 |
+| 06 | 100 |
+| 07 | 125 |
+| 08 | 125 |
+| 09 | 100 |
+| 10 | 125 |
+| 11 | 100 |
+| 12 | 200 |
+
+Certificate tiers:
 
 | Certificate Tier | Suggested Requirement |
 |---|---|
-| Participation | 3 valid flags |
-| Explorer | 10 valid flags across at least 2 tracks |
-| Completion | 21 valid flags across at least 5 tracks |
-| Finisher | flag 30 plus final defense checklist |
+| Participation | any 2 valid flags |
+| Explorer | 5 valid flags including at least one resolver/build flag |
+| Completion | 9 valid flags |
+| Finisher | capstone plus defense checklist |
 | Excellence | strong writeup, high score, or community contribution |
 
 ## MVP Cut
 
-If HKPUG wants to launch quickly, start with these 7 flags:
+If HKPUG wants to launch quickly, start with these 5 substantial flags:
 
 | Flag | Why This One |
 |---:|---|
-| 01 | proves setup works |
-| 02 | teaches simple index shape |
-| 03 | teaches normalization |
-| 08 | creates the first real "aha" dependency confusion moment |
-| 11 | teaches wheels are inspectable |
-| 16 | introduces legacy `setup.py` risk |
-| 25 | ends with a defensive fix |
+| 01 | proves setup works and teaches the index shape |
+| 02 | teaches normalization and index discovery |
+| 04 | creates the dependency confusion "aha" moment |
+| 05 | teaches artifact inspection |
+| 07 | introduces legacy `setup.py` risk |
 
-That MVP already gives a complete story:
+MVP story:
 
 ```mermaid
 flowchart LR
-  F01["01 Install"] --> F02["02 Inspect Index"] --> F03["03 Normalize"]
-  F03 --> F08["08 Confuse Resolver"] --> F11["11 Autopsy Wheel"]
-  F11 --> F16["16 Legacy Build Trap"] --> F25["25 Patch Defense"]
+  F01["01 Index Recon"] --> F02["02 Name Maze"]
+  F02 --> F04["04 Dependency Confusion"]
+  F04 --> F05["05 Wheel Autopsy"]
+  F05 --> F07["07 Legacy Sdist Trap"]
 ```
 
-## Flag 30 Capstone Design
+## Flag 12 Capstone Design
 
 The capstone should be a mini incident, not just another quiz.
 
@@ -228,22 +360,9 @@ Participant objective:
 6. submit the captured flag
 7. submit a short incident report and defensive patch
 
-The capstone package is intentionally "hackable" only inside the challenge
+The capstone package is intentionally hackable only inside the challenge
 workspace. It should not be uploaded to real PyPI, and it should not perform any
 network activity.
-
-Good capstone package behavior:
-
-- writes `HKPUG_FAKE_FLAG` to `artifacts/capstone_flag.txt`
-- records the selected package name, version, and artifact type
-- optionally exposes a CLI such as `hkpug-capstone-proof`
-
-Bad capstone package behavior:
-
-- reading real secrets
-- contacting external servers
-- modifying files outside the challenge directory
-- using real package names or real organization names
 
 Capstone success should require both offense and defense:
 
@@ -255,6 +374,6 @@ Capstone success should require both offense and defense:
 | Defense patch | fix index configuration, pinning, hashes, or lockfile |
 | Reflection | explain why newer package tooling reduces part of the risk |
 
-In the hosted official mode, participants can submit only the encrypted answer
-bundle and patch/writeup. In the community mode, they can publish their toy
-attacker package in their own fork after the official window closes.
+In the hosted official mode, participants submit only the encrypted answer
+bundle and patch/writeup. In community mode, they can publish their toy attacker
+package in their own fork after the official window closes.

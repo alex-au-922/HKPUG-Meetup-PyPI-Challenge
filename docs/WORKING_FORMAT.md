@@ -68,11 +68,11 @@ Example proof:
 
 ```json
 {
-  "flag_id": "flag-08",
+  "flag_id": "flag-04",
   "package": "hkpug-ctf-internal-utils",
   "version": "9.9.9",
   "source_index": "public-sim",
-  "captured_flag": "HKPUG{practice.flag-08}"
+  "captured_flag": "HKPUG{practice.flag-04}"
 }
 ```
 
@@ -93,8 +93,7 @@ writeup after the official window closes.
 
 Suggested thresholds:
 
-- Participation: 3 valid flags
-- Explorer: 10 valid flags across at least 2 tracks
-- Completion: 21 valid flags across at least 5 tracks
+- Participation: 2 valid flags
+- Explorer: 5 valid flags including one resolver/build flag
+- Completion: 9 valid flags
 - Finisher: capstone plus defense checklist
-

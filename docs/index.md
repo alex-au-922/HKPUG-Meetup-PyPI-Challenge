@@ -30,8 +30,8 @@ No real PyPI uploads, no real package names, no real credentials.
 
 ```mermaid
 flowchart LR
-  F01["01 Install"] --> F02["02 Inspect Index"] --> F03["03 Normalize"]
-  F03 --> F08["08 Confuse Resolver"] --> F11["11 Autopsy Wheel"]
-  F11 --> F16["16 Legacy Build Trap"] --> F25["25 Patch Defense"]
+  F01["01 Index Recon"] --> F02["02 Name Maze"]
+  F02 --> F04["04 Dependency Confusion"]
+  F04 --> F05["05 Wheel Autopsy"]
+  F05 --> F07["07 Legacy Sdist Trap"]
 ```
-
