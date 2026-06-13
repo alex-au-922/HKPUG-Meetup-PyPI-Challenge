@@ -23,6 +23,23 @@ Each flag follows the same shape:
 
 The challenge is about learning PyPI by hacking a safe toy ecosystem.
 
+## Expected Time
+
+The challenge runs for 30 calendar days, but the expected hands-on work is much
+smaller.
+
+| Section | Target time |
+|---|---:|
+| Flags 01-03: index, names, resolver | 4-7 hours total |
+| Flags 04-09: main package hacking labs | 12-18 hours total |
+| Flags 10-11: defense and CI | 4-7 hours total |
+| Flag 12: capstone | 4-6 hours |
+
+For a beginner who reads the tutorials carefully, the full trail should land
+around 25-35 hands-on hours. The tutorials are meant to replace most background
+searching. The remaining work should be investigation inside the lab, not
+learning packaging vocabulary from scratch.
+
 ## What "Hack" Means Here
 
 Allowed:
@@ -96,6 +113,33 @@ For hosted HKPUG mode, answers are encrypted before a pull request.
 
 For community mode, participants can self-check locally and submit a public
 writeup after the official window closes.
+
+## Finding Your Submission PR
+
+Hosted mode should use **one long-lived pull request per participant or team**.
+Do not open one pull request per flag.
+
+Use this title format:
+
+```text
+[HKPUG-TEAM-AB12] submissions
+```
+
+Use this branch format:
+
+```text
+submissions/HKPUG-TEAM-AB12
+```
+
+Then update the same PR as you solve more flags. To find your PR, search GitHub
+for your team code or use:
+
+```text
+is:pr is:open author:@me repo:alex-au-922/HKPUG-Meetup-PyPI-Challenge
+```
+
+The team code is not secret. The flag answers are secret and should be encrypted
+in hosted mode.
 
 ## E-Cert Progress
 

@@ -41,6 +41,21 @@ install-time metadata, and harmless local side effects.
 Flags 10 to 12 turn the same ideas into defense. You still hack the toy target,
 but the final answer needs an explanation or patch.
 
+## Expected Time
+
+The full trail is designed for roughly 25-35 hands-on hours for a beginner who
+reads the tutorials carefully.
+
+| Flag group | Target time |
+|---|---:|
+| 01-03 | 1-2.5 hours each |
+| 04-09 | 2-3 hours each |
+| 10-11 | 2-3.5 hours each |
+| 12 | 4-6 hours |
+
+The final-mile solve should still take thought, but the background vocabulary
+should be available in the tutorials and hint pages.
+
 ## Hint Schedule
 
 Each lab has three hint levels:

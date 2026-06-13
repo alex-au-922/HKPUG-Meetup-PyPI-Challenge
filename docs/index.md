@@ -12,7 +12,7 @@ each lab works, and how progress is tracked.
 2. Read [How To Play](WORKING_FORMAT.md).
 3. Open the [Tutorial Index](tutorials/README.md).
 4. Start with [Flag 01](labs/flag-01-index-recon.md).
-5. Check the [Scoreboard](scoreboard.md).
+5. Check [Hints](hints.md) and the [Scoreboard](scoreboard.md).
 
 ## Learning Promise
 
@@ -50,3 +50,19 @@ flowchart LR
 The labs are written for people who have never thought about Python packaging
 security before. The pages explain the basic nouns first, then stop before the
 last exploit step so you still have to do the CTF work yourself.
+
+## Expected Time
+
+This is a 30-day calendar challenge, not a 60-hour homework project. A beginner
+who reads the tutorials should not need to search the web for every packaging
+term.
+
+| Player type | Expected hands-on time |
+|---|---:|
+| Experienced packaging/security person | 12-20 hours |
+| Normal Python developer | 20-30 hours |
+| Beginner reading the tutorials carefully | 25-35 hours |
+| Team of 2-3 people | 16-25 shared hours |
+
+If a beginner regularly needs more than 3 hours before the final-mile puzzle of
+a non-capstone lab, the tutorial or lab text is probably missing background.

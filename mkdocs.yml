@@ -41,6 +41,7 @@ nav:
   - Home: index.md
   - Rules: rules.md
   - How To Play: WORKING_FORMAT.md
+  - Hints: hints.md
   - Scoreboard: scoreboard.md
   - Tutorials:
       - Tutorial Index: tutorials/README.md
@@ -49,6 +50,8 @@ nav:
       - Package Build Artifacts: tutorials/02-package-build-artifacts.md
       - Legacy Vs Modern Packaging: tutorials/03-legacy-vs-modern-packaging.md
       - Submission And Certificates: tutorials/04-submission-and-certificates.md
+      - Reading Pip Output: tutorials/05-reading-pip-output.md
+      - Submission PR Workflow: tutorials/06-submission-pr-workflow.md
   - Labs:
       - Lab Index: labs/index.md
       - Flag 01 Index Recon: labs/flag-01-index-recon.md

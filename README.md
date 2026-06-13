@@ -36,7 +36,8 @@ names and fake flags.
 1. Open the participant site.
 2. Read **Rules** and **How To Play**.
 3. Start with **Flag 01: Index Recon**.
-4. Track progress on the scoreboard.
+4. Use **Hints** when they open.
+5. Track progress on the scoreboard.
 
 ## Local Docs Preview
 
