@@ -86,7 +86,7 @@ Example proof:
 
 ## Submission
 
-For the MVP, participants submit:
+For the public challenge flow, participants submit:
 
 - flag value
 - one or two sentence explanation

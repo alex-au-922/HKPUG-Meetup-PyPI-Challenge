@@ -3,6 +3,22 @@
 Hosted HKPUG mode and community mode may use different submission paths. The
 event announcement will say which one is active.
 
+## What A Good Answer Looks Like
+
+A good CTF answer is not only the flag. It should also show that you understood
+the packaging behavior.
+
+For most labs, write:
+
+```text
+Flag: HKPUG{...}
+Why it worked: pip selected package/version/link X because Y.
+Evidence: command output, metadata file, artifact path, or workflow line.
+Defense: the smallest change that would prevent this in a real project.
+```
+
+Keep it short. The goal is proof of understanding, not a long essay.
+
 ## Official Submission
 
 Participants may be asked to submit:

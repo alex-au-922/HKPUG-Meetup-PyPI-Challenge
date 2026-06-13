@@ -1,30 +1,51 @@
 # Flag 01: Index Recon
 
-## Scenario
+## Plain English
 
-You are given a package that is not on real PyPI. Your first job is to map the
-challenge index, identify the project page, and install the selected artifact.
+Pip installs packages from an index. The default public index is PyPI, but this
+challenge uses a toy index. Your first job is to prove you can point pip at the
+toy index and identify the exact file pip selected.
 
-## Objective
+## Goal
 
-Make pip install `hkpug-ctf-hello` from the trusted challenge index and write
-proof under `artifacts/flag-01.json`.
+Install `hkpug-ctf-hello` from the challenge index and write proof under
+`artifacts/`.
 
-## What This Teaches
-
-- pip installs from an index URL
-- `--index-url` changes where pip searches
-- the challenge uses toy packages, not real PyPI
-
-## Expected Capture
+Practice flag for local scaffolding:
 
 ```text
-artifacts/flag-01.txt
+HKPUG{practice.flag-01}
 ```
+
+## Expected Files
+
+```text
+labs/flag-01-index-recon/
+  README.md
+  indexes/
+  packages-src/
+  victim/
+  artifacts/
+```
+
+## Local Setup
+
+```bash
+cd labs/flag-01-index-recon
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+export HKPUG_FAKE_FLAG="HKPUG{practice.flag-01}"
+```
+
+## Player Task
+
+Map the `/simple/` index, find the project page, install the toy package, and
+record the selected artifact URL or path.
 
 ## What To Submit
 
 - captured flag
 - install command used
 - selected artifact URL or path
-- one sentence explaining why real PyPI was not involved
+- why real PyPI was not involved

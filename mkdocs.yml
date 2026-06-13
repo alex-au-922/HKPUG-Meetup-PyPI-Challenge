@@ -53,6 +53,13 @@ nav:
       - Lab Index: labs/index.md
       - Flag 01 Index Recon: labs/flag-01-index-recon.md
       - Flag 02 Name Maze: labs/flag-02-name-maze.md
+      - Flag 03 Resolver Duel: labs/flag-03-resolver-duel.md
       - Flag 04 Dependency Confusion: labs/flag-04-dependency-confusion.md
       - Flag 05 Wheel Autopsy: labs/flag-05-wheel-autopsy.md
+      - Flag 06 Entry Point Ambush: labs/flag-06-entry-point-ambush.md
       - Flag 07 Legacy Sdist Trap: labs/flag-07-legacy-sdist-trap.md
+      - Flag 08 Build Isolation Lab: labs/flag-08-build-isolation-lab.md
+      - Flag 09 Startup Surprise: labs/flag-09-startup-surprise.md
+      - Flag 10 Pin Hash Lock: labs/flag-10-pin-hash-lock.md
+      - Flag 11 CI Publisher Trap: labs/flag-11-ci-publisher-trap.md
+      - Flag 12 Capstone Incident: labs/flag-12-capstone-incident.md

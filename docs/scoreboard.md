@@ -31,7 +31,7 @@ scored. Hint multipliers may affect the maximum score for a flag.
 
 ## Hint Multipliers
 
-For the MVP, hint state can be global per flag:
+For the public challenge flow, hint state can be global per flag:
 
 | State | Max Score |
 |---|---:|

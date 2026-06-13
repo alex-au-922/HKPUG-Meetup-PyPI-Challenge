@@ -1,18 +1,97 @@
 # Flag 04: Dependency Confusion
 
-## Scenario
+!!! danger "Challenge boundary"
+    **This lab uses a simulated public index, not real PyPI.**
 
-The victim app trusts a private index but also uses a simulated public index.
-The same package name exists in both places.
+    Do not upload packages to real PyPI and do not target real internal package
+    names.
 
-## Objective
+## Plain English
 
-Make pip choose the higher-version package from `public-sim`, prove which index
-won, and capture the fake flag locally.
+Dependency confusion happens when a project means to install a private package,
+but the installer can also see a public-looking package with the same name.
 
-## Submission
+If both sources are searched together, pip may choose the candidate that best
+matches its resolver rules. A higher version from the wrong place can beat the
+package you expected.
+
+## Story
+
+The victim app trusts a private toy index but also uses a simulated public toy
+index. The same package name exists in both places.
+
+Your job is to make pip choose the higher-version package from `public-sim`,
+prove which index won, and capture the fake flag locally.
+
+## What You Are Trying To Control
+
+You are trying to control source priority and candidate selection.
+
+The dangerous pattern to recognize is:
+
+```bash
+python -m pip install \
+  --index-url "$PRIVATE_INDEX_URL" \
+  --extra-index-url "$PUBLIC_SIM_INDEX_URL" \
+  hkpug-ctf-internal-utils
+```
+
+The exact command in the lab may differ, but the question is the same: which
+source supplied the installed file?
+
+## Files You Will Get
+
+```text
+labs/flag-04-dependency-confusion/
+  indexes/
+  packages-src/
+  victim/
+  artifacts/
+```
+
+## First Checks
+
+```bash
+cd labs/flag-04-dependency-confusion
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+export HKPUG_FAKE_FLAG="HKPUG{practice.flag-04}"
+```
+
+Inspect both project pages before installing:
+
+```bash
+python -m pip install -vv -r victim/requirements.txt
+python -m pip show hkpug-ctf-internal-utils
+```
+
+Verbose output should show which links pip considered.
+
+## Your Task
+
+Make the simulated public package win, capture the fake flag, and then propose a
+defensive install configuration that prevents the confusion.
+
+The final mile is yours: this page explains the risk, but not the exact version
+that wins.
+
+## What To Submit
 
 - captured flag
 - selected package version
 - which index won
 - defensive fix
+
+## Hints
+
+1. Nudge: compare the versions visible on both project pages.
+2. Direction: `--extra-index-url` does not mean "only use this if private fails"
+   in the way many people hope.
+3. Guided: in hosted mode, ask after you can show verbose pip output.
+
+## Defense Notes
+
+Prefer one trusted package source for private dependencies, exact internal names,
+and lockfiles or hashes. Do not mix a private namespace with an uncontrolled
+public search path.

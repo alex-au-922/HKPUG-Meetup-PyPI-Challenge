@@ -1,0 +1,100 @@
+# Flag 11: CI Publisher Trap
+
+!!! danger "Challenge boundary"
+    **This lab uses fake workflows, fake tokens, and toy package names.**
+
+    Do not test release-workflow attacks against real repositories or real
+    package publishing credentials.
+
+## Plain English
+
+Many packages are published by CI. CI means an automated workflow runs after a
+push, tag, release, or pull request. If the workflow trusts the wrong event or
+builds the wrong files, it may publish something the maintainer did not mean to
+publish.
+
+This lab does not publish anything. You audit a fake workflow and prove which
+package artifact would have been released.
+
+## Story
+
+The challenge gives you a toy repository with a release workflow. The workflow
+looks plausible at first glance. It builds a package and sends it to a fake
+publisher script.
+
+One detail makes the workflow unsafe. Your job is to find the detail, capture
+the local flag through the fake publisher, and patch the workflow.
+
+## What You Are Trying To Control
+
+You are trying to control release trust.
+
+Look for:
+
+- which event triggers the workflow
+- which branch or tag is trusted
+- whether the workflow builds checked-out code or generated artifacts
+- token permissions
+- whether untrusted pull request code can affect publishing
+
+## Files You Will Get
+
+```text
+labs/flag-11-ci-publisher-trap/
+  fake-repo/
+    .github/workflows/
+    package/
+    scripts/
+  artifacts/
+```
+
+## First Checks
+
+```bash
+cd labs/flag-11-ci-publisher-trap/fake-repo
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip build
+export HKPUG_FAKE_FLAG="HKPUG{practice.flag-11}"
+```
+
+Read the workflow like a program:
+
+```bash
+python - <<'PY'
+from pathlib import Path
+for path in Path(".github/workflows").glob("*.yml"):
+    print(f"--- {path} ---")
+    print(path.read_text())
+PY
+```
+
+Run only the provided fake publisher script. It writes local proof instead of
+uploading anywhere.
+
+## Your Task
+
+Identify the unsafe workflow assumption, produce the local fake publish proof,
+and patch the workflow so the unsafe path would no longer publish.
+
+The final mile is yours: the docs will not name the exact bad line.
+
+## What To Submit
+
+- captured flag or fake publish proof
+- unsafe workflow line or setting
+- patched workflow snippet
+- one sentence explaining why the patch works
+
+## Hints
+
+1. Nudge: start at the `on:` block, then read permissions.
+2. Direction: publishing from untrusted pull request context is different from
+   publishing from a protected tag.
+3. Guided: in hosted mode, request a hint with the workflow text you inspected.
+
+## Defense Notes
+
+Keep release jobs tied to protected refs, use minimal permissions, separate
+build and publish trust boundaries, and prefer trusted publishing mechanisms
+where available.

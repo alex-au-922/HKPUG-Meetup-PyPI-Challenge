@@ -1,24 +1,50 @@
 # Flag 07: Legacy Sdist Trap
 
-## Scenario
+## Plain English
 
-The victim is forced to install from a source distribution. A legacy `setup.py`
-path writes a local marker during the controlled build.
+An sdist is source code that pip may build locally. Legacy `setup.py` build
+paths can run Python code during the build.
 
-## Objective
+## Goal
 
-Trigger the legacy source-build path and capture the fake flag under
-`artifacts/`.
+Force the toy package down the legacy source-build path and capture the harmless
+local marker.
 
-## What This Teaches
+Practice flag for local scaffolding:
 
-- source builds can run project build logic
-- legacy setup.py-era behavior is important to understand
-- wheels and modern build frontends change the risk surface
+```text
+HKPUG{practice.flag-07}
+```
+
+## Expected Files
+
+```text
+labs/flag-07-legacy-sdist-trap/
+  README.md
+  indexes/
+  packages-src/
+  victim/
+  artifacts/
+```
+
+## Local Setup
+
+```bash
+cd labs/flag-07-legacy-sdist-trap
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+export HKPUG_FAKE_FLAG="HKPUG{practice.flag-07}"
+```
+
+## Player Task
+
+Compare wheel and sdist install behavior, trigger the source-build path, and
+identify which build phase wrote proof.
 
 ## What To Submit
 
 - captured flag
 - whether pip used wheel or sdist
-- which build phase created the marker
-- one modern packaging mitigation
+- build phase that created the marker
+- modern packaging mitigation

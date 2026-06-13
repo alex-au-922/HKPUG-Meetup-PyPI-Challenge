@@ -1,0 +1,100 @@
+# Flag 06: Entry Point Ambush
+
+!!! danger "Challenge boundary"
+    **Run only challenge-owned console scripts inside the challenge virtual
+    environment.**
+
+    Do not create package commands that touch real user files, credentials, or
+    external services.
+
+## Plain English
+
+A package can install commands into your virtual environment. You may install a
+package named `hkpug-ctf-tool`, then suddenly get a command named
+`hkpug-tool` in `.venv/bin/`.
+
+That command is usually created from package metadata called an entry point.
+The code may not run during installation, but it can run the moment a user calls
+the command.
+
+## Story
+
+The victim workflow installs a toy package and then runs a helper command from
+that package. The package has normal-looking metadata, but one console script
+is wired to the flag capture path.
+
+Some optional behavior is hidden behind an extra. In packaging, an extra is the
+part inside square brackets, such as `package[dev]`.
+
+## What You Are Trying To Control
+
+You are trying to control which command appears after installation and which
+extra dependencies are pulled in.
+
+You should be able to answer:
+
+- Which package created the command?
+- Which metadata file lists the command?
+- Did the install include any extras?
+- What command actually triggers the flag?
+
+## Files You Will Get
+
+```text
+labs/flag-06-entry-point-ambush/
+  indexes/
+  packages-src/
+  victim/
+  artifacts/
+```
+
+## First Checks
+
+Use a fresh environment:
+
+```bash
+cd labs/flag-06-entry-point-ambush
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+export HKPUG_FAKE_FLAG="HKPUG{practice.flag-06}"
+```
+
+After installing the toy package, inspect metadata:
+
+```bash
+python -m pip show -f hkpug-ctf-tool
+python - <<'PY'
+import importlib.metadata
+dist = importlib.metadata.distribution("hkpug-ctf-tool")
+for ep in dist.entry_points:
+    print(ep)
+PY
+```
+
+## Your Task
+
+Install the correct toy package shape, identify the generated command, and run
+the command path that captures the flag.
+
+The final mile is not printed here. You must connect the entry point metadata to
+the command that appears in your virtual environment.
+
+## What To Submit
+
+- captured flag
+- console command name
+- entry point target, such as `module:function`
+- whether an extra was required
+
+## Hints
+
+1. Nudge: `pip show -f` tells you which files were installed.
+2. Direction: entry points live in installed distribution metadata.
+3. Guided: in hosted mode, ask only after you can show the package metadata.
+
+## Defense Notes
+
+Do not run newly installed commands blindly in automation. In real projects,
+review console entry points, restrict trusted package sources, and keep
+installation separate from privileged release steps.

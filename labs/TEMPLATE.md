@@ -1,18 +1,22 @@
 # Flag XX: Lab Title
 
-## Scenario
+This README is the workspace note for a lab. Keep it public-safe: no official
+flags, no secret answer keys, and no real package targets.
 
-Explain the story in 3 to 5 sentences.
+## Plain English
 
-## Objective
+Explain the core idea as if the player has never seen Python packaging security
+before. Define the nouns before asking them to hack anything.
 
-Capture:
+## Goal
+
+Capture the hosted flag, or use this practice value when testing locally:
 
 ```text
 HKPUG{practice.flag-XX}
 ```
 
-## Files
+## Expected Files
 
 ```text
 labs/flag-XX-name/
@@ -23,23 +27,29 @@ labs/flag-XX-name/
   artifacts/
 ```
 
-## Commands
+## Local Setup
 
 ```bash
+cd labs/flag-XX-name
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
 export HKPUG_FAKE_FLAG="HKPUG{practice.flag-XX}"
 ```
 
-Add lab-specific commands here.
+## Player Task
+
+Describe what the player must prove, not the exact final solve.
 
 ## What To Submit
 
-- flag
-- one short explanation
-- optional defense patch
+- captured flag
+- one short explanation of why the flag appeared
+- key command, file, or package version used
+- optional defensive fix
 
-## Hints
+## Hint Shape
 
-1. First hint.
-2. Second hint.
-3. Final hint.
-
+1. Nudge: point at the right file or command.
+2. Direction: name the packaging concept.
+3. Guided: hosted-mode personalized hint, if enabled.

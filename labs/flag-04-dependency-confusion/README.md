@@ -1,26 +1,47 @@
 # Flag 04: Dependency Confusion
 
-## Scenario
+## Plain English
 
-The victim app trusts a private index but also uses a simulated public index.
-The same package name exists in both places.
+If pip can see a private-looking package and a public-looking package with the
+same name, the resolver may choose the wrong one. This lab uses only simulated
+toy indexes.
 
-## Objective
+## Goal
 
-Make pip choose the higher-version package from `public-sim`, prove which index
-won, and capture the fake flag locally.
+Make the simulated public package win, prove which index supplied it, and then
+describe the defense.
 
-## What This Teaches
-
-- `--extra-index-url` can create dependency confusion risk
-- pip selects candidates across configured indexes
-- higher versions can beat trusted internal packages
-
-## Expected Capture
+Practice flag for local scaffolding:
 
 ```text
-artifacts/flag-04.json
+HKPUG{practice.flag-04}
 ```
+
+## Expected Files
+
+```text
+labs/flag-04-dependency-confusion/
+  README.md
+  indexes/
+  packages-src/
+  victim/
+  artifacts/
+```
+
+## Local Setup
+
+```bash
+cd labs/flag-04-dependency-confusion
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+export HKPUG_FAKE_FLAG="HKPUG{practice.flag-04}"
+```
+
+## Player Task
+
+Inspect both toy indexes, run the victim install, identify the winning version,
+and capture local proof.
 
 ## What To Submit
 

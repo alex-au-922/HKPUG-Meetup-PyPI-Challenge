@@ -1,30 +1,50 @@
 # Flag 02: Name Maze
 
-## Scenario
+## Plain English
 
-The same package can be requested with different punctuation. Pip normalizes the
-name before looking up the project page.
+Package names can look different to humans but normalize to the same project
+lookup name. Pip lowercases names and treats runs of `.`, `_`, and `-` as `-`.
 
-## Objective
+## Goal
 
-Show that package name variants resolve to the same normalized project name, then
-find the correct project page.
+Normalize the noisy toy package names, find the real project page, and capture
+the flag.
 
-Examples:
+Practice flag for local scaffolding:
 
-- `HKPUG_CTF.Normalize.Me`
-- `hkpug-ctf-normalize-me`
-- `hkpug.ctf_normalize-me`
+```text
+HKPUG{practice.flag-02}
+```
 
-## What This Teaches
+## Expected Files
 
-- `.`, `_`, and `-` are normalized for lookup
-- private package naming policy matters
-- collision-style mistakes can cause confusion
+```text
+labs/flag-02-name-maze/
+  README.md
+  indexes/
+  packages-src/
+  victim/
+  artifacts/
+```
+
+## Local Setup
+
+```bash
+cd labs/flag-02-name-maze
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+export HKPUG_FAKE_FLAG="HKPUG{practice.flag-02}"
+```
+
+## Player Task
+
+Test the provided spelling variants, find their normalized project page, install
+the correct toy artifact, and capture proof.
 
 ## What To Submit
 
 - normalized name
-- package variants tested
+- variants tested
 - project page path
-- practice flag
+- captured flag

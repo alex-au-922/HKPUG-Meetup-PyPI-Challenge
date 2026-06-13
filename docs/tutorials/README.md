@@ -1,7 +1,8 @@
 # Tutorial Pages
 
-These tutorials explain the working format. They should be short, practical,
-and linked from each lab.
+These tutorials explain the working format with almost no assumed background.
+They are intentionally basic about vocabulary, commands, and where to look.
+The labs still leave the final connection for you.
 
 Recommended reading order:
 
@@ -11,7 +12,7 @@ Recommended reading order:
 4. `03-legacy-vs-modern-packaging.md`
 5. `04-submission-and-certificates.md`
 
-Each tutorial should answer three questions:
+Each tutorial answers three questions:
 
 - What am I looking at?
 - What command do I run?

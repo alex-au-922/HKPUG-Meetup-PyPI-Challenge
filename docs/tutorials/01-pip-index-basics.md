@@ -1,33 +1,47 @@
 # Pip Index Basics
 
-When you run `pip install SomePackage`, pip does not magically know where the
-package file is. It asks a package index.
+This page explains the first mental model.
 
-The default index is PyPI, but in this challenge we point pip at local or hosted
-toy indexes.
+## What Is Pip?
 
-## Important Options
+`pip` is the tool that installs Python packages.
 
-Use one index:
+When you type:
 
 ```bash
-python -m pip install --index-url file://$PWD/indexes/trusted/simple hkpug-ctf-hello
+python -m pip install requests
 ```
 
-Add another index:
+you are asking pip to:
 
-```bash
-python -m pip install \
-  --index-url file://$PWD/indexes/trusted/simple \
-  --extra-index-url file://$PWD/indexes/public-sim/simple \
-  hkpug-ctf-hello
+1. find a package named `requests`
+2. choose a version
+3. download a file
+4. install that file into your Python environment
+
+## What Is PyPI?
+
+PyPI is the default public package index. It is where pip usually looks.
+
+This challenge does **not** use real PyPI as the target. We use toy indexes that
+look like PyPI indexes.
+
+## What Is An Index?
+
+An index is a website or folder that says:
+
+```text
+Here are package names.
+Here are package files for each name.
+Here are links to download those files.
 ```
 
-The second form is where dependency confusion lessons start.
+A very small index can just be HTML files.
 
-## Simple Index Shape
+## What Is `/simple/`?
 
-A minimal index looks like:
+Python package indexes expose a "simple" API. In this challenge, it often looks
+like:
 
 ```text
 indexes/trusted/simple/
@@ -38,22 +52,79 @@ packages/
   hkpug_ctf_hello-1.0.0-py3-none-any.whl
 ```
 
-The project page links to distribution files.
+The root page lists projects. The project page lists package files.
+
+## One Index
+
+This asks pip to use one trusted toy index:
+
+```bash
+python -m pip install \
+  --index-url file://$PWD/indexes/trusted/simple \
+  hkpug-ctf-hello
+```
+
+The key phrase is `--index-url`.
+
+## Two Indexes
+
+This asks pip to use one main index and one extra index:
+
+```bash
+python -m pip install \
+  --index-url file://$PWD/indexes/trusted/simple \
+  --extra-index-url file://$PWD/indexes/public-sim/simple \
+  hkpug-ctf-hello
+```
+
+The dangerous phrase is `--extra-index-url`.
+
+If the same package exists in both places, you must ask:
+
+```text
+Which candidate does pip think is best?
+```
+
+That question powers several flags.
 
 ## Name Normalization
 
-Package names are normalized for index lookup. Runs of `.`, `_`, and `-` become
-one `-`, and letters are lowercased.
+Package names are normalized before lookup.
 
-Examples:
+These can point to the same normalized name:
 
 - `HKPUG_CTF.Hello`
 - `hkpug-ctf-hello`
 - `hkpug.ctf_hello`
 
-All normalize to:
+They normalize to:
 
 ```text
 hkpug-ctf-hello
 ```
 
+So when a lab gives you weird punctuation, do not panic. Normalize the name and
+look for the matching project page.
+
+## Useful Commands
+
+Run pip with more detail:
+
+```bash
+python -m pip install -vv ...
+```
+
+Download without installing:
+
+```bash
+python -m pip download ...
+```
+
+Show installed package details:
+
+```bash
+python -m pip show hkpug-ctf-hello
+```
+
+The tutorials give you the map. The labs still expect you to decide which
+package path matters.
