@@ -824,13 +824,10 @@
 
 
 <h1 id="scoreboard">Scoreboard</h1>
-<p>This scoreboard is intentionally friendly. It should show progress and learning
-status before pure ranking.</p>
-<p>The first version reads static data from:</p>
-<div class="highlight"><pre><span></span><code>assets/leaderboard.json
-</code></pre></div>
-<p>During an official event, the progress board can be updated as submissions are
-scored. Hint multipliers may affect the maximum score for a flag.</p>
+<p>Use the scoreboard to check progress, certificate tier, and hint-adjusted score
+state.</p>
+<p>Scores are useful, but they are not the whole point. A good solve also includes
+a clear explanation of what happened and how to defend it.</p>
 <div class="scoreboard-toolbar">
   <label for="scoreboard-filter">Filter</label>
   <input id="scoreboard-filter" type="search" placeholder="team, tier, region" />
@@ -844,7 +841,7 @@ scored. Hint multipliers may affect the maximum score for a flag.</p>
 <thead>
 <tr>
 <th>Tier</th>
-<th>Suggested Requirement</th>
+<th>Requirement</th>
 </tr>
 </thead>
 <tbody>
@@ -867,7 +864,7 @@ scored. Hint multipliers may affect the maximum score for a flag.</p>
 </tbody>
 </table>
 <h2 id="hint-multipliers">Hint Multipliers</h2>
-<p>For the public challenge flow, hint state can be global per flag:</p>
+<p>Hint state can affect the maximum score:</p>
 <table>
 <thead>
 <tr>
@@ -894,8 +891,7 @@ scored. Hint multipliers may affect the maximum score for a flag.</p>
 </tr>
 </tbody>
 </table>
-<p>Official events may use public or private hints. The event announcement will
-state how hint usage affects scoring.</p>
+<p>Check the event notes for the exact scoring rule before you submit.</p>
 
 
 

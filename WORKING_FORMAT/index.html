@@ -367,18 +367,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#standard-lab-layout" class="md-nav__link">
+  <a href="#flag-capture" class="md-nav__link">
     <span class="md-ellipsis">
-      Standard Lab Layout
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#standard-flag-capture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Standard Flag Capture
+      Flag Capture
     </span>
   </a>
   
@@ -877,18 +868,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#standard-lab-layout" class="md-nav__link">
+  <a href="#flag-capture" class="md-nav__link">
     <span class="md-ellipsis">
-      Standard Lab Layout
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#standard-flag-capture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Standard Flag Capture
+      Flag Capture
     </span>
   </a>
   
@@ -1009,7 +991,7 @@ lab, not learning packaging vocabulary from scratch.</p>
 <p>Allowed:</p>
 <ul>
 <li>point pip at the provided challenge index</li>
-<li>build toy wheels or sdists inside this repo</li>
+<li>build toy wheels or sdists inside the challenge workspace</li>
 <li>edit challenge-owned index HTML files</li>
 <li>run the victim app inside the challenge workspace</li>
 <li>capture fake flags under <code>artifacts/</code></li>
@@ -1023,19 +1005,8 @@ lab, not learning packaging vocabulary from scratch.</p>
 <li><strong>contacting external callback servers</strong></li>
 <li><strong>modifying files outside the challenge workspace</strong></li>
 </ul>
-<h2 id="standard-lab-layout">Standard Lab Layout</h2>
-<p>Each lab should eventually follow this structure:</p>
-<div class="highlight"><pre><span></span><code>labs/flag-XX-name/
-  README.md
-  scenario/
-  packages-src/
-  indexes/
-  victim/
-  expected/
-</code></pre></div>
-<p>Some early labs may be lighter than this.</p>
-<h2 id="standard-flag-capture">Standard Flag Capture</h2>
-<p>The official fake flag is provided through a local environment variable:</p>
+<h2 id="flag-capture">Flag Capture</h2>
+<p>Most labs provide a fake flag through a local environment variable:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HKPUG_FAKE_FLAG</span><span class="o">=</span><span class="s2">&quot;HKPUG{practice.flag-XX}&quot;</span>
 </code></pre></div>
 <p>The package or victim app should write proof to:</p>
@@ -1051,17 +1022,16 @@ lab, not learning packaging vocabulary from scratch.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="submission">Submission</h2>
-<p>For the public challenge flow, participants submit:</p>
+<p>Submit:</p>
 <ul>
 <li>flag value</li>
 <li>one or two sentence explanation</li>
 <li>optional patch or writeup</li>
 </ul>
-<p>For hosted HKPUG mode, answers are encrypted before a pull request.</p>
-<p>For community mode, participants can self-check locally and submit a public
-writeup after the official window closes.</p>
+<p>If the event uses pull-request submissions, put your encrypted answer files in
+your team folder.</p>
 <h2 id="finding-your-submission-pr">Finding Your Submission PR</h2>
-<p>Hosted mode should use <strong>one long-lived pull request per participant or team</strong>.
+<p>Use <strong>one long-lived pull request per participant or team</strong>.
 Do not open one pull request per flag.</p>
 <p>Use this title format:</p>
 <div class="highlight"><pre><span></span><code>[HKPUG-TEAM-AB12] submissions
@@ -1073,8 +1043,8 @@ Do not open one pull request per flag.</p>
 for your team code or use:</p>
 <div class="highlight"><pre><span></span><code>is:pr is:open author:@me repo:alex-au-922/HKPUG-Meetup-PyPI-Challenge
 </code></pre></div>
-<p>The team code is not secret. The flag answers are secret and should be encrypted
-in hosted mode.</p>
+<p>The team code is not secret. The flag answers are secret and should be
+encrypted when the event asks for encrypted submissions.</p>
 <h2 id="submission-pr-format">Submission PR Format</h2>
 <p>Use this folder shape:</p>
 <div class="highlight"><pre><span></span><code>submissions/
@@ -1099,11 +1069,11 @@ in hosted mode.</p>
 <span class="k">- [ ]</span> Flag 11 submitted
 <span class="k">- [ ]</span> Flag 12 submitted
 </code></pre></div>
-<p>The repository guard checks submission PRs automatically. It labels submission
-PRs, comments with the exact fix when the format is wrong, and auto-closes
-duplicate PRs for the same team.</p>
+<p>GitHub checks submission PRs automatically. If the format is wrong, the PR gets
+a comment explaining what to fix. Duplicate PRs for the same team may be closed;
+keep updating your original PR instead.</p>
 <h2 id="e-cert-progress">E-Cert Progress</h2>
-<p>Suggested thresholds:</p>
+<p>Certificate tiers:</p>
 <ul>
 <li>Participation: 2 valid flags</li>
 <li>Explorer: 5 valid flags including one resolver/build flag</li>
