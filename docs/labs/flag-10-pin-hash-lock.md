@@ -166,7 +166,7 @@ weakest.
 
 1. Nudge: compare `requirements.txt` with the package versions in the index.
 2. Direction: `--require-hashes` changes what pip accepts.
-3. Guided: in hosted mode, include your failing safe-install output.
+3. Guided: include your failing safe-install output.
 
 ## Defense Notes
 

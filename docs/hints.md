@@ -1,7 +1,7 @@
 # Hints
 
-Hints are part of the challenge design. They should keep people moving without
-turning the lab into a copy-paste walkthrough.
+Hints are here to keep you moving without turning the lab into a copy-paste
+walkthrough.
 
 ## Hint Timing
 
@@ -9,10 +9,10 @@ turning the lab into a copy-paste walkthrough.
 |---|---|---:|---|
 | Nudge | about 24 hours after lab launch | small | where to look |
 | Direction | about 48 hours after lab launch | medium | the concept to test |
-| Guided | hosted mode only | larger | a personalized next step |
+| Guided | when available | larger | a personalized next step |
 
-For a 2-day flag, the hosted run may release only Nudge and Guided. For a
-3-day flag, it may release Nudge, Direction, and Guided.
+For a 2-day flag, you may see only Nudge and Guided. For a 3-day flag, you may
+see Nudge, Direction, and Guided.
 
 ## Public Hints By Flag
 
@@ -35,8 +35,8 @@ These public hints are safe to read. They do not contain final answers.
 
 ## Guided Hints
 
-Guided hints are private in hosted mode because they depend on what your team
-has already tried. A good guided hint request includes:
+Guided hints depend on what your team has already tried. A good guided hint
+request includes:
 
 - your team code
 - flag number

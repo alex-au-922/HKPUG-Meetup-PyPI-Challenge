@@ -68,7 +68,7 @@ Each lab has three hint levels:
 |---|---|---:|---|
 | Nudge | Around 24 hours after lab launch | small | Points you at the right file or command. |
 | Direction | Around 48 hours after lab launch | medium | Names the concept you should test. |
-| Guided | Hosted mode only | larger | Gives a personalized next step and marks that a guided hint was used. |
+| Guided | When available | larger | Gives a personalized next step and marks that a guided hint was used. |
 
-The hosted HKPUG run may adjust the exact timing. Community players can still
-use the public hint text for learning.
+The event page may adjust the exact timing. Public hint text is safe to use for
+learning.

@@ -176,7 +176,7 @@ exact file contents.
 
 1. Nudge: `pip show -f` lists installed files by distribution.
 2. Direction: inspect `.pth` files in the active virtual environment.
-3. Guided: in hosted mode, provide your `site-packages` path when asking.
+3. Guided: provide your `site-packages` path when asking.
 
 ## Defense Notes
 

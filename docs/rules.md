@@ -23,7 +23,7 @@
 
     - point pip at the provided challenge indexes
     - inspect toy `/simple/` index pages
-    - build toy wheels and source distributions inside this repo
+    - build toy wheels and source distributions inside the challenge workspace
     - run victim apps inside the challenge workspace
     - write fake flag proof under `artifacts/`
     - explain and patch the vulnerable configuration
@@ -38,6 +38,5 @@ real service, it is outside the challenge boundary.
 
 ## Submission Rule
 
-For official HKPUG mode, submit only the requested answer bundle or writeup.
-Do not submit real exploit payloads, real secrets, or screenshots containing
-private information.
+Submit only the requested answer bundle or writeup. Do not submit real exploit
+payloads, real secrets, or screenshots containing private information.

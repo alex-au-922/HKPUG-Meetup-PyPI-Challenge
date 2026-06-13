@@ -159,7 +159,7 @@ exact project page that contains the winning artifact.
 
 1. Nudge: do not compare the raw spelling; compare the normalized spelling.
 2. Direction: the project page path should match the normalized name.
-3. Guided: in hosted mode, send the variants you tested before asking.
+3. Guided: send the variants you tested before asking.
 
 ## Defense Notes
 

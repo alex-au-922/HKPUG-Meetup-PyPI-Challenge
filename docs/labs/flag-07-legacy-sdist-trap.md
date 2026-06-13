@@ -167,7 +167,7 @@ contains the marker.
 
 1. Nudge: use `-vv` and read the build log, not only the final success line.
 2. Direction: forcing source builds changes what code pip must execute.
-3. Guided: in hosted mode, include the relevant build log lines.
+3. Guided: include the relevant build log lines.
 
 ## Defense Notes
 

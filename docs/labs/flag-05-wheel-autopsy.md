@@ -161,7 +161,7 @@ one contains the key clue.
 
 1. Nudge: start in the `.dist-info/` directory.
 2. Direction: `RECORD` tells you what files the wheel expects to install.
-3. Guided: in hosted mode, send the wheel file list before asking.
+3. Guided: send the wheel file list before asking.
 
 ## Defense Notes
 

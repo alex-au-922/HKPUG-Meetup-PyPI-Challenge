@@ -129,9 +129,6 @@ labs/flag-03-resolver-duel/
   artifacts/
 ```
 
-The hosted challenge may generate the package files for you. The public repo
-does not publish official flag values.
-
 ## First Checks
 
 Start by creating a fresh environment. Fresh matters because cached installs can
@@ -175,8 +172,7 @@ The final mile is yours: the docs will not tell you which exact version wins.
 
 1. Nudge: look for the lines in verbose pip output that say a link was skipped.
 2. Direction: compare the available versions with the victim requirement.
-3. Guided: in hosted mode, request a guided hint after you can show your
-   candidate list.
+3. Guided: request a guided hint after you can show your candidate list.
 
 ## Defense Notes
 

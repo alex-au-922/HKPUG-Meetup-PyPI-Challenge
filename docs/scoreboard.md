@@ -1,16 +1,10 @@
 # Scoreboard
 
-This scoreboard is intentionally friendly. It should show progress and learning
-status before pure ranking.
+Use the scoreboard to check progress, certificate tier, and hint-adjusted score
+state.
 
-The first version reads static data from:
-
-```text
-assets/leaderboard.json
-```
-
-During an official event, the progress board can be updated as submissions are
-scored. Hint multipliers may affect the maximum score for a flag.
+Scores are useful, but they are not the whole point. A good solve also includes
+a clear explanation of what happened and how to defend it.
 
 <div class="scoreboard-toolbar">
   <label for="scoreboard-filter">Filter</label>
@@ -22,7 +16,7 @@ scored. Hint multipliers may affect the maximum score for a flag.
 
 ## Certificate Tiers
 
-| Tier | Suggested Requirement |
+| Tier | Requirement |
 |---|---|
 | Participation | 2 valid flags |
 | Explorer | 5 valid flags including one resolver/build flag |
@@ -31,7 +25,7 @@ scored. Hint multipliers may affect the maximum score for a flag.
 
 ## Hint Multipliers
 
-For the public challenge flow, hint state can be global per flag:
+Hint state can affect the maximum score:
 
 | State | Max Score |
 |---|---:|
@@ -40,5 +34,4 @@ For the public challenge flow, hint state can be global per flag:
 | Hint 2 open | 70% |
 | Guided open | 50% |
 
-Official events may use public or private hints. The event announcement will
-state how hint usage affects scoring.
+Check the event notes for the exact scoring rule before you submit.

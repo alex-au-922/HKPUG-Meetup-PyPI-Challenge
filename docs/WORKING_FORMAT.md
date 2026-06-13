@@ -49,7 +49,7 @@ lab, not learning packaging vocabulary from scratch.
 Allowed:
 
 - point pip at the provided challenge index
-- build toy wheels or sdists inside this repo
+- build toy wheels or sdists inside the challenge workspace
 - edit challenge-owned index HTML files
 - run the victim app inside the challenge workspace
 - capture fake flags under `artifacts/`
@@ -63,25 +63,9 @@ Not allowed:
 - **contacting external callback servers**
 - **modifying files outside the challenge workspace**
 
-## Standard Lab Layout
+## Flag Capture
 
-Each lab should eventually follow this structure:
-
-```text
-labs/flag-XX-name/
-  README.md
-  scenario/
-  packages-src/
-  indexes/
-  victim/
-  expected/
-```
-
-Some early labs may be lighter than this.
-
-## Standard Flag Capture
-
-The official fake flag is provided through a local environment variable:
+Most labs provide a fake flag through a local environment variable:
 
 ```bash
 export HKPUG_FAKE_FLAG="HKPUG{practice.flag-XX}"
@@ -107,20 +91,18 @@ Example proof:
 
 ## Submission
 
-For the public challenge flow, participants submit:
+Submit:
 
 - flag value
 - one or two sentence explanation
 - optional patch or writeup
 
-For hosted HKPUG mode, answers are encrypted before a pull request.
-
-For community mode, participants can self-check locally and submit a public
-writeup after the official window closes.
+If the event uses pull-request submissions, put your encrypted answer files in
+your team folder.
 
 ## Finding Your Submission PR
 
-Hosted mode should use **one long-lived pull request per participant or team**.
+Use **one long-lived pull request per participant or team**.
 Do not open one pull request per flag.
 
 Use this title format:
@@ -142,8 +124,8 @@ for your team code or use:
 is:pr is:open author:@me repo:alex-au-922/HKPUG-Meetup-PyPI-Challenge
 ```
 
-The team code is not secret. The flag answers are secret and should be encrypted
-in hosted mode.
+The team code is not secret. The flag answers are secret and should be
+encrypted when the event asks for encrypted submissions.
 
 ## Submission PR Format
 
@@ -176,13 +158,13 @@ Team code: HKPUG-TEAM-AB12
 - [ ] Flag 12 submitted
 ```
 
-The repository guard checks submission PRs automatically. It labels submission
-PRs, comments with the exact fix when the format is wrong, and auto-closes
-duplicate PRs for the same team.
+GitHub checks submission PRs automatically. If the format is wrong, the PR gets
+a comment explaining what to fix. Duplicate PRs for the same team may be closed;
+keep updating your original PR instead.
 
 ## E-Cert Progress
 
-Suggested thresholds:
+Certificate tiers:
 
 - Participation: 2 valid flags
 - Explorer: 5 valid flags including one resolver/build flag

@@ -172,7 +172,7 @@ the command that appears in your virtual environment.
 
 1. Nudge: `pip show -f` tells you which files were installed.
 2. Direction: entry points live in installed distribution metadata.
-3. Guided: in hosted mode, ask only after you can show the package metadata.
+3. Guided: ask only after you can show the package metadata.
 
 ## Defense Notes
 

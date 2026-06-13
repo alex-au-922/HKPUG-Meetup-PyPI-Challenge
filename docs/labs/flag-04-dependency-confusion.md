@@ -166,7 +166,7 @@ that wins.
 1. Nudge: compare the versions visible on both project pages.
 2. Direction: `--extra-index-url` does not mean "only use this if private fails"
    in the way many people hope.
-3. Guided: in hosted mode, ask after you can show verbose pip output.
+3. Guided: ask after you can show verbose pip output.
 
 ## Defense Notes
 

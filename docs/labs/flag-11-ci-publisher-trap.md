@@ -174,7 +174,7 @@ The final mile is yours: the docs will not name the exact bad line.
 1. Nudge: start at the `on:` block, then read permissions.
 2. Direction: publishing from untrusted pull request context is different from
    publishing from a protected tag.
-3. Guided: in hosted mode, request a hint with the workflow text you inspected.
+3. Guided: request a hint with the workflow text you inspected.
 
 ## Defense Notes
 

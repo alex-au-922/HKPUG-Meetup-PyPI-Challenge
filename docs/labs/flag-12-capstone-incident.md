@@ -179,8 +179,7 @@ metadata trick.
 
 1. Nudge: draw the install path before you build anything.
 2. Direction: prove why the victim selected your artifact, not only that it did.
-3. Guided: in hosted mode, send your candidate-selection evidence with the hint
-   request.
+3. Guided: send your candidate-selection evidence with the hint request.
 
 ## Defense Notes
 

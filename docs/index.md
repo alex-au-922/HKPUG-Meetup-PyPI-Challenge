@@ -2,9 +2,8 @@
 
 Learn PyPI by hacking a safe toy package ecosystem.
 
-This site is the participant-facing lab and progress hub. The GitHub repo
-contains the raw challenge files; this MkDocs site explains how to play, how
-each lab works, and how progress is tracked.
+This site explains how to play, how each lab works, and how your progress is
+tracked.
 
 ## Start Here
 
@@ -62,5 +61,5 @@ term.
 | Beginner reading the flag pages carefully | 25-35 hours |
 | Team of 2-3 people | 16-25 shared hours |
 
-If a beginner regularly needs more than 3 hours before the final-mile puzzle of
-a non-capstone lab, the lab text is probably missing background.
+Most flags are designed to fit into a few focused sessions. The capstone takes
+longer because it asks you to combine earlier ideas.

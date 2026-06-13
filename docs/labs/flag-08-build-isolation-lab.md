@@ -175,7 +175,7 @@ page.
 1. Nudge: search the verbose build log for `Installing build dependencies`.
 2. Direction: build dependencies come from `pyproject.toml`, not from
    `requirements.txt`.
-3. Guided: in hosted mode, request a hint with both build logs attached.
+3. Guided: request a hint with both build logs attached.
 
 ## Defense Notes
 

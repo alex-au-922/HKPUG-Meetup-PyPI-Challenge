@@ -10,7 +10,7 @@ https://alex-au-922.github.io/HKPUG-Meetup-PyPI-Challenge/
 ## What This Is
 
 This is a public learning CTF for Python packaging and PyPI supply-chain
-security. Participants work through a series of hands-on labs involving:
+security. Participants work through hands-on labs involving:
 
 - PyPI-compatible indexes
 - pip resolver behavior
@@ -48,10 +48,10 @@ python -m pip install -r requirements-docs.txt
 mkdocs serve
 ```
 
-## Repository Layout
+## Project Layout
 
 ```text
-docs/       participant-facing MkDocs content
+docs/       participant-facing site content
 labs/       lab workspaces and challenge material
 mkdocs.yml  participant site navigation
 ```

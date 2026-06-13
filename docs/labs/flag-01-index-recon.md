@@ -168,8 +168,8 @@ in the index proves the answer.
 1. Nudge: if pip cannot find the package, check whether your index URL ends at
    the correct `/simple/` location.
 2. Direction: package project pages use normalized names.
-3. Guided: in hosted mode, ask after you can show the index root and the
-   project page you inspected.
+3. Guided: ask after you can show the index root and the project page you
+   inspected.
 
 ## Defense Notes
 
