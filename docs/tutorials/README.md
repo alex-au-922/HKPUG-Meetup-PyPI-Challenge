@@ -1,8 +1,7 @@
 # Tutorial Pages
 
-The 20260530 workshop showed that participants need more guidance on the
-general working format. These tutorials should be short, practical, and linked
-from each lab.
+These tutorials explain the working format. They should be short, practical,
+and linked from each lab.
 
 Recommended reading order:
 
@@ -17,4 +16,3 @@ Each tutorial should answer three questions:
 - What am I looking at?
 - What command do I run?
 - What should I observe?
-

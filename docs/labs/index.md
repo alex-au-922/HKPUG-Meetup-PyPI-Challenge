@@ -5,11 +5,11 @@ span 2 to 3 days and contain several investigation steps.
 
 | Flag | Lab | Status |
 |---:|---|---|
-| 01 | [Index Recon](flag-01-custom-index-install.md) | stub |
-| 02 | [Name Maze](flag-03-name-normalization.md) | stub |
-| 04 | [Dependency Confusion](flag-08-extra-index-confusion.md) | stub |
-| 05 | [Wheel Autopsy](flag-11-wheel-autopsy.md) | stub |
-| 07 | [Legacy Sdist Trap](flag-16-legacy-sdist-trap.md) | stub |
+| 01 | [Index Recon](flag-01-index-recon.md) | stub |
+| 02 | [Name Maze](flag-02-name-maze.md) | stub |
+| 04 | [Dependency Confusion](flag-04-dependency-confusion.md) | stub |
+| 05 | [Wheel Autopsy](flag-05-wheel-autopsy.md) | stub |
+| 07 | [Legacy Sdist Trap](flag-07-legacy-sdist-trap.md) | stub |
 
 Each lab should include:
 

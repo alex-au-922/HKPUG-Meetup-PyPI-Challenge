@@ -1,4 +1,4 @@
-# Flag 03: Name Normalization
+# Flag 02: Name Maze
 
 ## Scenario
 
@@ -7,7 +7,8 @@ name before looking up the project page.
 
 ## Objective
 
-Show that package name variants resolve to the same normalized project name.
+Show that package name variants resolve to the same normalized project name, then
+find the correct project page.
 
 Examples:
 
@@ -25,5 +26,5 @@ Examples:
 
 - normalized name
 - package variants tested
+- project page path
 - practice flag
-

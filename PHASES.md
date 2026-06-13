@@ -3,7 +3,7 @@
 Planning snapshot: 2026-06-13
 
 The challenge should be built in playable phases. Each phase should add a small
-set of flags, tutorial pages, and organizer checks.
+set of flags, tutorial pages, and release checks.
 
 ## Phase 0: Repo And Working Format
 
@@ -14,7 +14,7 @@ Deliverables:
 - participant working format
 - tutorial index
 - lab template
-- first seven lab stubs
+- first five lab stubs
 - registration and certificate rules
 - GitHub issue roadmap
 

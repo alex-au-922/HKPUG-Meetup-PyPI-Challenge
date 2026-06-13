@@ -2,6 +2,12 @@
 
 This challenge is a safe PyPI hacking trail.
 
+!!! danger "Stay inside the sandbox"
+    **Do not use real PyPI, real package names, real credentials, or external
+    callback servers.**
+
+    The challenge only uses toy indexes, toy packages, and fake flags.
+
 You will:
 
 - create or inspect toy package indexes
@@ -12,10 +18,10 @@ You will:
 
 You will not:
 
-- upload packages to real PyPI
-- attack real packages
-- use real credentials
-- exfiltrate anything
+- **upload packages to real PyPI**
+- **attack real packages**
+- **use real credentials**
+- **exfiltrate anything**
 
 ## Basic Workflow
 
@@ -28,7 +34,7 @@ uv pip install -r requirements.txt
 Then open a lab:
 
 ```bash
-cd labs/flag-01-custom-index-install
+cd labs/flag-01-index-recon
 ```
 
 Read the lab `README.md`, run the setup command, and capture the fake flag.
@@ -52,4 +58,3 @@ Look for:
 - the project page under `/simple/<normalized-name>/`
 - the selected version
 - whether pip chose a wheel or sdist
-

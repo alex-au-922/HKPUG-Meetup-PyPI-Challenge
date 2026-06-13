@@ -8,10 +8,11 @@ each lab works, and how progress is tracked.
 
 ## Start Here
 
-1. Read [How To Play](WORKING_FORMAT.md).
-2. Open the [Tutorial Index](tutorials/README.md).
-3. Start with [Flag 01](labs/flag-01-custom-index-install.md).
-4. Check the [Scoreboard](scoreboard.md).
+1. Read [Rules](rules.md).
+2. Read [How To Play](WORKING_FORMAT.md).
+3. Open the [Tutorial Index](tutorials/README.md).
+4. Start with [Flag 01](labs/flag-01-index-recon.md).
+5. Check the [Scoreboard](scoreboard.md).
 
 ## Learning Promise
 
@@ -24,7 +25,10 @@ Every flag is a hacking lab:
 - trigger harmless local flag capture
 - explain the defensive fix
 
-No real PyPI uploads, no real package names, no real credentials.
+!!! danger "Challenge boundary"
+    **No real PyPI uploads. No real package names. No real credentials.**
+
+    All hacking happens inside the toy challenge workspace.
 
 ## MVP Trail
 

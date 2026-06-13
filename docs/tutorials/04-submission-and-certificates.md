@@ -1,18 +1,17 @@
 # Submission And Certificates
 
-The hosted HKPUG mode should use encrypted answer submission. The community mode
-can use local self-checks.
+Hosted HKPUG mode and community mode may use different submission paths. The
+event announcement will say which one is active.
 
 ## Official Submission
 
-Participants submit:
+Participants may be asked to submit:
 
-- encrypted answers
-- signed manifest
-- optional encrypted writeup
+- flag answers
+- short explanations
+- optional writeup or patch
 
-The trusted scorer decrypts answers, checks flags, updates the progress board,
-and records certificate eligibility.
+Official scoring updates the progress board and certificate eligibility.
 
 ## Community Submission
 

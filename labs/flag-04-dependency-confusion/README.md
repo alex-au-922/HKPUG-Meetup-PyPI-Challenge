@@ -1,4 +1,4 @@
-# Flag 08: Extra Index Confusion
+# Flag 04: Dependency Confusion
 
 ## Scenario
 
@@ -7,8 +7,8 @@ The same package name exists in both places.
 
 ## Objective
 
-Make pip choose the higher-version package from `public-sim` and capture the
-fake flag locally.
+Make pip choose the higher-version package from `public-sim`, prove which index
+won, and capture the fake flag locally.
 
 ## What This Teaches
 
@@ -19,7 +19,7 @@ fake flag locally.
 ## Expected Capture
 
 ```text
-artifacts/flag-08.txt
+artifacts/flag-04.json
 ```
 
 ## What To Submit
@@ -28,4 +28,3 @@ artifacts/flag-08.txt
 - selected package version
 - which index won
 - defensive fix
-

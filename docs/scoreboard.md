@@ -9,8 +9,8 @@ The first version reads static data from:
 assets/leaderboard.json
 ```
 
-Later, the trusted scorer can update the same JSON file on the Pages branch.
-The same scorer can also apply hint multipliers.
+During an official event, the progress board can be updated as submissions are
+scored. Hint multipliers may affect the maximum score for a flag.
 
 <div class="scoreboard-toolbar">
   <label for="scoreboard-filter">Filter</label>
@@ -40,5 +40,5 @@ For the MVP, hint state can be global per flag:
 | Hint 2 open | 70% |
 | Guided open | 50% |
 
-For a later private tracked hint system, the scorer can store per-team unlocks
-and apply the multiplier only to teams that requested hints.
+Official events may use public or private hints. The event announcement will
+state how hint usage affects scoring.

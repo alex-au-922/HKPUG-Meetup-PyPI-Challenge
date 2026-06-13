@@ -2,7 +2,15 @@
 
 This page explains how participants should work through the challenge.
 
-## The Daily Loop
+!!! danger "Before you start"
+    **Do not upload packages to real PyPI.**
+
+    **Do not target real packages or read real credentials.**
+
+    Use only the toy package names, toy indexes, and fake flags provided by this
+    challenge.
+
+## The Lab Loop
 
 Each flag follows the same shape:
 
@@ -28,11 +36,11 @@ Allowed:
 
 Not allowed:
 
-- uploading anything to real PyPI
-- targeting real package names
-- reading real credentials
-- contacting external callback servers
-- modifying files outside the challenge workspace
+- **uploading anything to real PyPI**
+- **targeting real package names**
+- **reading real credentials**
+- **contacting external callback servers**
+- **modifying files outside the challenge workspace**
 
 ## Standard Lab Layout
 

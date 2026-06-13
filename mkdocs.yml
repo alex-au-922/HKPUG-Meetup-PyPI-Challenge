@@ -39,6 +39,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Rules: rules.md
   - How To Play: WORKING_FORMAT.md
   - Scoreboard: scoreboard.md
   - Tutorials:
@@ -50,12 +51,8 @@ nav:
       - Submission And Certificates: tutorials/04-submission-and-certificates.md
   - Labs:
       - Lab Index: labs/index.md
-      - Flag 01 Index Recon: labs/flag-01-custom-index-install.md
-      - Flag 02 Name Maze: labs/flag-03-name-normalization.md
-      - Flag 04 Dependency Confusion: labs/flag-08-extra-index-confusion.md
-      - Flag 05 Wheel Autopsy: labs/flag-11-wheel-autopsy.md
-      - Flag 07 Legacy Sdist Trap: labs/flag-16-legacy-sdist-trap.md
-  - Organizer:
-      - MkDocs And Scoreboard Plan: organizer/mkdocs-scoreboard-plan.md
-      - Private Hint Design: organizer/private-hint-design.md
-      - Repository Safety Model: organizer/repository-safety-model.md
+      - Flag 01 Index Recon: labs/flag-01-index-recon.md
+      - Flag 02 Name Maze: labs/flag-02-name-maze.md
+      - Flag 04 Dependency Confusion: labs/flag-04-dependency-confusion.md
+      - Flag 05 Wheel Autopsy: labs/flag-05-wheel-autopsy.md
+      - Flag 07 Legacy Sdist Trap: labs/flag-07-legacy-sdist-trap.md

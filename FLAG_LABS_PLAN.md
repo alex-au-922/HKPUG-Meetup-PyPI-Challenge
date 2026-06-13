@@ -117,14 +117,8 @@ Bad difficulty comes from:
 
 ## Hint System
 
-There are three workable hint models.
-
-### Model A: Public Scheduled Hints
-
-Use scheduled public hint drops. This is easiest to operate and should be the
-MVP fallback.
-
-Each flag has three published states:
+Hints should be announced clearly. They may reduce the maximum score available
+for that flag.
 
 | State | Timing | Max Score | Content |
 |---|---|---:|---|
@@ -137,120 +131,15 @@ For 2-day flags, release Hint 1 after 24 hours and Guided after the window.
 For 3-day flags, release Hint 1 after 24 hours, Hint 2 after 48 hours, and
 Guided after the window.
 
-Score should be based on the public hint state at the time of submission:
+Score can be based on the hint state at the time of submission:
 
 ```text
 awarded_points = base_points * current_hint_multiplier
 ```
 
-This is easier to operate than tracking which team clicked which hint.
-
-### Model B: Encrypted Scheduled Hints
-
-This is the best middle ground for HKPUG if we want hints to feel private
-without building a full web app.
-
-Mechanism:
-
-1. each registered team already has a private key
-2. organizers generate hint text for each flag and level
-3. at the scheduled release time, a workflow encrypts hints to each team's
-   public certificate
-4. encrypted hint files are published in the repo or Pages branch
-5. teams decrypt only their own hint locally
-
-Example layout:
-
-```text
-hints/
-  flag-04/
-    hint-1/
-      hk-01.cms
-      hk-02.cms
-    hint-2/
-      hk-01.cms
-      hk-02.cms
-```
-
-This keeps hint content private, but scoring is still based on the public
-release schedule:
-
-```text
-if Hint 1 has been released publicly, all later submissions use the Hint 1 max.
-```
-
-Pros:
-
-- private hint content
-- no separate server
-- reuses the workshop certificate model
-- low operational complexity
-
-Cons:
-
-- no per-team "I used this hint" tracking
-- once a scheduled hint opens, everybody's max score for that flag drops
-
-### Model C: Signed Private Hint Unlocks
-
-This is the best long-term model if per-team hint penalties matter.
-
-Mechanism:
-
-1. the frontend shows the selected flag and hint level
-2. the frontend creates a request payload with a nonce
-3. the team signs that payload with its team private key
-4. the frontend submits the request and signature to a trusted workflow
-5. the workflow verifies the signature against `team_allowlist.json`
-6. the workflow encrypts the hint to that team's public certificate
-7. the workflow records the unlock in `hint_unlocks.json`
-8. the scorer applies decay only to that team and flag
-
-Example unlock state:
-
-```json
-{
-  "hk-01": {
-    "flag-04": {
-      "hint_level": 1,
-      "unlocked_at": "2026-06-15T10:30:00Z"
-    }
-  }
-}
-```
-
-Important GitHub limitation:
-
-- comments in a public repo are public
-- GitHub Actions artifacts are not a private messaging system
-- true private hint content needs encryption or an external channel
-- a static frontend cannot securely choose secret hint text or write trusted
-  unlock state by itself
-
-The practical GitHub-native version is:
-
-- request metadata can be public
-- request authorization is a team signature
-- hint content is encrypted to the team
-- scoring state is stored on the leaderboard branch
-- GitHub Actions acts as the trusted verifier/encrypter/ledger writer
-
-Extra moving parts:
-
-- per-team hint unlock form
-- browser-side signing or a small local CLI to sign the request
-- workflow dispatch, issue command, or PR-based request submission
-- each unlock creates an audit event in `hint_unlocks.json`
-- score decays only for teams that unlocked the hint
-- hints become fully public after the flag window closes
-
-### Recommendation
-
-Use Model A for the first dry run if speed matters. Use Model B for the real
-HKPUG run if we want hints to feel more special without adding much operational
-burden. Use Model C when we are ready to build the signed request UX. Model C is
-not conceptually hard, but it has more edge cases: nonce replay, browser key
-handling, failed workflow runs, and scoreboard merge conflicts.
+Official events may use public scheduled hints or private team hints. The
+participant-facing rule should stay simple: **using or waiting for hints may
+reduce the maximum score for that flag.**
 
 ## Hint Style
 

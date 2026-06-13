@@ -1,14 +1,14 @@
-# Flag 01: Custom Index Install
+# Flag 01: Index Recon
 
 ## Scenario
 
-You are given a package that is not on real PyPI. Your first job is to install
-it from the challenge index.
+You are given a package that is not on real PyPI. Your first job is to map the
+challenge index, identify the project page, and install the selected artifact.
 
 ## Objective
 
-Make pip install `hkpug-ctf-hello` from the trusted challenge index and print
-the practice flag.
+Make pip install `hkpug-ctf-hello` from the trusted challenge index and write
+proof under `artifacts/flag-01.json`.
 
 ## What This Teaches
 
@@ -26,5 +26,5 @@ artifacts/flag-01.txt
 
 - captured flag
 - install command used
+- selected artifact URL or path
 - one sentence explaining why real PyPI was not involved
-
