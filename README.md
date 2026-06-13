@@ -73,6 +73,8 @@ Build roadmap and participant guidance:
 - `docs/WORKING_FORMAT.md`
 - `docs/tutorials/README.md`
 - `labs/README.md`
+- `SECURITY.md`
+- `docs/organizer/repository-safety-model.md`
 
 ## Challenge Philosophy
 

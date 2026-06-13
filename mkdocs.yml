@@ -58,3 +58,4 @@ nav:
   - Organizer:
       - MkDocs And Scoreboard Plan: organizer/mkdocs-scoreboard-plan.md
       - Private Hint Design: organizer/private-hint-design.md
+      - Repository Safety Model: organizer/repository-safety-model.md
