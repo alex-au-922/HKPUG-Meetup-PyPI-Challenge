@@ -10,8 +10,8 @@ each lab works, and how progress is tracked.
 
 1. Read [Rules](rules.md).
 2. Read [How To Play](WORKING_FORMAT.md).
-3. Open the [Tutorial Index](tutorials/README.md).
-4. Start with [Flag 01](labs/flag-01-index-recon.md).
+3. Start with [Flag 01](labs/flag-01-index-recon.md).
+4. Use the [Tutorial Index](tutorials/README.md) as a reference when needed.
 5. Check [Hints](hints.md) and the [Scoreboard](scoreboard.md).
 
 ## Learning Promise
@@ -47,9 +47,9 @@ flowchart LR
   F11 --> F12["12 Capstone Incident"]
 ```
 
-The labs are written for people who have never thought about Python packaging
-security before. The pages explain the basic nouns first, then stop before the
-last exploit step so you still have to do the CTF work yourself.
+Each flag page contains its own mini tutorial. The separate tutorial pages are
+reference material for people who want to review commands, vocabulary, or the
+submission workflow without opening every flag.
 
 ## Expected Time
 

@@ -16,6 +16,26 @@ You are not attacking the real Python ecosystem. You are showing that you can
 think like both sides: the attacker who understands pip behavior, and the
 maintainer who can remove the weakness.
 
+## Mini Tutorial
+
+The capstone is less about learning a new trick and more about choosing the
+right old trick.
+
+Draw the install path first:
+
+```text
+victim requirement -> package name normalization -> indexes searched
+-> candidates found -> artifact selected -> code path that captures proof
+```
+
+Then mark each part as known or unknown. Do not build a package until you know
+which selection rule you are trying to influence.
+
+A good capstone solve has two halves:
+
+- offense: prove your challenge-owned artifact was selected
+- defense: make the same selection impossible or harmless
+
 ## Story
 
 The victim service installs dependencies from a mixed challenge ecosystem. You

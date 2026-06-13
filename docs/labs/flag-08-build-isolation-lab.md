@@ -16,6 +16,22 @@ Build isolation means pip creates a temporary build environment and installs the
 build requirements there. This is usually safer and more reproducible, but it
 also means build dependencies have their own resolver story.
 
+## Mini Tutorial
+
+Runtime dependencies and build dependencies are not the same.
+
+| Dependency type | Where it appears | When it matters |
+|---|---|---|
+| build dependency | `pyproject.toml` `[build-system]` | before the package is built |
+| runtime dependency | package metadata or requirements file | after the package is installed |
+
+With build isolation, pip creates a temporary environment and installs build
+dependencies there. That means you may see pip resolving packages before the
+victim package itself exists as a wheel.
+
+In this flag, the build log is the map. Search for build dependency installation
+before looking at normal runtime imports.
+
 ## Story
 
 The victim package is a source distribution. Its `pyproject.toml` asks for a

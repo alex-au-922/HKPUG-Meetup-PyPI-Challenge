@@ -17,6 +17,27 @@ Python, and lines beginning with `import` can run at interpreter startup.
 This lab uses a harmless toy `.pth` effect to teach you to inspect installed
 files when behavior appears before your app code runs.
 
+## Mini Tutorial
+
+`site-packages` is where packages are installed inside your virtual environment.
+Python checks that location during startup.
+
+A `.pth` file can do two things:
+
+- add an import path
+- run an `import ...` line during startup
+
+That means the victim script may be innocent. The marker can appear before the
+victim imports the suspicious package directly.
+
+For this flag, separate the timeline:
+
+```text
+install package -> start Python -> victim code runs
+```
+
+The interesting behavior may happen in the middle step.
+
 ## Story
 
 The victim installs a package and then starts Python. A marker appears under

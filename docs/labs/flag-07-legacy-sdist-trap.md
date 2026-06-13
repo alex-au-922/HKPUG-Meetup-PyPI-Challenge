@@ -15,6 +15,24 @@ Older Python packages often used `setup.py`. That file is Python code. If a
 build path runs it, the build can have side effects. In this CTF, the side
 effect is harmless: a local fake flag marker under `artifacts/`.
 
+## Mini Tutorial
+
+The big question is artifact type:
+
+| Artifact | What pip receives | Why you care |
+|---|---|---|
+| wheel | already built package | less build logic needed locally |
+| sdist | source archive | pip may need to run build logic |
+
+Legacy `setup.py` is interesting because it is executable Python code. The lab
+does not require packaging history. It requires observation:
+
+1. Did pip download a wheel or an sdist?
+2. Did pip build a wheel locally?
+3. Which build step wrote the marker?
+
+Use verbose output as your timeline.
+
 ## Story
 
 The victim is forced to install from a source distribution. A legacy

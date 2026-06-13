@@ -15,13 +15,18 @@ This page explains how participants should work through the challenge.
 Each flag follows the same shape:
 
 1. read the scenario
-2. run the setup command
-3. inspect or modify the toy index/package
-4. make the controlled package capture the fake flag
-5. submit the flag and one short explanation
-6. optionally submit a defensive patch or writeup
+2. read the mini tutorial inside that flag page
+3. run the setup command
+4. inspect or modify the toy index/package
+5. make the controlled package capture the fake flag
+6. submit the flag and one short explanation
+7. optionally submit a defensive patch or writeup
 
 The challenge is about learning PyPI by hacking a safe toy ecosystem.
+
+The separate Tutorial section is a reference shelf. It should help when you
+want to review pip output, artifacts, or submission format, but the core lesson
+for a flag should be inside the flag page itself.
 
 ## Expected Time
 

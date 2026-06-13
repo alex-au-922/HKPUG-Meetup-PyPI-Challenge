@@ -15,6 +15,23 @@ and version match, the file bytes must match this exact fingerprint."
 This lab teaches the difference between "I asked for roughly this dependency"
 and "I can reproduce exactly this install."
 
+## Mini Tutorial
+
+Dependency control has levels:
+
+| Requirement style | Example | What it protects |
+|---|---|---|
+| loose range | `pkg>=1.0` | allows many future versions |
+| exact pin | `pkg==1.2.3` | fixes the version |
+| hash check | `--hash=sha256:...` | fixes the exact file bytes |
+| lockfile | generated dependency record | fixes the whole dependency decision |
+
+The trap is that "same name and version" is not always enough. If the exact file
+matters, use hashes or a lock process that records hashes.
+
+In this flag you must do both sides: show the weak install can be abused, then
+show the fixed install rejects the unsafe candidate.
+
 ## Story
 
 The victim app has a weak requirements file. A toy malicious candidate can win

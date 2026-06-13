@@ -15,6 +15,27 @@ and requirements like `<2` or `>=1.4`.
 The resolver is the part of pip that chooses one candidate. This lab teaches you
 to slow down and answer: "Why did pip choose that file instead of this one?"
 
+## Mini Tutorial
+
+A candidate is one possible package file.
+
+Pip may reject a candidate because:
+
+- the version is outside the requirement range
+- the wheel is not compatible with your Python
+- a newer matching version exists
+- hashes are required and the file does not match
+- pre-release versions are not allowed
+
+Your job is to turn pip output into a small table:
+
+| Candidate | Accepted or skipped? | Why? |
+|---|---|---|
+| version A | skipped | does not match requirement |
+| version B | accepted | best matching candidate |
+
+Do not start by guessing the winning version. First list what pip can see.
+
 ## Story
 
 The victim app asks for a toy package called `hkpug-ctf-widget`. The challenge

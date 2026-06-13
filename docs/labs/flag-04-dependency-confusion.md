@@ -15,6 +15,27 @@ If both sources are searched together, pip may choose the candidate that best
 matches its resolver rules. A higher version from the wrong place can beat the
 package you expected.
 
+## Mini Tutorial
+
+The subtle point is that `--extra-index-url` adds more candidates. It is not a
+clean security boundary.
+
+Think of pip seeing one combined candidate pool:
+
+```text
+private index candidates + extra index candidates -> resolver chooses one
+```
+
+So the lab question is not only "which index did we trust?" It is:
+
+1. Which package name did the victim request?
+2. Which indexes contained that name?
+3. Which versions existed in each index?
+4. Which candidate did pip choose?
+
+Once you can answer those four questions, the exploit and the defense are both
+much easier to explain.
+
 ## Story
 
 The victim app trusts a private toy index but also uses a simulated public toy

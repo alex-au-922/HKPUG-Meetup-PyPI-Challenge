@@ -13,6 +13,22 @@ special layout. You can open it before installing it.
 This lab teaches you that package review is not magic. You can inspect metadata,
 installed files, entry points, and hashes with ordinary tools.
 
+## Mini Tutorial
+
+Inside a wheel, the most important directory usually ends with `.dist-info`.
+
+Look there first:
+
+| File | What it tells you |
+|---|---|
+| `METADATA` | package name, version, dependencies, extras |
+| `WHEEL` | wheel format and compatibility information |
+| `RECORD` | file list and hashes for installed files |
+| entry point metadata | commands the package may install |
+
+You are not hunting for a random hidden string. You are reading the package's
+own shipping label and file list.
+
 ## Story
 
 A wheel was installed in the victim environment. Something about it leads to the

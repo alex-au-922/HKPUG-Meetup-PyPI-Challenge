@@ -17,6 +17,28 @@ That command is usually created from package metadata called an entry point.
 The code may not run during installation, but it can run the moment a user calls
 the command.
 
+## Mini Tutorial
+
+An entry point is metadata that says:
+
+```text
+command name -> Python module:function
+```
+
+After install, pip creates a small command wrapper in the virtual environment.
+When the user runs that command, Python calls the target function.
+
+Extras are different. An extra is an optional dependency group:
+
+```text
+package[extra-name]
+```
+
+For this flag, keep the two ideas separate:
+
+- entry point: what command gets created?
+- extra: did installing with `[something]` pull in more packages?
+
 ## Story
 
 The victim workflow installs a toy package and then runs a helper command from

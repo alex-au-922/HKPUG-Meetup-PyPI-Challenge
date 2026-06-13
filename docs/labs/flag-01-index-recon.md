@@ -16,6 +16,25 @@ An index is just a website with a simple listing of package files. In this lab,
 you learn to point pip at the toy challenge index and prove that real PyPI was
 not involved.
 
+## Mini Tutorial
+
+For this flag, think of the index as three layers:
+
+| Layer | What it is |
+|---|---|
+| index root | the page that lists project names |
+| project page | the page for one normalized package name |
+| artifact link | the wheel or source file pip can download |
+
+Pip is not doing a broad web search. It reads the index pages, follows package
+links, then chooses a file. Your evidence should connect those three layers.
+
+When you run with `-vv`, look for:
+
+- the index URL pip searched
+- the links pip found
+- the artifact pip downloaded or installed
+
 ## Story
 
 You are given a package named `hkpug-ctf-hello`. It is not meant to exist on

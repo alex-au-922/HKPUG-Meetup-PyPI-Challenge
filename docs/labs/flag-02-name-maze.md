@@ -15,6 +15,23 @@ For Python package indexes, runs of `.`, `_`, and `-` are treated similarly for
 the project URL. That means names that look different to a human can point to
 the same normalized project page.
 
+## Mini Tutorial
+
+There are two names in your head:
+
+| Name type | Example | Meaning |
+|---|---|---|
+| display spelling | `HKPUG_CTF.Normalize.Me` | what a human typed |
+| lookup spelling | `hkpug-ctf-normalize-me` | what the index page usually uses |
+
+The quick normalization rule for this challenge:
+
+1. lowercase the name
+2. replace runs of `.`, `_`, and `-` with one `-`
+
+So do not solve this by staring at punctuation. Convert each candidate to its
+lookup spelling, then compare project pages.
+
 ## Story
 
 The challenge gives you several package name spellings. Some are noisy on

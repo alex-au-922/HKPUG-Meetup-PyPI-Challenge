@@ -1,12 +1,12 @@
 # Tutorial Pages
 
-These tutorials explain the working format with almost no assumed background.
-They are intentionally basic about vocabulary, commands, and where to look.
+These tutorials are reference pages. The required tutorial for each flag lives
+inside that flag page.
 
-The goal is that a beginner should not need to search the web for normal lab
-vocabulary. The labs still leave the final connection for you.
+Use this section when you want to review vocabulary, commands, pip output, or
+submission flow without opening every lab.
 
-Recommended reading order:
+Recommended reference order:
 
 1. `00-how-to-play.md`
 2. `01-pip-index-basics.md`
@@ -16,7 +16,7 @@ Recommended reading order:
 6. `05-reading-pip-output.md`
 7. `06-submission-pr-workflow.md`
 
-Each tutorial answers three questions:
+Each reference page answers three questions:
 
 - What am I looking at?
 - What command do I run?

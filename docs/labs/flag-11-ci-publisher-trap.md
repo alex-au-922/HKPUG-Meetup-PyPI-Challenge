@@ -16,6 +16,24 @@ publish.
 This lab does not publish anything. You audit a fake workflow and prove which
 package artifact would have been released.
 
+## Mini Tutorial
+
+Read a CI workflow like a security checklist:
+
+| Workflow part | Question |
+|---|---|
+| trigger | what event starts the job? |
+| checkout | whose code is being built? |
+| permissions | what can the job write? |
+| build step | what artifact is created? |
+| publish step | where would it go? |
+
+The dangerous mistake is usually a trust boundary mistake. A protected tag,
+maintainer-controlled branch, and untrusted pull request are not the same kind
+of input.
+
+This lab uses a fake publisher so the proof stays local.
+
 ## Story
 
 The challenge gives you a toy repository with a release workflow. The workflow
