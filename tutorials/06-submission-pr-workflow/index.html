@@ -630,6 +630,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforcement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#team-code" class="md-nav__link">
     <span class="md-ellipsis">
       Team Code
@@ -1113,6 +1122,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforcement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#team-code" class="md-nav__link">
     <span class="md-ellipsis">
       Team Code
@@ -1218,6 +1236,19 @@ work. Reviewers cannot see progress clearly.</p>
 <div class="highlight"><pre><span></span><code>one participant or team = one long-lived pull request
 </code></pre></div>
 <p>You update the same PR as you solve more flags.</p>
+<h2 id="enforcement">Enforcement</h2>
+<p>The repository has a submission guard workflow. It checks PR title, branch name,
+team folder, and duplicate PRs.</p>
+<p>GitHub does not usually "delete" pull requests. The guard does this instead:</p>
+<ul>
+<li>labels submission PRs as <code>submission</code></li>
+<li>fails the PR check when the format is wrong</li>
+<li>comments with the exact fix</li>
+<li>auto-closes duplicate PRs for the same team</li>
+</ul>
+<p>Maintainers can switch on stricter mode later to auto-close every invalid
+submission PR, but the default is friendlier: fix the PR and the check turns
+green.</p>
 <h2 id="team-code">Team Code</h2>
 <p>Each participant or team gets a short code during registration:</p>
 <div class="highlight"><pre><span></span><code>HKPUG-TEAM-AB12
